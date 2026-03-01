@@ -1,35 +1,30 @@
 const https = require('https');
 
-const SYSTEM_PROMPT = `You are Kai, a sharp and friendly assistant for Alloc8r — Vancouver's premium car broker service. Alloc8r helps Canadian buyers skip dealership games, avoid hidden markup, and secure hard-to-find vehicle allocations (like the Lexus GX 550).
+const SYSTEM_PROMPT = `You are Kai, a sharp and friendly assistant for Alloc8r — Vancouver's premium car broker service. Alloc8r helps Canadian buyers skip dealership games, avoid hidden markup, and secure hard-to-find vehicle allocations like the Lexus GX 550.
 
-Your personality: Confident, warm, and knowledgeable. You sound like a sharp friend who happens to know everything about the car industry — not a pushy salesperson, and not a generic chatbot.
+Your personality: Confident, warm, knowledgeable. Like a sharp friend who knows everything about the car industry.
 
-Your job is to:
-1. Welcome the visitor and genuinely help them figure out if Alloc8r is the right fit
-2. Have a natural conversation — don't interrogate, just chat
-3. Gently uncover three things through conversation (don't ask all at once):
-   - TIMELINE: Are they looking to buy within the next 3 months?
-   - VEHICLE: Do they have a specific car or trim in mind?
-   - FEE OPENNESS: Are they open to a flat broker fee (ranging from free to $2,500 CAD depending on the service tier) in exchange for saving thousands?
-4. Once you have a good read on all three AND they seem like a real buyer, ask for their name and best contact method (email or phone)
-5. Reassure them: their info only goes to the Alloc8r team, no dealer ever sees it
+Your job:
+1. Have a natural conversation to find out if Alloc8r is a good fit
+2. Gently uncover: their timeline (buying within 3 months?), their target vehicle, and if they're open to a broker fee
+3. Once you have all three, ask for their name and contact info (email or phone)
 
-Key knowledge:
-- Alloc8r's services range from free (deal audit, split savings 50/50) to $2,500 flat fee (full concierge)
-- They save clients $3,500+ on average per vehicle
-- They can secure rare allocations like Lexus GX 550, TRD Pro trucks, Land Cruiser, Porsche 911 etc. in 4-12 weeks
-- Based in Vancouver, BC — serve all of Canada
-- Free 30-minute consultation with zero pressure
+Key facts about Alloc8r:
+- Services from free (deal audit) to $2,500 (full concierge)
+- Average client savings: $3,500+ per vehicle
+- Secure rare allocations like Lexus GX 550, Land Cruiser, Porsche 911 in 4-12 weeks
+- Based in Vancouver, BC, serve all of Canada
+- Free 30-minute consultation, no pressure
 
-When a visitor gives you their contact info, end your message with this exact JSON on its own line:
-LEAD_CAPTURED:{"name":"[their name]","contact":"[their email or phone]","vehicle":"[vehicle they mentioned or not specified]","timeline":"[their timeline or not specified]"}
+When a visitor gives contact info, end your message with this on its own line:
+LEAD_CAPTURED:{"name":"NAME","contact":"CONTACT","vehicle":"VEHICLE","timeline":"TIMELINE"}
 
-Keep responses concise — 2-4 sentences max unless they ask something that needs more detail. No bullet points or headers, just natural conversation.`;
+Keep replies to 2-4 sentences. Be conversational, not salesy.`;
 
 function callAnthropic(apiKey, messages) {
   return new Promise(function(resolve, reject) {
     var body = JSON.stringify({
-      model: 'claude-3-5-haiku-20241022',
+      model: 'claude-3-haiku-20240307',
       max_tokens: 400,
       system: SYSTEM_PROMPT,
       messages: messages
@@ -51,11 +46,7 @@ function callAnthropic(apiKey, messages) {
       var data = '';
       res.on('data', function(chunk) { data += chunk; });
       res.on('end', function() {
-        try {
-          resolve({ status: res.statusCode, body: JSON.parse(data) });
-        } catch(e) {
-          reject(new Error('Failed to parse response: ' + data));
-        }
+        resolve({ status: res.statusCode, raw: data });
       });
     });
 
@@ -81,46 +72,57 @@ exports.handler = async function(event, context) {
     return { statusCode: 405, headers: headers, body: JSON.stringify({ error: 'Method not allowed' }) };
   }
 
-  try {
-    var parsed = JSON.parse(event.body);
-    var messages = parsed.messages;
-
-    if (!process.env.ANTHROPIC_API_KEY) {
-      return { statusCode: 500, headers: headers, body: JSON.stringify({ error: 'API key not configured' }) };
-    }
-
-    var result = await callAnthropic(process.env.ANTHROPIC_API_KEY, messages);
-
-    if (result.status !== 200) {
-      console.error('Anthropic API error:', result.status, JSON.stringify(result.body));
-      return { statusCode: 500, headers: headers, body: JSON.stringify({ error: 'AI service error: ' + result.status }) };
-    }
-
-    var rawText = result.body.content[0].text;
-
-    // Parse lead capture signal
-    var leadData = null;
-    var displayText = rawText;
-    var leadMatch = rawText.match(/LEAD_CAPTURED:(\{[^}]+\})/);
-    if (leadMatch) {
-      try {
-        leadData = JSON.parse(leadMatch[1]);
-        displayText = rawText.replace(/LEAD_CAPTURED:\{[^}]+\}/, '').trim();
-      } catch(e) {}
-    }
-
-    return {
-      statusCode: 200,
-      headers: headers,
-      body: JSON.stringify({ text: displayText, lead: leadData })
-    };
-
-  } catch(err) {
-    console.error('Function error:', err.message);
-    return {
-      statusCode: 500,
-      headers: headers,
-      body: JSON.stringify({ error: 'Server error: ' + err.message })
-    };
+  if (!process.env.ANTHROPIC_API_KEY) {
+    console.error('MISSING: ANTHROPIC_API_KEY not set');
+    return { statusCode: 500, headers: headers, body: JSON.stringify({ error: 'API key not configured' }) };
   }
+
+  var messages;
+  try {
+    messages = JSON.parse(event.body).messages;
+  } catch(e) {
+    return { statusCode: 400, headers: headers, body: JSON.stringify({ error: 'Invalid request body' }) };
+  }
+
+  var result;
+  try {
+    result = await callAnthropic(process.env.ANTHROPIC_API_KEY, messages);
+  } catch(e) {
+    console.error('Network error:', e.message);
+    return { statusCode: 500, headers: headers, body: JSON.stringify({ error: 'Network error: ' + e.message }) };
+  }
+
+  console.log('Anthropic status:', result.status);
+  console.log('Anthropic raw:', result.raw.substring(0, 300));
+
+  var parsed;
+  try {
+    parsed = JSON.parse(result.raw);
+  } catch(e) {
+    console.error('Parse error:', result.raw);
+    return { statusCode: 500, headers: headers, body: JSON.stringify({ error: 'Could not parse AI response' }) };
+  }
+
+  if (result.status !== 200) {
+    var errMsg = parsed.error && parsed.error.message || 'unknown error';
+    console.error('Anthropic error:', result.status, errMsg);
+    return { statusCode: 500, headers: headers, body: JSON.stringify({ error: errMsg }) };
+  }
+
+  var rawText = parsed.content[0].text;
+  var leadData = null;
+  var displayText = rawText;
+  var leadMatch = rawText.match(/LEAD_CAPTURED:(\{[^}]+\})/);
+  if (leadMatch) {
+    try {
+      leadData = JSON.parse(leadMatch[1]);
+      displayText = rawText.replace(/LEAD_CAPTURED:\{[^}]+\}/, '').trim();
+    } catch(e) {}
+  }
+
+  return {
+    statusCode: 200,
+    headers: headers,
+    body: JSON.stringify({ text: displayText, lead: leadData })
+  };
 };
