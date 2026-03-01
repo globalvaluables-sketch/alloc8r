@@ -1,0 +1,2001 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alloc8r | Car Broker Vancouver, Beat Dealer Markup & Skip the Waitlist</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+.font-display { font-family: 'Syne', sans-serif; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #f8fafc; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+html { scroll-padding-top: 5rem; }
+.reveal { opacity: 0; transform: translateY(30px) scale(0.98); transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1); will-change: opacity, transform; }
+.reveal.active { opacity: 1; transform: translateY(0) scale(1); }
+.reveal-delay-100 { transition-delay: 0.1s; }
+.reveal-delay-200 { transition-delay: 0.2s; }
+.reveal-delay-300 { transition-delay: 0.3s; }
+
+/* Marquee */
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.animate-marquee { animation: marquee 25s linear infinite; display: flex; width: max-content; }
+
+/* Hero fade-up stagger */
+@keyframes heroFadeUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+.h-anim { animation: heroFadeUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) both; }
+.h-d1 { animation-delay: 0.05s; }
+.h-d2 { animation-delay: 0.18s; }
+.h-d3 { animation-delay: 0.32s; }
+.h-d4 { animation-delay: 0.46s; }
+.h-d5 { animation-delay: 0.60s; }
+.h-d6 { animation-delay: 0.78s; }
+
+/* Hero dot grid bg */
+.dot-grid { background-image: radial-gradient(rgba(255,255,255,0.04) 1.5px, transparent 1.5px); background-size: 28px 28px; }
+
+/* Stat pills */
+.stat-pill { transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), background 0.2s; }
+.stat-pill:hover { transform: translateY(-4px); }
+
+/* Quiz */
+.quiz-card { transition: all 0.28s cubic-bezier(0.16,1,0.3,1); }
+.quiz-card:hover { transform: translateY(-5px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+.quiz-grid-wrap { transition: opacity 0.28s ease, transform 0.28s ease; }
+.quiz-result-wrap { transition: opacity 0.32s ease, transform 0.32s ease; }
+.tier-feature { transition: all 0.38s ease-out; }
+.tier-feature.fv { opacity: 1 !important; transform: translateY(0) !important; }
+
+/* Flip cards */
+.flipped { transform: rotateY(180deg) !important; }
+#mobile-cards-container::-webkit-scrollbar { display: none; }
+#mobile-cards-container { -ms-overflow-style: none; scrollbar-width: none; }
+
+/* Side bookmarks removed (replaced by quiz) */
+/* FAQ */
+/* Keep all existing FAQ / roadmap styles */
+</style>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LocalBusiness","name":"Alloc8r","description":"Alloc8r is a car broker and car buying service based in Vancouver, BC. We help Canadian buyers avoid dealer markup, secure high-demand vehicle allocations like the Lexus GX 550, and professionally negotiate every deal on your behalf.","url":"https://alloc8r.ca","telephone":"+16728002023","address":{"@type":"PostalAddress","addressLocality":"Vancouver","addressRegion":"BC","addressCountry":"CA"},"areaServed":[{"@type":"City","name":"Vancouver"},{"@type":"Country","name":"Canada"}],"serviceType":["Car Broker Vancouver","Car Buying Service","Vehicle Allocation Canada","Dealer Markup Removal","Lexus GX 550 Allocation Canada"],"priceRange":"Free–$2,500 CAD","knowsAbout":["car broker Vancouver","avoid dealer markup Canada","Lexus GX 550 allocation Canada","car buying service Canada"]}
+</script>
+<meta name="description" content="Alloc8r is Vancouver's car broker and car buying service. We secure Lexus GX 550 allocations, avoid dealer markup, and negotiate on your behalf. Save $3,500+ on your next car in Canada.">
+<meta property="og:title" content="Alloc8r | Car Broker Vancouver, Skip Waitlists & Avoid Dealer Markup">
+<meta property="og:description" content="Vancouver's car buying service. We secure rare allocations like the Lexus GX 550 in weeks, strip hidden dealer markup, and negotiate every deal on your behalf.">
+<meta property="og:image" content="https://img.youtube.com/vi/e_FlKdieyaw/maxresdefault.jpg">
+<meta property="og:type" content="website">
+</head>
+
+<body class="leading-relaxed selection:bg-blue-100 selection:text-blue-900 text-slate-900 bg-white relative">
+
+<!-- ============================================================ -->
+<!-- NAVBAR -->
+<!-- ============================================================ -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/50 transition-all duration-300">
+  <div class="lg:px-8 flex z-50 bg-transparent h-16 max-w-7xl mr-auto ml-auto pr-6 pl-6 relative items-center justify-between">
+    <a href="#" class="text-xl font-semibold tracking-tight text-slate-900 hover:text-slate-700 transition-colors z-50 font-display">Alloc8r.</a>
+    <div class="hidden lg:flex items-center gap-8">
+      <a href="#problem" class="hover:text-slate-900 transition-colors text-sm font-medium text-slate-600">The Trap</a>
+      <a href="#why-us" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">How It Works</a>
+      <a href="#tiers" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">Services</a>
+      <a href="#faq" class="text-sm font-medium text-slate-600 hover:text-slate-900 transition-colors">FAQs</a>
+    </div>
+    <div class="hidden lg:flex items-center gap-3">
+      <a href="#" onclick="event.preventDefault(); openCalModal();" class="inline-flex items-center px-5 py-2.5 rounded-xl bg-slate-900 text-white text-sm font-medium hover:bg-slate-800 transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 duration-300">Book Free Consultation</a>
+    </div>
+    <button onclick="toggleMenu()" class="lg:hidden p-2 -mr-2 text-slate-600 hover:bg-slate-100 rounded-lg transition-colors focus:outline-none z-50 relative" id="mobile-menu-btn" aria-label="Toggle menu">
+      <div class="block" id="icon-menu"><iconify-icon icon="solar:hamburger-menu-linear" stroke-width="1.5" class="w-6 h-6"></iconify-icon></div>
+      <div id="icon-close" class="hidden"><iconify-icon icon="solar:close-circle-linear" stroke-width="1.5" class="w-6 h-6"></iconify-icon></div>
+    </button>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="fixed inset-0 z-40 bg-white/95 backdrop-blur-xl border-t border-slate-100 flex flex-col pt-24 px-6 pb-6 gap-2 transition-all duration-300 ease-in-out lg:hidden origin-top opacity-0 -translate-y-4 hidden">
+    <a href="#problem" class="text-2xl font-medium text-slate-900 py-3 border-b border-slate-100 hover:text-blue-600 hover:pl-2 transition-all" onclick="toggleMenu()">The Trap</a>
+    <a href="#why-us" class="text-2xl font-medium text-slate-900 py-3 border-b border-slate-100 hover:text-blue-600 hover:pl-2 transition-all" onclick="toggleMenu()">How It Works</a>
+    <a href="#tiers" class="text-2xl font-medium text-slate-900 py-3 border-b border-slate-100 hover:text-blue-600 hover:pl-2 transition-all" onclick="toggleMenu()">Services</a>
+    <a href="#faq" class="text-2xl font-medium text-slate-900 py-3 border-b border-slate-100 hover:text-blue-600 hover:pl-2 transition-all" onclick="toggleMenu()">FAQs</a>
+    <div class="mt-auto">
+      <a href="#" class="inline-flex justify-center items-center px-8 py-4 rounded-xl bg-slate-900 text-white font-medium hover:bg-slate-800 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 duration-300 w-full text-center" onclick="event.preventDefault(); toggleMenu(); openCalModal();">Book Free Consultation</a>
+      <p class="text-center text-xs text-slate-400 mt-6">Alloc8r © 2025 · Vancouver, BC</p>
+    </div>
+  </div>
+</nav>
+
+<!-- ============================================================ -->
+<!-- HERO, Split Dark / Light -->
+<!-- ============================================================ -->
+<section id="home" class="relative overflow-hidden" style="min-height: calc(100svh - 0px);">
+
+  <!-- ── Dark left background (full width on mobile, left-half on desktop) ── -->
+  <div class="absolute inset-0 lg:right-1/2 bg-[#070d1c] dot-grid z-0">
+    <!-- Ambient glows -->
+    <div class="absolute top-1/4 left-1/3 w-[480px] h-[480px] bg-blue-600/8 rounded-full blur-[100px] pointer-events-none"></div>
+    <div class="absolute bottom-1/3 left-1/4 w-[320px] h-[320px] bg-indigo-500/6 rounded-full blur-[80px] pointer-events-none"></div>
+  </div>
+
+  <!-- ── Light right background (desktop only) ── -->
+  <div class="absolute inset-y-0 right-0 left-1/2 bg-slate-50 hidden lg:block z-0"></div>
+
+  <!-- ── Curved SVG divider between dark/light (desktop only) ── -->
+  <div class="absolute inset-y-0 z-10 hidden lg:block pointer-events-none" style="left: calc(50% - 36px); width: 72px;">
+    <svg viewBox="0 0 72 100" preserveAspectRatio="none" class="h-full w-full">
+      <path d="M 36 0 Q 0 50 36 100 L 72 100 L 72 0 Z" fill="#f8fafc"/>
+    </svg>
+  </div>
+
+  <!-- ── Content ── -->
+  <div class="relative z-20 max-w-7xl mx-auto px-6 lg:px-8 pt-28 pb-20 lg:pt-36 lg:pb-28 flex items-center" style="min-height: inherit;">
+    <div class="flex flex-col lg:flex-row items-center w-full gap-14 lg:gap-0">
+
+      <!-- LEFT: Dark copy panel -->
+      <div class="lg:w-1/2 lg:pr-20 w-full space-y-7 text-center lg:text-left">
+
+        <!-- Eyebrow, THE KEY POSITIONING LINE -->
+        <div class="h-anim h-d1 inline-flex items-center gap-2.5 bg-white/10 border border-white/15 text-white/85 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm mx-auto lg:mx-0 block w-fit">
+          <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse flex-shrink-0"></span>
+          Think of us as a buyer's agent, but for your car.
+        </div>
+
+        <!-- H1 -->
+        <div class="h-anim h-d2">
+          <h1 class="font-display text-white tracking-tight leading-[1.05]" style="font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 700;">
+            The dealer has a<br>
+            professional negotiator.<br>
+            <span class="text-blue-400">Now, so do you.</span>
+          </h1>
+        </div>
+
+        <!-- Sub-headline -->
+        <p class="h-anim h-d3 text-white/60 text-base lg:text-lg leading-relaxed max-w-lg mx-auto lg:mx-0">
+          Alloc8r sits on <em class="text-white/85 not-italic font-medium">your</em> side of the table. We negotiate with dealers, strip hidden fees, and secure hard-to-get allocations, so you get the best possible deal without the games.
+        </p>
+
+        <!-- Stat Pills -->
+        <div class="h-anim h-d4 grid grid-cols-3 gap-3 max-w-lg mx-auto lg:mx-0">
+          <div class="stat-pill bg-white/6 border border-white/10 rounded-xl p-3.5 text-center cursor-default">
+            <p class="font-display text-xl font-bold text-white leading-none">1 in 3</p>
+            <p class="text-[11px] text-white/45 mt-1.5 leading-snug">car loans end up underwater</p>
+          </div>
+          <div class="stat-pill bg-emerald-500/10 border border-emerald-500/20 rounded-xl p-3.5 text-center cursor-default">
+            <p class="font-display text-xl font-bold text-emerald-400 leading-none">$3,500+</p>
+            <p class="text-[11px] text-white/45 mt-1.5 leading-snug">avg. saved per vehicle</p>
+          </div>
+          <div class="stat-pill bg-blue-500/10 border border-blue-500/20 rounded-xl p-3.5 text-center cursor-default">
+            <p class="font-display text-xl font-bold text-blue-400 leading-none">4–12 wks</p>
+            <p class="text-[11px] text-white/45 mt-1.5 leading-snug">for rare allocated cars</p>
+          </div>
+        </div>
+
+        <!-- CTAs -->
+        <div class="h-anim h-d5 flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+          <a href="#" onclick="event.preventDefault(); openCalModal();" class="inline-flex justify-center items-center px-7 py-4 rounded-xl bg-white text-slate-900 font-semibold hover:bg-slate-100 transition-all shadow-lg hover:shadow-xl hover:-translate-y-1 duration-300 text-sm">
+            Book Free Consultation
+          </a>
+          <a href="#why-us" class="inline-flex justify-center items-center px-7 py-4 rounded-xl bg-white/8 border border-white/15 text-white font-medium hover:bg-white/14 transition-all text-sm">
+            See How It Works
+            <iconify-icon icon="solar:alt-arrow-right-linear" class="ml-2 w-4 h-4"></iconify-icon>
+          </a>
+        </div>
+
+        <!-- Social proof -->
+        <div class="h-anim h-d6 flex items-center gap-3 justify-center lg:justify-start">
+          <div class="flex -space-x-2">
+            <div class="w-8 h-8 rounded-full border-2 border-white/20 overflow-hidden"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64" class="w-full h-full object-cover"></div>
+            <div class="w-8 h-8 rounded-full border-2 border-white/20 overflow-hidden"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64" class="w-full h-full object-cover"></div>
+            <div class="w-8 h-8 rounded-full border-2 border-white/20 overflow-hidden"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=64&h=64" class="w-full h-full object-cover"></div>
+          </div>
+          <p class="text-sm text-white/45">Trusted by hundreds of Canadian buyers</p>
+        </div>
+      </div>
+
+      <!-- RIGHT: Video panel (dark bg on mobile, light on desktop) -->
+      <div class="lg:w-1/2 lg:pl-12 w-full flex justify-center lg:justify-end h-anim h-d3">
+        <div class="relative w-full max-w-[300px] lg:max-w-[320px]">
+
+          <!-- Video card -->
+          <div class="aspect-[9/16] rounded-3xl overflow-hidden shadow-2xl bg-slate-800 lg:bg-slate-100 relative">
+            <iframe
+              src="https://www.youtube.com/embed/e_FlKdieyaw"
+              title="Alloc8r, Canada's car buyer's agent explained"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+              class="w-full h-full absolute inset-0">
+            </iframe>
+          </div>
+
+          <!-- Floating savings badge -->
+          <div class="absolute -bottom-4 -left-4 lg:-left-10 bg-white p-3.5 rounded-xl shadow-xl border border-slate-100/80 z-10" style="backdrop-filter: blur(12px);">
+            <div class="flex items-center gap-3">
+              <div class="bg-emerald-100 p-2 rounded-lg flex-shrink-0">
+                <iconify-icon icon="solar:shield-check-linear" stroke-width="1.5" class="w-5 h-5 text-emerald-600"></iconify-icon>
+              </div>
+              <div>
+                <p class="text-[10px] text-slate-400 font-medium uppercase tracking-wider">Avg Client Savings</p>
+                <p class="text-base font-bold text-slate-900 font-display">$3,500+ / Vehicle</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating "on your side" badge (top right) -->
+          <div class="absolute -top-3 -right-3 lg:-right-6 bg-blue-600 text-white px-3 py-1.5 rounded-full text-xs font-semibold shadow-lg flex items-center gap-1.5">
+            <iconify-icon icon="solar:shield-user-linear" width="14"></iconify-icon>
+            100% on your side
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bottom wave separator -->
+  <div class="absolute bottom-0 left-0 right-0 lg:hidden h-8 bg-white" style="clip-path: ellipse(60% 100% at 50% 100%);"></div>
+</section>
+
+<!-- ============================================================ -->
+<!-- PROBLEM / SOLUTION, SEO-optimised rebuild -->
+<!-- ============================================================ -->
+<section class="bg-white pt-20 pb-0 lg:pt-28 relative overflow-hidden" id="problem">
+  <div class="lg:px-8 max-w-7xl mx-auto px-6">
+
+    <!-- Section header, keyword-rich H2 -->
+    <div class="text-center max-w-3xl mx-auto mb-6">
+      <div class="inline-flex gap-2 text-sm font-medium text-blue-600 bg-blue-50 border-blue-100 border rounded-full px-3 py-1 items-center mb-5">
+        <iconify-icon icon="solar:eye-linear" class="w-4 h-4"></iconify-icon>
+        Why Vancouver buyers work with a car broker
+      </div>
+      <p class="mt-2 text-slate-500 text-base max-w-2xl mx-auto">
+        As Vancouver's car buying service, Alloc8r exists because the process is designed to benefit the dealer, not you. Here's exactly how we help you get a car sooner for less.
+      </p>
+    </div>
+
+    <!-- Always-visible stat strip -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-0 mb-16 mt-8 max-w-2xl mx-auto divide-y sm:divide-y-0 sm:divide-x divide-slate-100">
+      <div class="flex items-center gap-3 sm:px-8 py-3 sm:py-0">
+        <div class="w-9 h-9 rounded-lg bg-red-50 flex items-center justify-center flex-shrink-0">
+          <iconify-icon icon="solar:danger-triangle-linear" class="text-red-500" width="18"></iconify-icon>
+        </div>
+        <div>
+          <p class="text-lg font-bold text-slate-900 leading-none">68%</p>
+          <p class="text-xs text-slate-500 mt-0.5">of buyers don't trust their dealer</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 sm:px-8 py-3 sm:py-0">
+        <div class="w-9 h-9 rounded-lg bg-amber-50 flex items-center justify-center flex-shrink-0">
+          <iconify-icon icon="solar:clock-circle-linear" class="text-amber-500" width="18"></iconify-icon>
+        </div>
+        <div>
+          <p class="text-lg font-bold text-slate-900 leading-none">2–4 yrs</p>
+          <p class="text-xs text-slate-500 mt-0.5">avg. wait for high-demand models</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-3 sm:px-8 py-3 sm:py-0">
+        <div class="w-9 h-9 rounded-lg bg-slate-100 flex items-center justify-center flex-shrink-0">
+          <iconify-icon icon="solar:clock-circle-linear" class="text-slate-500" width="18"></iconify-icon>
+        </div>
+        <div>
+          <p class="text-lg font-bold text-slate-900 leading-none">12–14 hrs</p>
+          <p class="text-xs text-slate-500 mt-0.5">avg. research time spent per car deal</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Problem/Solution Carousel -->
+    <div class="relative pb-20" id="ps-carousel-wrapper">
+
+      <!-- Slide track -->
+      <div class="overflow-hidden rounded-2xl" id="ps-track-outer">
+        <div class="flex transition-transform duration-500 ease-in-out" id="ps-track" style="will-change:transform;">
+
+          <!-- SLIDE 1 -->
+          <div class="ps-slide w-full flex-shrink-0 grid grid-cols-1 lg:grid-cols-2 rounded-2xl overflow-hidden border border-slate-100 shadow-sm">
+            <div class="bg-slate-900 p-8 lg:p-10 relative overflow-hidden">
+              <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 to-red-400"></div>
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-red-500/15 border border-red-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <iconify-icon icon="solar:clock-circle-linear" class="text-red-400" width="20"></iconify-icon>
+                </div>
+                <div>
+                  <span class="inline-block text-[10px] font-bold text-red-400 bg-red-500/10 border border-red-500/15 rounded-full px-2.5 py-0.5 uppercase tracking-wider mb-3">The Problem</span>
+                  <h3 class="text-lg font-semibold text-white mb-2">Multi-Year Waitlist</h3>
+                  <p class="text-slate-400 text-sm leading-relaxed">Dealers put you on a list with no timeline and no guarantee, using your deposit as an interest-free loan. High-demand models like the Lexus GX 550, Porsche 911, and Mercedes G 63 average <strong class="text-slate-300">2 to 4 years</strong>. Buyers who skip the wait pay Adjusted Market Value: <strong class="text-slate-300">$20,000 to $50,000 over MSRP</strong> on the used market.</p>
+                  <div class="mt-4 flex items-center gap-2 text-red-400 text-xs font-medium">
+                    <iconify-icon icon="solar:danger-triangle-linear" width="13"></iconify-icon>
+                    Industry average: 24–48 month waitlist for allocated models in Canada
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white p-8 lg:p-10 relative overflow-hidden border-t lg:border-t-0 lg:border-l border-slate-100">
+              <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 to-blue-500"></div>
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <iconify-icon icon="solar:key-linear" class="text-emerald-600" width="20"></iconify-icon>
+                </div>
+                <div>
+                  <span class="inline-block text-[10px] font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 rounded-full px-2.5 py-0.5 uppercase tracking-wider mb-3">The Alloc8r Fix</span>
+                  <h3 class="text-lg font-semibold text-slate-900 mb-2">Skip the Line. Get Your Car in Weeks.</h3>
+                  <p class="text-slate-600 text-sm leading-relaxed">Our pre-secured allocations and dealer volume relationships move you to the front. One client received their <strong class="text-slate-800">2026 Lexus GX 550 in two weeks</strong> instead of three years. Typical Alloc8r wait: 4 to 12 weeks.</p>
+                  <div class="mt-4 flex items-center gap-2 text-emerald-600 text-xs font-medium">
+                    <iconify-icon icon="solar:check-circle-linear" width="13"></iconify-icon>
+                    Typical Alloc8r wait: 4 to 12 weeks for high-demand allocations
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 2 -->
+          <div class="ps-slide w-full flex-shrink-0 grid grid-cols-1 lg:grid-cols-2 rounded-2xl overflow-hidden border border-slate-100 shadow-sm">
+            <div class="bg-slate-900 p-8 lg:p-10 relative overflow-hidden">
+              <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 to-red-400"></div>
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-red-500/15 border border-red-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <iconify-icon icon="solar:hand-money-linear" class="text-red-400" width="20"></iconify-icon>
+                </div>
+                <div>
+                  <span class="inline-block text-[10px] font-bold text-red-400 bg-red-500/10 border border-red-500/15 rounded-full px-2.5 py-0.5 uppercase tracking-wider mb-3">The Problem</span>
+                  <h3 class="text-lg font-semibold text-white mb-2">Dealer Markup and Hidden Fees</h3>
+                  <p class="text-slate-400 text-sm leading-relaxed">Nitrogen tires, paint protection, admin fees, extended warranties. None of it is mandatory, all of it is profitable. By the time you're in the finance office, the sticker price means nothing. Most Canadian buyers pay <strong class="text-slate-300">$2,000 to $5,000 more</strong> than they should.</p>
+                  <div class="mt-4 flex items-center gap-2 text-red-400 text-xs font-medium">
+                    <iconify-icon icon="solar:danger-triangle-linear" width="13"></iconify-icon>
+                    68% of Canadian buyers don't trust dealers to be transparent on pricing
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white p-8 lg:p-10 relative overflow-hidden border-t lg:border-t-0 lg:border-l border-slate-100">
+              <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 to-blue-500"></div>
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <iconify-icon icon="solar:shield-check-linear" class="text-emerald-600" width="20"></iconify-icon>
+                </div>
+                <div>
+                  <span class="inline-block text-[10px] font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 rounded-full px-2.5 py-0.5 uppercase tracking-wider mb-3">The Alloc8r Fix</span>
+                  <h3 class="text-lg font-semibold text-slate-900 mb-2">We Make Dealers Compete for Your Business.</h3>
+                  <p class="text-slate-600 text-sm leading-relaxed">Alloc8r brings dealers repeat volume. In return, they offer our clients the lowest price they can, the same treatment usually reserved for fleet buyers. Average saving: <strong class="text-slate-800">$3,500 per deal</strong>.</p>
+                  <div class="mt-4 flex items-center gap-2 text-emerald-600 text-xs font-medium">
+                    <iconify-icon icon="solar:check-circle-linear" width="13"></iconify-icon>
+                    On average, $3,500 removed per deal in hidden dealer markup across Canada.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 3 -->
+          <div class="ps-slide w-full flex-shrink-0 grid grid-cols-1 lg:grid-cols-2 rounded-2xl overflow-hidden border border-slate-100 shadow-sm">
+            <div class="bg-slate-900 p-8 lg:p-10 relative overflow-hidden">
+              <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-red-500 to-red-400"></div>
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-red-500/15 border border-red-500/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <iconify-icon icon="solar:face-scan-circle-linear" class="text-red-400" width="20"></iconify-icon>
+                </div>
+                <div>
+                  <span class="inline-block text-[10px] font-bold text-red-400 bg-red-500/10 border border-red-500/15 rounded-full px-2.5 py-0.5 uppercase tracking-wider mb-3">The Problem</span>
+                  <h3 class="text-lg font-semibold text-white mb-2">Five Hours of Calculated Exhaustion</h3>
+                  <p class="text-slate-400 text-sm leading-relaxed">The wait, the manager checking with his boss, the finance office. It's a system designed to outlast your willpower. By the time the manager's made his third trip to the back office, you're convinced you got a deal. You didn't.</p>
+                  <div class="mt-4 flex items-center gap-2 text-red-400 text-xs font-medium">
+                    <iconify-icon icon="solar:danger-triangle-linear" width="13"></iconify-icon>
+                    81% of buyers report high anxiety. Most never negotiate a better deal.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="bg-white p-8 lg:p-10 relative overflow-hidden border-t lg:border-t-0 lg:border-l border-slate-100">
+              <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-400 to-blue-500"></div>
+              <div class="flex items-start gap-4">
+                <div class="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                  <iconify-icon icon="solar:emoji-funny-circle-linear" class="text-emerald-600" width="20"></iconify-icon>
+                </div>
+                <div>
+                  <span class="inline-block text-[10px] font-bold text-emerald-600 bg-emerald-50 border border-emerald-100 rounded-full px-2.5 py-0.5 uppercase tracking-wider mb-3">The Alloc8r Fix</span>
+                  <h3 class="text-lg font-semibold text-slate-900 mb-2">Walk in Once. With a Pre-Negotiated Price.</h3>
+                  <p class="text-slate-600 text-sm leading-relaxed">You never sit across from a sales manager. We handle every call and counteroffer, then send you in to sign a locked deal. One client had a <strong class="text-slate-800">$10,000 security deposit removed</strong> with no change to monthly payments.</p>
+                  <div class="mt-4 flex items-center gap-2 text-emerald-600 text-xs font-medium">
+                    <iconify-icon icon="solar:check-circle-linear" width="13"></iconify-icon>
+                    Reclaim 12–14 hrs of research and 4–5 hrs at the dealership. That's time you're not getting back.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /ps-track -->
+      </div><!-- /ps-track-outer -->
+
+      <!-- Controls row -->
+      <div class="flex items-center justify-between mt-6 px-1">
+        <!-- Prev -->
+        <button id="ps-prev" onclick="psGo(-1)" class="w-10 h-10 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-400 hover:text-slate-700 hover:border-slate-400 transition-all shadow-sm disabled:opacity-30 disabled:cursor-not-allowed" aria-label="Previous" disabled>
+          <iconify-icon icon="solar:alt-arrow-left-linear" width="18"></iconify-icon>
+        </button>
+
+        <!-- Dots + label -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="flex gap-2 items-center" id="ps-dots">
+            <button onclick="psGo(0, true)" class="ps-dot w-8 h-2 rounded-full bg-slate-900 transition-all duration-300" data-idx="0"></button>
+            <button onclick="psGo(1, true)" class="ps-dot w-5 h-2 rounded-full bg-slate-200 transition-all duration-300" data-idx="1"></button>
+            <button onclick="psGo(2, true)" class="ps-dot w-5 h-2 rounded-full bg-slate-200 transition-all duration-300" data-idx="2"></button>
+          </div>
+          <p class="text-xs text-slate-400" id="ps-label">Multi-Year Waitlist</p>
+        </div>
+
+        <!-- Next -->
+        <button id="ps-next" onclick="psGo(1)" class="w-10 h-10 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-400 hover:text-slate-700 hover:border-slate-400 transition-all shadow-sm" aria-label="Next">
+          <iconify-icon icon="solar:alt-arrow-right-linear" width="18"></iconify-icon>
+        </button>
+      </div>
+
+      <!-- Swipe hint (mobile only) -->
+      <p class="text-center text-xs text-slate-400 mt-3 flex items-center justify-center gap-1.5 lg:hidden">
+        <iconify-icon icon="solar:hand-shake-linear" width="14"></iconify-icon>
+        Swipe to see more
+      </p>
+
+    </div><!-- /ps-carousel-wrapper -->
+  </div>
+
+  <style>
+    #ps-track-outer { touch-action: pan-y; }
+    .ps-slide { min-width: 100%; }
+  </style>
+
+  <script>
+    (function() {
+      var current = 0;
+      var total = 3;
+      var labels = ['Multi-Year Waitlist', 'Dealer Markup', 'Negotiation Exhaustion'];
+      var track = document.getElementById('ps-track');
+      var prevBtn = document.getElementById('ps-prev');
+      var nextBtn = document.getElementById('ps-next');
+      var labelEl = document.getElementById('ps-label');
+
+      function psUpdateUI() {
+        if (!track) return;
+        track.style.transform = 'translateX(-' + (current * 100) + '%)';
+        // dots
+        document.querySelectorAll('.ps-dot').forEach(function(d, i) {
+          d.className = i === current
+            ? 'ps-dot w-8 h-2 rounded-full bg-slate-900 transition-all duration-300'
+            : 'ps-dot w-5 h-2 rounded-full bg-slate-200 transition-all duration-300';
+        });
+        if (labelEl) labelEl.textContent = labels[current];
+        if (prevBtn) prevBtn.disabled = current === 0;
+        if (nextBtn) nextBtn.disabled = current === total - 1;
+      }
+
+      window.psGo = function(val, absolute) {
+        if (absolute) { current = val; }
+        else { current = Math.max(0, Math.min(total - 1, current + val)); }
+        psUpdateUI();
+      };
+
+      // Touch / mouse drag
+      var outer = document.getElementById('ps-track-outer');
+      if (outer) {
+        var startX = 0, isDragging = false;
+        outer.addEventListener('touchstart', function(e) { startX = e.touches[0].clientX; isDragging = true; }, { passive: true });
+        outer.addEventListener('touchend', function(e) {
+          if (!isDragging) return;
+          isDragging = false;
+          var diff = startX - e.changedTouches[0].clientX;
+          if (Math.abs(diff) > 44) psGo(diff > 0 ? 1 : -1);
+        }, { passive: true });
+        // Mouse drag for desktop
+        outer.addEventListener('mousedown', function(e) { startX = e.clientX; isDragging = true; e.preventDefault(); });
+        window.addEventListener('mouseup', function(e) {
+          if (!isDragging) return;
+          isDragging = false;
+          var diff = startX - e.clientX;
+          if (Math.abs(diff) > 44) psGo(diff > 0 ? 1 : -1);
+        });
+      }
+
+      psUpdateUI();
+    })();
+  </script>
+
+</section>
+
+
+<!-- ============================================================ -->
+<!-- HOW IT WORKS (roadmap, unchanged) -->
+<!-- ============================================================ -->
+<section class="lg:py-28 overflow-hidden bg-slate-50 pt-20 pb-20 relative" id="why-us">
+  <div class="lg:px-8 max-w-7xl mr-auto ml-auto pr-6 pl-6">
+    <div class="text-center max-w-2xl mx-auto mb-16 reveal active">
+      <span class="text-blue-600 font-semibold tracking-wide uppercase text-xs">The Process</span>
+      <h2 class="mt-3 text-3xl lg:text-4xl font-semibold text-slate-900 tracking-tight">How Alloc8r works.</h2>
+      <p class="mt-4 text-slate-600 text-lg">Four steps. No dealership games. You show up to sign a deal that's already won.</p>
+    </div>
+    <div class="relative w-full max-w-[800px] mx-auto" id="roadmap-container">
+      <!-- Desktop Layout -->
+      <div class="hidden lg:block" style="min-height:900px;position:relative;">
+        <svg class="w-full h-full absolute top-0 right-0 bottom-0 left-0" viewBox="0 0 800 1000" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" style="position:absolute;top:0px;left:0px;width:800px;height:900px;" stroke-width="2" id="roadmap-svg">
+          <path id="roadmap-path" d="M 200 80 C 200 150, 600 150, 600 280 C 600 410, 200 410, 200 520 C 200 630, 600 630, 600 660 C 600 750, 400 820, 400 920" stroke="#2ECC71" stroke-width="3" stroke-dasharray="10 8" stroke-linecap="round" fill="none" opacity="0.4"></path>
+        </svg>
+        <div id="roadmap-car" class="absolute z-20" style="width:48px;height:48px;margin-left:-24px;margin-top:-24px;top:0px;left:0px;opacity:0.45;">
+          <svg viewBox="0 0 60 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-lg">
+            <path d="M8 28 L8 18 L14 18 L18 10 L38 10 L44 18 L52 18 L52 28" stroke="#2ECC71" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+            <path d="M16 18 L19 12 L28 12 L28 18 Z" stroke="#2ECC71" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+            <path d="M30 18 L30 12 L39 12 L42 18 Z" stroke="#2ECC71" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+            <circle cx="20" cy="28" r="4" stroke="#2ECC71" stroke-width="2" fill="none"></circle>
+            <circle cx="20" cy="28" r="1.5" fill="#2ECC71"></circle>
+            <circle cx="40" cy="28" r="4" stroke="#2ECC71" stroke-width="2" fill="none"></circle>
+            <circle cx="40" cy="28" r="1.5" fill="#2ECC71"></circle>
+            <line x1="8" y1="28" x2="16" y2="28" stroke="#2ECC71" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="24" y1="28" x2="36" y2="28" stroke="#2ECC71" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="44" y1="28" x2="52" y2="28" stroke="#2ECC71" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="52" y1="20" x2="54" y2="20" stroke="#2ECC71" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="52" y1="24" x2="54" y2="24" stroke="#2ECC71" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="6" y1="20" x2="8" y2="20" stroke="#2ECC71" stroke-width="2" stroke-linecap="round"></line>
+            <line x1="6" y1="24" x2="8" y2="24" stroke="#2ECC71" stroke-width="2" stroke-linecap="round"></line>
+          </svg>
+        </div>
+        <div class="absolute z-10 flex items-center gap-3 step-container" data-step-num="1" style="left:25%;top:8%;transform:translate(-50%,-50%);">
+          <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-lg shadow-sm border-2 border-green-300 flex-shrink-0" style="box-shadow:rgba(34,197,94,0.2) 0px 0px 0px 6px;transition:transform 0.3s;">1</div>
+          <div class="step-info" style="min-width:200px;max-width:260px;">
+            <h3 class="text-sm lg:text-base font-semibold text-slate-900 tracking-tight">Free Consultation</h3>
+            <p class="lg:text-sm leading-relaxed step-explanation-v2 text-xs text-slate-600 mt-1" data-step="1" style="display:block;">Tell us what you're looking for. We tell you exactly what it should cost, how long it should take, and whether you even need our full service. No pressure, no pitch.</p>
+          </div>
+        </div>
+        <div class="absolute z-10 flex items-center gap-3 step-container" data-step-num="2" style="left:75%;top:28%;transform:translate(-50%,-50%);">
+          <div class="w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 font-bold text-lg shadow-sm border-2 border-amber-300 flex-shrink-0" style="transition:transform 0.3s;">2</div>
+          <div class="step-info" style="min-width:200px;max-width:260px;">
+            <h3 class="text-sm lg:text-base font-semibold text-slate-900 tracking-tight">Test Drive on Your Terms</h3>
+            <p class="lg:text-sm leading-relaxed step-explanation-v2 text-xs text-slate-600 mt-1" data-step="2" style="display:block;">We arrange your test drive and brief you beforehand, what to look for, what to ignore, and exactly how to leave without signing anything.</p>
+          </div>
+        </div>
+        <div class="absolute z-10 flex items-center gap-3 step-container" data-step-num="3" style="left:25%;top:52%;transform:translate(-50%,-50%);">
+          <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-lg shadow-sm border-2 border-blue-300 flex-shrink-0" style="transition:transform 0.3s;">3</div>
+          <div class="step-info" style="min-width:200px;max-width:260px;">
+            <h3 class="lg:text-base text-sm font-semibold text-slate-900 tracking-tight">We Negotiate. You Wait.</h3>
+            <p class="lg:text-sm leading-relaxed step-explanation-v2 text-xs text-slate-600 mt-1" data-step="3" style="display:block;">Calls, emails, competing dealer bids. We pit dealers against each other until the price stops moving. Every hidden fee gets stripped before we bring the deal to you.</p>
+          </div>
+        </div>
+        <div class="absolute z-10 flex items-center gap-3 step-container" data-step-num="4" style="left:75%;top:66%;transform:translate(-50%,-50%);">
+          <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-lg shadow-sm border-2 border-purple-300 flex-shrink-0" style="transition:transform 0.3s;">4</div>
+          <div class="step-info" style="min-width:200px;max-width:260px;">
+            <h3 class="text-sm lg:text-base font-semibold text-slate-900 tracking-tight">Show Up and Sign</h3>
+            <p class="lg:text-sm leading-relaxed step-explanation-v2 text-xs text-slate-600 mt-1" data-step="4" style="display:block;">Walk in with a locked price, no surprises in the finance office, and drive away knowing you paid less than everyone else who bought the same car.</p>
+          </div>
+        </div>
+        <div class="absolute z-10 text-center" style="left:50%;top:92%;transform:translate(-50%,-50%);">
+          <div class="w-14 h-14 bg-green-500 rounded-full flex items-center justify-center border-4 border-white shadow-xl mx-auto"><iconify-icon icon="solar:flag-linear" class="text-white w-6 h-6"></iconify-icon></div>
+          <p class="mt-3 font-semibold text-slate-900 text-sm tracking-widest uppercase">Drive Away</p>
+        </div>
+        <div id="key-cta-desktop" class="absolute z-20 text-center transition-all duration-700" style="left:50%;top:92%;transform:translate(-50%,60px);opacity:0;pointer-events:none;">
+          <a href="#" onclick="event.preventDefault(); openCalModal();" class="inline-flex items-center gap-2.5 mt-16 px-6 py-3 bg-emerald-500 text-white rounded-full font-medium shadow-lg hover:bg-emerald-600 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">Book Your Free Consultation!</a>
+        </div>
+      </div>
+
+      <!-- Mobile Layout -->
+      <div class="lg:hidden relative" id="mobile-roadmap-wrapper" style="padding-bottom:40px;">
+        <div class="flex flex-col relative" style="padding:0 8px 0 56px;">
+          <!-- Left-edge line: background -->
+          <svg id="mobile-roadmap-svg-bg" class="absolute top-0" style="left:20px;width:4px;z-index:1;" preserveAspectRatio="none">
+            <line x1="2" y1="24" x2="2" y2="0" stroke="#2ECC71" stroke-width="3" stroke-dasharray="8 6" stroke-linecap="round" opacity="0.15"></line>
+          </svg>
+          <!-- Left-edge line: progress -->
+          <svg id="mobile-roadmap-svg-progress" class="absolute top-0" style="left:20px;width:4px;z-index:1;" preserveAspectRatio="none">
+            <line id="mobile-roadmap-progress-line" x1="2" y1="24" x2="2" y2="0" stroke="#2ECC71" stroke-width="3" stroke-dasharray="8 6" stroke-linecap="round" opacity="0.45"></line>
+          </svg>
+          <!-- Car travels along left edge -->
+          <div id="mobile-roadmap-car" class="absolute z-20" style="width:36px;height:36px;left:2px;top:-18px;">
+            <svg viewBox="0 0 60 36" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full h-full drop-shadow-lg">
+              <path d="M8 28 L8 18 L14 18 L18 10 L38 10 L44 18 L52 18 L52 28" stroke="#2ECC71" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              <path d="M16 18 L19 12 L28 12 L28 18 Z" stroke="#2ECC71" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              <path d="M30 18 L30 12 L39 12 L42 18 Z" stroke="#2ECC71" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"></path>
+              <circle cx="20" cy="28" r="4" stroke="#2ECC71" stroke-width="2" fill="none"></circle>
+              <circle cx="20" cy="28" r="1.5" fill="#2ECC71"></circle>
+              <circle cx="40" cy="28" r="4" stroke="#2ECC71" stroke-width="2" fill="none"></circle>
+              <circle cx="40" cy="28" r="1.5" fill="#2ECC71"></circle>
+              <line x1="8" y1="28" x2="16" y2="28" stroke="#2ECC71" stroke-width="2" stroke-linecap="round"></line>
+              <line x1="24" y1="28" x2="36" y2="28" stroke="#2ECC71" stroke-width="2" stroke-linecap="round"></line>
+              <line x1="44" y1="28" x2="52" y2="28" stroke="#2ECC71" stroke-width="2" stroke-linecap="round"></line>
+            </svg>
+          </div>
+          <!-- Step 1 -->
+          <div class="flex items-start gap-4 relative z-10 mb-12 mobile-step" data-mobile-step="1">
+            <div class="w-11 h-11 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-base border-2 border-green-300 flex-shrink-0 shadow-sm mobile-step-circle" style="transition:all 0.3s ease;margin-left:-43px;">1</div>
+            <div class="pt-1">
+              <h3 class="text-base font-semibold text-slate-900 tracking-tight">Free Consultation</h3>
+              <p class="leading-relaxed text-sm text-slate-600 mt-1">Tell us what you're looking for. We tell you what it should cost, how long it should take, and whether you need our full service. No pressure, no pitch.</p>
+            </div>
+          </div>
+          <!-- Step 2 -->
+          <div class="flex items-start gap-4 relative z-10 mb-12 mobile-step" data-mobile-step="2">
+            <div class="w-11 h-11 rounded-full bg-amber-100 flex items-center justify-center text-amber-600 font-bold text-base border-2 border-amber-300 flex-shrink-0 shadow-sm mobile-step-circle" style="transition:all 0.3s ease;margin-left:-43px;">2</div>
+            <div class="pt-1">
+              <h3 class="text-base font-semibold text-slate-900 tracking-tight">Test Drive on Your Terms</h3>
+              <p class="leading-relaxed text-sm text-slate-600 mt-1">We arrange your test drive and brief you beforehand, what to look for, what to ignore, and how to leave without signing anything.</p>
+            </div>
+          </div>
+          <!-- Step 3 -->
+          <div class="flex items-start gap-4 relative z-10 mb-12 mobile-step" data-mobile-step="3">
+            <div class="w-11 h-11 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold text-base border-2 border-blue-300 flex-shrink-0 shadow-sm mobile-step-circle" style="transition:all 0.3s ease;margin-left:-43px;">3</div>
+            <div class="pt-1">
+              <h3 class="text-base font-semibold text-slate-900 tracking-tight">We Negotiate. You Wait.</h3>
+              <p class="leading-relaxed text-sm text-slate-600 mt-1">Calls, emails, competing dealer bids. We pit dealers against each other until the price stops moving. Every hidden fee gets stripped before we bring you the deal.</p>
+            </div>
+          </div>
+          <!-- Step 4 -->
+          <div class="flex items-start gap-4 relative z-10 mb-12 mobile-step" data-mobile-step="4">
+            <div class="w-11 h-11 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 font-bold text-base border-2 border-purple-300 flex-shrink-0 shadow-sm mobile-step-circle" style="transition:all 0.3s ease;margin-left:-43px;">4</div>
+            <div class="pt-1">
+              <h3 class="text-base font-semibold text-slate-900 tracking-tight">Show Up and Sign</h3>
+              <p class="leading-relaxed text-sm text-slate-600 mt-1">Walk in with a locked price, no finance office surprises, and drive away knowing you paid less than everyone else who bought the same car.</p>
+            </div>
+          </div>
+          <!-- Finish -->
+          <div class="flex items-center gap-4 relative z-10 mobile-step" data-mobile-step="5" id="mobile-finish-line">
+            <div class="w-11 h-11 bg-green-500 rounded-full flex items-center justify-center border-4 border-white shadow-xl mobile-step-circle flex-shrink-0" style="transition:all 0.3s ease;margin-left:-43px;"><iconify-icon icon="solar:flag-linear" class="text-white w-5 h-5"></iconify-icon></div>
+            <p class="font-semibold text-slate-900 text-sm tracking-widest uppercase">Drive Away</p>
+          </div>
+          <div id="key-cta-mobile" class="relative z-20 text-center mt-8" style="opacity:0;transform:translateY(20px);pointer-events:none;"><a href="#" onclick="event.preventDefault(); openCalModal();" class="inline-flex items-center gap-2.5 hover:bg-emerald-600 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 font-medium text-white bg-emerald-500 rounded-full pt-3 pr-6 pb-3 pl-6 shadow-lg">Book Your Free Consultation!</a></div>
+          <script>
+            (function() {
+              function initMobileRoadmapV2() {
+                var car = document.getElementById('mobile-roadmap-car');
+                var wrapper = document.getElementById('mobile-roadmap-wrapper');
+                var finishLine = document.getElementById('mobile-finish-line');
+                var keyCta = document.getElementById('key-cta-mobile');
+                var progressLine = document.getElementById('mobile-roadmap-progress-line');
+                var bgSvg = document.getElementById('mobile-roadmap-svg-bg');
+                var progressSvg = document.getElementById('mobile-roadmap-svg-progress');
+                if (!car || !wrapper || !finishLine || !progressLine) return;
+                var carReachedEnd = false;
+                var ticking = false;
+                function getStepPositions() {
+                  var wrapperRect = wrapper.getBoundingClientRect();
+                  var steps = wrapper.querySelectorAll('.mobile-step');
+                  var positions = [];
+                  steps.forEach(function(step) {
+                    var circle = step.querySelector('.mobile-step-circle');
+                    if (circle) {
+                      var circleRect = circle.getBoundingClientRect();
+                      var centerY = circleRect.top - wrapperRect.top + (circleRect.height / 2);
+                      positions.push({ el: step, circle: circle, centerY: centerY });
+                    }
+                  });
+                  return positions;
+                }
+                function updateSvgHeights() {
+                  var stepPositions = getStepPositions();
+                  if (stepPositions.length === 0) return;
+                  var lastStepY = stepPositions[stepPositions.length - 1].centerY;
+                  var svgHeight = lastStepY + 40;
+                  if (bgSvg) bgSvg.style.height = svgHeight + 'px';
+                  if (progressSvg) progressSvg.style.height = svgHeight + 'px';
+                  var bgLine = bgSvg ? bgSvg.querySelector('line') : null;
+                  if (bgLine) bgLine.setAttribute('y2', lastStepY);
+                }
+                function updateMobileCar() {
+                  ticking = false;
+                  var wrapperRect = wrapper.getBoundingClientRect();
+                  var viewportCenter = window.innerHeight * 0.55;
+                  var progress = (viewportCenter - wrapperRect.top) / wrapperRect.height;
+                  progress = Math.max(0, Math.min(1, progress));
+                  var stepPositions = getStepPositions();
+                  if (stepPositions.length === 0) return;
+                  var firstStepY = stepPositions[0].centerY;
+                  var lastStepY = stepPositions[stepPositions.length - 1].centerY;
+                  var svgHeight = lastStepY + 40;
+                  if (bgSvg) bgSvg.style.height = svgHeight + 'px';
+                  if (progressSvg) progressSvg.style.height = svgHeight + 'px';
+                  var bgLine = bgSvg ? bgSvg.querySelector('line') : null;
+                  if (bgLine) bgLine.setAttribute('y2', lastStepY);
+                  var currentY = firstStepY + (lastStepY - firstStepY) * progress;
+                  currentY = Math.max(firstStepY, Math.min(lastStepY, currentY));
+                  car.style.top = (currentY - 18) + 'px';
+                  progressLine.setAttribute('y2', currentY);
+                  var closestStep = null;
+                  var closestDist = Infinity;
+                  stepPositions.forEach(function(sp) {
+                    var dist = Math.abs(currentY - sp.centerY);
+                    if (dist < closestDist) { closestDist = dist; closestStep = sp; }
+                  });
+                  stepPositions.forEach(function(sp) {
+                    if (sp === closestStep && closestDist < 60) { sp.circle.style.boxShadow = 'rgba(34,197,94,0.25) 0px 0px 0px 8px'; sp.circle.style.transform = 'scale(1.15)'; }
+                    else if (currentY >= sp.centerY - 10) { sp.circle.style.boxShadow = 'rgba(34,197,94,0.1) 0px 0px 0px 4px'; sp.circle.style.transform = 'scale(1)'; }
+                    else { sp.circle.style.boxShadow = 'none'; sp.circle.style.transform = 'scale(1)'; }
+                  });
+                  var distToFinish = Math.abs(currentY - lastStepY);
+                  if (distToFinish < 40 && progress > 0.75 && !carReachedEnd) {
+                    carReachedEnd = true;
+                    if (keyCta) { keyCta.style.opacity = '1'; keyCta.style.transform = 'translateY(0)'; keyCta.style.pointerEvents = 'auto'; }
+                    var finishCircle = finishLine.querySelector('.w-14');
+                    if (finishCircle) { finishCircle.style.boxShadow = '0 0 0 8px rgba(34,197,94,0.3)'; finishCircle.style.transform = 'scale(1.15)'; }
+                  } else if ((distToFinish >= 60 || progress <= 0.7) && carReachedEnd) {
+                    carReachedEnd = false;
+                    if (keyCta) { keyCta.style.opacity = '0'; keyCta.style.transform = 'translateY(20px)'; keyCta.style.pointerEvents = 'none'; }
+                    var finishCircle = finishLine.querySelector('.w-14');
+                    if (finishCircle) { finishCircle.style.boxShadow = 'none'; finishCircle.style.transform = 'scale(1)'; }
+                  }
+                }
+                function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(updateMobileCar); } }
+                window.addEventListener('scroll', onScroll, { passive: true });
+                window.addEventListener('resize', function() { requestAnimationFrame(updateMobileCar); });
+                setTimeout(function() { updateSvgHeights(); updateMobileCar(); }, 100);
+                setTimeout(function() { updateSvgHeights(); updateMobileCar(); }, 500);
+              }
+              if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', function() { setTimeout(initMobileRoadmapV2, 300); }); }
+              else { setTimeout(initMobileRoadmapV2, 300); }
+            })();
+          </script>
+        </div>
+      </div>
+    </div>
+    <script>
+      (function() {
+        function initRoadmapV2() {
+          var section = document.getElementById('roadmap-container');
+          var svgEl = document.getElementById('roadmap-svg');
+          var pathEl = document.getElementById('roadmap-path');
+          var car = document.getElementById('roadmap-car');
+          if (!section || !svgEl || !pathEl || !car) return;
+          var stepPositions = [{step:1,threshold:0.08},{step:2,threshold:0.28},{step:3,threshold:0.50},{step:4,threshold:0.66},{step:5,threshold:0.92}];
+          var lastActiveStep = -1;
+          function showExplanation(stepNum) { var el = document.querySelector('.step-explanation-v2[data-step="'+stepNum+'"]'); if (el) { el.style.opacity = '1'; el.style.maxHeight = '120px'; } }
+          function hideExplanation(stepNum) { var el = document.querySelector('.step-explanation-v2[data-step="'+stepNum+'"]'); if (el) { el.style.opacity = '0'; el.style.maxHeight = '0'; } }
+          function pulseStep(stepNum) {
+            document.querySelectorAll('.step-container').forEach(function(c) {
+              var num = parseInt(c.getAttribute('data-step-num'));
+              var circle = c.querySelector('.w-12');
+              if (num === stepNum) { circle.style.transform = 'scale(1.15)'; circle.style.boxShadow = '0 0 0 6px rgba(34,197,94,0.2)'; }
+              else { circle.style.transform = 'scale(1)'; circle.style.boxShadow = 'none'; }
+            });
+          }
+          function updateCar() {
+            var rect = section.getBoundingClientRect();
+            var viewportCenter = window.innerHeight * 0.6;
+            var progress = (viewportCenter - rect.top) / rect.height;
+            progress = Math.max(0, Math.min(1, progress));
+            var totalLength = pathEl.getTotalLength();
+            var len = progress * totalLength;
+            var pt = pathEl.getPointAtLength(len);
+            var ptNext = pathEl.getPointAtLength(Math.min(len + 2, totalLength));
+            var angle = Math.atan2(ptNext.y - pt.y, ptNext.x - pt.x) * (180 / Math.PI);
+            var scaleX = rect.width / 800;
+            var scaleY = rect.height / 1000;
+            car.style.transform = 'translate('+pt.x*scaleX+'px,'+pt.y*scaleY+'px) rotate('+angle+'deg)';
+            var activeStep = 0;
+            for (var i = stepPositions.length - 1; i >= 0; i--) { if (progress >= stepPositions[i].threshold) { activeStep = stepPositions[i].step; break; } }
+            if (activeStep !== lastActiveStep) {
+              lastActiveStep = activeStep;
+              if (activeStep >= 5) { for (var s = 1; s <= 4; s++) hideExplanation(s); pulseStep(-1); }
+              else if (activeStep > 0) { for (var s = 1; s <= 4; s++) { if (s === activeStep) showExplanation(s); else hideExplanation(s); } pulseStep(activeStep); }
+            }
+          }
+          document.querySelectorAll('.step-info').forEach(function(el) { el.classList.remove('hidden'); });
+          window.addEventListener('scroll', updateCar, { passive: true });
+          window.addEventListener('resize', updateCar);
+          updateCar();
+        }
+        if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', initRoadmapV2); }
+        else { setTimeout(initRoadmapV2, 150); }
+      })();
+    </script>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- SERVICES QUIZ, "Which situation sounds like you?" -->
+<!-- ============================================================ -->
+<section class="bg-white border-t border-slate-100 pt-20 pb-24 lg:pt-28 lg:pb-32 relative overflow-hidden" id="tiers">
+
+  <!-- Subtle background texture -->
+  <div class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(circle at 20% 50%, rgba(59,130,246,0.03) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(99,102,241,0.025) 0%, transparent 50%);"></div>
+
+  <div class="max-w-5xl mx-auto px-6 lg:px-8 relative z-10">
+
+    <!-- Section header -->
+    <div class="text-center mb-12 reveal active">
+      <div class="inline-flex items-center gap-2 text-sm font-medium text-blue-600 bg-blue-50 border border-blue-100 rounded-full px-4 py-1.5 mb-5">
+        <iconify-icon icon="solar:target-linear" width="14"></iconify-icon>
+        Find Your Service
+      </div>
+      <h2 class="text-3xl lg:text-4xl font-semibold text-slate-900 tracking-tight mb-3">Which situation sounds like you?</h2>
+      <p class="text-slate-500 text-lg max-w-xl mx-auto">Pick the one that fits, we'll show you exactly how we can help.</p>
+    </div>
+
+    <!-- ── QUIZ STATE: 4 Situation Cards ── -->
+    <div id="quiz-grid" class="quiz-grid-wrap" style="transition: opacity 0.28s ease, transform 0.28s ease;">
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+
+        <!-- Card A: Best deal on any car → Concierge -->
+        <button onclick="selectSituation(2)" class="quiz-card group text-left bg-white rounded-2xl border border-slate-200 p-6 hover:border-blue-300 hover:shadow-xl relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-blue-400">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-blue-500 rounded-l-2xl transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-100 transition-colors">
+              <iconify-icon icon="solar:hand-shake-linear" class="text-blue-600" width="24"></iconify-icon>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-semibold text-slate-900 text-base mb-1 leading-snug">I want the best deal on my next car</h3>
+              <p class="text-sm text-slate-500 leading-relaxed">Any make or model, I just don't want to be taken advantage of.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-xs text-blue-500 font-medium bg-blue-50 px-2.5 py-1 rounded-full border border-blue-100">Full-Service Concierge · $1,500</span>
+            <div class="flex items-center gap-1 text-sm text-blue-600 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+              <span>This is me</span>
+              <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon>
+            </div>
+          </div>
+        </button>
+
+        <!-- Card B: Chasing a rare car → Allocation Hunter -->
+        <button onclick="selectSituation(3)" class="quiz-card group text-left bg-white rounded-2xl border border-slate-200 p-6 hover:border-purple-300 hover:shadow-xl relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-purple-400">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-purple-500 rounded-l-2xl transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-purple-50 border border-purple-100 flex items-center justify-center flex-shrink-0 group-hover:bg-purple-100 transition-colors">
+              <iconify-icon icon="solar:key-minimalistic-linear" class="text-purple-600" width="24"></iconify-icon>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-semibold text-slate-900 text-base mb-1 leading-snug">I'm chasing a specific rare or hard-to-get car</h3>
+              <p class="text-sm text-slate-500 leading-relaxed">I want it soon, without a 3-year wait or a $50K markup.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-xs text-purple-600 font-medium bg-purple-50 px-2.5 py-1 rounded-full border border-purple-100">Allocation Hunter · $2,500+</span>
+            <div class="flex items-center gap-1 text-sm text-purple-600 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+              <span>This is me</span>
+              <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon>
+            </div>
+          </div>
+        </button>
+
+        <!-- Card C: Already have a dealer offer → Deal Audit -->
+        <button onclick="selectSituation(4)" class="quiz-card group text-left bg-white rounded-2xl border border-slate-200 p-6 hover:border-emerald-300 hover:shadow-xl relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-emerald-400">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-emerald-500 rounded-l-2xl transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center flex-shrink-0 group-hover:bg-emerald-100 transition-colors">
+              <iconify-icon icon="solar:document-text-linear" class="text-emerald-600" width="24"></iconify-icon>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-semibold text-slate-900 text-base mb-1 leading-snug">I already have a dealer offer in hand</h3>
+              <p class="text-sm text-slate-500 leading-relaxed">I want to know if it's actually a good deal, before I sign.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-xs text-emerald-700 font-medium bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-100">Deal Audit · $0 upfront</span>
+            <div class="flex items-center gap-1 text-sm text-emerald-600 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+              <span>This is me</span>
+              <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon>
+            </div>
+          </div>
+        </button>
+
+        <!-- Card D: Not sure where to start → Free Consultation -->
+        <button onclick="selectSituation(0)" class="quiz-card group text-left bg-white rounded-2xl border border-slate-200 p-6 hover:border-slate-400 hover:shadow-xl relative overflow-hidden focus:outline-none focus:ring-2 focus:ring-slate-400">
+          <div class="absolute left-0 top-0 bottom-0 w-1 bg-slate-500 rounded-l-2xl transform -translate-x-full group-hover:translate-x-0 transition-transform duration-300"></div>
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center flex-shrink-0 group-hover:bg-slate-100 transition-colors">
+              <iconify-icon icon="solar:map-linear" class="text-slate-600" width="24"></iconify-icon>
+            </div>
+            <div class="flex-1 min-w-0">
+              <h3 class="font-semibold text-slate-900 text-base mb-1 leading-snug">I'm not sure where to start</h3>
+              <p class="text-sm text-slate-500 leading-relaxed">I want expert advice before committing to anything.</p>
+            </div>
+          </div>
+          <div class="mt-4 flex items-center justify-between">
+            <span class="text-xs text-slate-600 font-medium bg-slate-100 px-2.5 py-1 rounded-full border border-slate-200">Free Consultation · No commitment</span>
+            <div class="flex items-center gap-1 text-sm text-slate-600 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+              <span>This is me</span>
+              <iconify-icon icon="solar:arrow-right-linear" width="16"></iconify-icon>
+            </div>
+          </div>
+        </button>
+
+      </div>
+
+      <!-- Browse all services link -->
+      <div class="text-center">
+        <button onclick="toggleAllServices()" id="browse-all-btn" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-slate-700 transition-colors font-medium">
+          <iconify-icon icon="solar:list-linear" width="16"></iconify-icon>
+          <span id="browse-all-label">Browse all 5 services</span>
+          <iconify-icon icon="solar:alt-arrow-down-linear" width="14" id="browse-all-arrow" style="transition: transform 0.3s;"></iconify-icon>
+        </button>
+
+        <!-- All services expanded list -->
+        <div id="all-services-list" class="hidden mt-6 overflow-hidden">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto">
+
+            <div class="bg-slate-50 rounded-xl p-4 border border-slate-200 text-left">
+              <p class="text-xs text-slate-400 font-medium uppercase tracking-wider mb-1">Free</p>
+              <p class="font-semibold text-slate-900 text-sm mb-1">Free Consultation</p>
+              <p class="text-xs text-slate-500 leading-relaxed mb-3">We analyze your situation and tell you the best path forward. Zero pressure.</p>
+              <button onclick="selectSituation(0)" class="text-xs text-blue-600 font-medium hover:underline">Learn more →</button>
+            </div>
+
+            <div class="bg-amber-50 rounded-xl p-4 border border-amber-100 text-left">
+              <p class="text-xs text-amber-600 font-medium uppercase tracking-wider mb-1">$500</p>
+              <p class="font-semibold text-slate-900 text-sm mb-1">Negotiator's Playbook</p>
+              <p class="text-xs text-slate-500 leading-relaxed mb-3">Want to negotiate yourself? We hand you the exact data-backed game plan.</p>
+              <button onclick="selectSituation(1)" class="text-xs text-amber-700 font-medium hover:underline">Learn more →</button>
+            </div>
+
+            <div class="bg-blue-50 rounded-xl p-4 border border-blue-100 text-left relative">
+              <span class="absolute top-3 right-3 text-[10px] font-bold text-blue-600 bg-blue-100 px-2 py-0.5 rounded-full">Popular</span>
+              <p class="text-xs text-blue-600 font-medium uppercase tracking-wider mb-1">$1,500</p>
+              <p class="font-semibold text-slate-900 text-sm mb-1">Full-Service Concierge</p>
+              <p class="text-xs text-slate-500 leading-relaxed mb-3">We handle 100% of negotiation. You just show up and drive away.</p>
+              <button onclick="selectSituation(2)" class="text-xs text-blue-600 font-medium hover:underline">Learn more →</button>
+            </div>
+
+            <div class="bg-purple-50 rounded-xl p-4 border border-purple-100 text-left">
+              <p class="text-xs text-purple-600 font-medium uppercase tracking-wider mb-1">$2,500+</p>
+              <p class="font-semibold text-slate-900 text-sm mb-1">Allocation Hunter</p>
+              <p class="text-xs text-slate-500 leading-relaxed mb-3">Rare car, short wait. We bypass waitlists and dealer markups entirely.</p>
+              <button onclick="selectSituation(3)" class="text-xs text-purple-600 font-medium hover:underline">Learn more →</button>
+            </div>
+
+            <div class="bg-emerald-50 rounded-xl p-4 border border-emerald-100 text-left">
+              <p class="text-xs text-emerald-600 font-medium uppercase tracking-wider mb-1">$0 upfront</p>
+              <p class="font-semibold text-slate-900 text-sm mb-1">Deal Audit</p>
+              <p class="text-xs text-slate-500 leading-relaxed mb-3">Have an offer already? We challenge it. You pay nothing if we can't beat it.</p>
+              <button onclick="selectSituation(4)" class="text-xs text-emerald-600 font-medium hover:underline">Learn more →</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── RESULT STATE: Service Detail Card ── -->
+    <div id="quiz-result" class="quiz-result-wrap hidden" style="opacity:0;transform:translateY(14px);">
+
+      <!-- Back button -->
+      <button onclick="backToQuiz()" class="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-slate-700 mb-6 transition-colors font-medium group">
+        <iconify-icon icon="solar:alt-arrow-left-linear" width="16" class="group-hover:-translate-x-1 transition-transform"></iconify-icon>
+        Back to all options
+      </button>
+
+      <!-- Result card, populated by JS -->
+      <div id="quiz-result-card" class="max-w-3xl mx-auto"></div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- CAR BRANDS MARQUEE -->
+<!-- ============================================================ -->
+<section class="overflow-hidden bg-slate-50 border-slate-200 border-t border-b pt-16 pb-16 relative">
+  <div class="text-center mb-10 pointer-events-none px-4">
+    <h3 class="text-sm font-semibold text-slate-500 uppercase tracking-widest">Our Network Spans All Major Manufacturers</h3>
+    <p class="text-[10px] text-slate-400 mt-2 uppercase tracking-tighter opacity-70">Click &amp; Drag to explore</p>
+  </div>
+  <div id="scroll-container" class="relative w-full h-16 flex items-center overflow-x-auto no-scrollbar marquee-container select-none">
+    <div class="absolute left-0 w-16 md:w-48 h-full bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
+    <div class="absolute right-0 w-16 md:w-48 h-full bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
+    <div id="marquee-track" class="flex gap-16 md:gap-24 items-center font-bold text-xl md:text-2xl text-slate-300 uppercase tracking-widest min-w-max px-16 md:px-24">
+      <div class="flex items-center gap-16 md:gap-24 whitespace-nowrap brand-set">
+        <span>Acura</span><span>Alfa Romeo</span><span>Aston Martin</span><span>Audi</span><span>Bentley</span><span>BMW</span><span>Buick</span><span>Cadillac</span><span>Chevrolet</span><span>Chrysler</span><span>Dodge</span><span>Ferrari</span><span>Ford</span><span>Genesis</span><span>GMC</span><span>Honda</span><span>Hyundai</span><span>Infiniti</span><span>Jaguar</span><span>Jeep</span><span>Kia</span><span>Lamborghini</span><span>Land Rover</span><span>Lexus</span><span>Lincoln</span><span>Lotus</span><span>Lucid</span><span>Maserati</span><span>Mazda</span><span>McLaren</span><span>Mercedes-Benz</span><span>MINI</span><span>Mitsubishi</span><span>Nissan</span><span>Polestar</span><span>Porsche</span><span>RAM</span><span>Rivian</span><span>Rolls-Royce</span><span>Subaru</span><span>Tesla</span><span>Toyota</span><span>Volkswagen</span><span>Volvo</span>
+      </div>
+      <div class="flex items-center gap-16 md:gap-24 whitespace-nowrap brand-set" aria-hidden="true">
+        <span>Acura</span><span>Alfa Romeo</span><span>Aston Martin</span><span>Audi</span><span>Bentley</span><span>BMW</span><span>Buick</span><span>Cadillac</span><span>Chevrolet</span><span>Chrysler</span><span>Dodge</span><span>Ferrari</span><span>Ford</span><span>Genesis</span><span>GMC</span><span>Honda</span><span>Hyundai</span><span>Infiniti</span><span>Jaguar</span><span>Jeep</span><span>Kia</span><span>Lamborghini</span><span>Land Rover</span><span>Lexus</span><span>Lincoln</span><span>Lotus</span><span>Lucid</span><span>Maserati</span><span>Mazda</span><span>McLaren</span><span>Mercedes-Benz</span><span>MINI</span><span>Mitsubishi</span><span>Nissan</span><span>Polestar</span><span>Porsche</span><span>RAM</span><span>Rivian</span><span>Rolls-Royce</span><span>Subaru</span><span>Tesla</span><span>Toyota</span><span>Volkswagen</span><span>Volvo</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- FAQ -->
+<!-- ============================================================ -->
+<section class="lg:py-28 bg-white border-slate-100 border-t pt-20 pb-20" id="faq">
+  <div class="lg:px-8 max-w-3xl mr-auto ml-auto pr-6 pl-6">
+    <h2 class="text-3xl font-semibold text-slate-900 tracking-tight text-center mb-4 reveal active">Frequently Asked Questions</h2>
+    <p class="text-center text-slate-500 mb-12 reveal active">Everything you need to know about working with Alloc8r.</p>
+    <div class="reveal reveal-delay-100 active" id="faq-container">
+      <div class="faq-item border-b border-slate-200" data-faq="0">
+        <button onclick="toggleFaq(0)" class="w-full flex items-center justify-between py-6 text-left group">
+          <div class="flex items-center gap-4"><span class="font-medium text-slate-900 text-base">How long does the whole process take from first call to picking up keys?</span></div>
+          <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-all faq-toggle-icon" data-faq-icon="0">
+            <iconify-icon icon="solar:add-circle-linear" class="w-5 h-5 text-slate-400 transition-transform duration-300"></iconify-icon>
+          </div>
+        </button>
+        <div class="faq-answer overflow-hidden transition-all duration-500 ease-out" style="max-height:0;opacity:0;" data-faq-answer="0">
+          <div class="pb-6 pl-6 pr-4 lg:pl-14 lg:pr-8"><p class="text-slate-600 text-sm leading-relaxed">For a standard in-stock vehicle, most clients go from first call to driving away in <strong class="text-slate-800">1 to 3 weeks</strong>. For high-demand or allocated models, it depends on the vehicle, but we always give you a realistic timeline upfront, not the optimistic guess a dealer uses to secure your deposit.</p></div>
+        </div>
+      </div>
+      <div class="faq-item border-b border-slate-200" data-faq="1">
+        <button onclick="toggleFaq(1)" class="w-full flex items-center justify-between py-6 text-left group">
+          <div class="flex items-center gap-4"><span class="font-medium text-slate-900 text-base">How long is the actual wait time for a Lexus GX 550, Porsche 911, or Mercedes G 63 in Canada?</span></div>
+          <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-all faq-toggle-icon" data-faq-icon="1">
+            <iconify-icon icon="solar:add-circle-linear" class="w-5 h-5 text-slate-400 transition-transform duration-300"></iconify-icon>
+          </div>
+        </button>
+        <div class="faq-answer overflow-hidden transition-all duration-500 ease-out" style="max-height:0;opacity:0;" data-faq-answer="1">
+          <div class="pb-6 pl-6 pr-4 lg:pl-14 lg:pr-8"><p class="text-slate-600 text-sm leading-relaxed mb-4">These are current wait times for our most popular allocated vehicles for 2026. We set up reservations the moment they become available so we can transfer them to you, minimizing your wait. Looking for a vehicle not on the list? Contact us to check real waiting times.</p>
+            <div class="overflow-x-auto mb-3"><table class="w-full text-sm border border-slate-200 rounded-lg overflow-hidden"><thead><tr class="bg-slate-50"><th class="text-left py-3 px-4 font-medium text-slate-700 border-b border-slate-200">Vehicle</th><th class="text-left py-3 px-4 font-medium text-red-600 border-b border-slate-200">Standard Wait</th><th class="text-left py-3 px-4 font-medium text-emerald-600 border-b border-slate-200">With Alloc8r</th></tr></thead><tbody class="text-slate-600"><tr class="border-b border-slate-100"><td class="py-2.5 px-4 font-medium text-slate-800">Lexus GX 550</td><td class="py-2.5 px-4 text-red-500">24 – 48 Months</td><td class="py-2.5 px-4 text-emerald-600 font-medium">4 – 12 Weeks</td></tr><tr class="border-b border-slate-100"><td class="py-2.5 px-4 font-medium text-slate-800">Porsche 911</td><td class="py-2.5 px-4 text-red-500">18 – 36 Months</td><td class="py-2.5 px-4 text-emerald-600 font-medium">6 – 9 Months</td></tr><tr class="border-b border-slate-100"><td class="py-2.5 px-4 font-medium text-slate-800">Mercedes G 63 AMG</td><td class="py-2.5 px-4 text-red-500">18 – 24 Months</td><td class="py-2.5 px-4 text-emerald-600 font-medium">3 – 5 Months</td></tr><tr class="border-b border-slate-100"><td class="py-2.5 px-4 font-medium text-slate-800">Toyota Land Cruiser</td><td class="py-2.5 px-4 text-red-500">12 – 18 Months</td><td class="py-2.5 px-4 text-emerald-600 font-medium">8 – 14 Weeks</td></tr><tr><td class="py-2.5 px-4 font-medium text-slate-800">Ford Raptor</td><td class="py-2.5 px-4 text-red-500">12 – 18 Months</td><td class="py-2.5 px-4 text-emerald-600 font-medium">8 – 12 Weeks</td></tr></tbody></table></div>
+            <p class="text-xs text-slate-400 italic">* Estimates subject to change based on current market conditions. Table reflects our most allocated vehicles. <a href="#" onclick="event.preventDefault(); openCalModal();" class="text-blue-500 hover:underline">Contact us</a> to check wait times for other vehicles.</p></div>
+        </div>
+      </div>
+      <div class="faq-item border-b border-slate-200" data-faq="2">
+        <button onclick="toggleFaq(2)" class="w-full flex items-center justify-between py-6 text-left group">
+          <div class="flex items-center gap-4"><span class="font-medium text-slate-900 text-base">What does Alloc8r actually cost, and will I save money?</span></div>
+          <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-all faq-toggle-icon" data-faq-icon="2">
+            <iconify-icon icon="solar:add-circle-linear" class="w-5 h-5 text-slate-400 transition-transform duration-300"></iconify-icon>
+          </div>
+        </button>
+        <div class="faq-answer overflow-hidden transition-all duration-500 ease-out" style="max-height:0;opacity:0;" data-faq-answer="2">
+          <div class="pb-6 pl-6 pr-4 lg:pl-14 lg:pr-8"><div class="bg-gradient-to-br from-slate-50 to-blue-50/50 rounded-2xl p-6 border border-slate-200/80">
+              <div class="flex items-start gap-3 mb-5">
+                <div class="w-8 h-8 rounded-lg bg-blue-100 flex items-center justify-center flex-shrink-0 mt-0.5"><iconify-icon icon="solar:shield-check-linear" class="w-4 h-4 text-blue-600"></iconify-icon></div>
+                <div>
+                  <p class="text-slate-700 text-sm leading-relaxed font-medium mb-3">Our fees range from $500 for a consultation-only playbook to $2,500+ for rare allocations. On most deals, clients save more than the fee, often significantly more. Average savings across all clients: $3,500+ per vehicle.</p>
+                  <p class="text-slate-600 text-sm leading-relaxed">We operate transparently: if we cannot find a clear financial or logistical advantage for your specific situation, we'll tell you and walk away. No pressure, no pitch.</p>
+                </div>
+              </div>
+              <div class="ml-11 pt-4 border-t border-slate-200/60">
+                <div class="bg-white rounded-xl p-4 border border-slate-200/80 mb-4">
+                  <div class="flex items-center gap-2 mb-2"><iconify-icon icon="solar:hand-shake-linear" class="w-4 h-4 text-emerald-600"></iconify-icon><p class="text-sm font-medium text-slate-900">Already have a dealer offer? Pay nothing upfront.</p></div>
+                  <p class="text-slate-600 text-sm leading-relaxed">Send us your offer. If we beat it, we split the extra savings 50/50. If we can't, you owe us nothing.</p>
+                </div>
+                <a href="#" class="inline-flex items-center gap-2 text-sm font-medium text-blue-600 hover:text-blue-700 transition-colors group" onclick="event.preventDefault(); openCalModal();">Book a free call to get a specific estimate<iconify-icon icon="solar:arrow-right-linear" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></iconify-icon></a>
+              </div>
+            </div></div>
+        </div>
+      </div>
+      <div class="faq-item border-b border-slate-200" data-faq="3">
+        <button onclick="toggleFaq(3)" class="w-full flex items-center justify-between py-6 text-left group">
+          <div class="flex items-center gap-4"><span class="font-medium text-slate-900 text-base">What if you can't beat my deal or find me a better price?</span></div>
+          <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-all faq-toggle-icon" data-faq-icon="3">
+            <iconify-icon icon="solar:add-circle-linear" class="w-5 h-5 text-slate-400 transition-transform duration-300"></iconify-icon>
+          </div>
+        </button>
+        <div class="faq-answer overflow-hidden transition-all duration-500 ease-out" style="max-height:0;opacity:0;" data-faq-answer="3">
+          <div class="pb-6 pl-6 pr-4 lg:pl-14 lg:pr-8"><p class="text-slate-600 text-sm leading-relaxed mb-3">It depends on which service you used:</p>
+            <ul class="space-y-3 text-sm text-slate-600">
+              <li class="flex items-start gap-2"><iconify-icon icon="solar:shield-check-linear" class="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0"></iconify-icon><span><strong class="text-slate-800">Deal Audit (pay on results):</strong> You owe us nothing. Zero. We only get paid if we save you money, and only a share of what we actually save.</span></li>
+              <li class="flex items-start gap-2"><iconify-icon icon="solar:shield-check-linear" class="w-4 h-4 text-emerald-500 mt-0.5 flex-shrink-0"></iconify-icon><span><strong class="text-slate-800">Full-Service Concierge or Allocation Hunter:</strong> We won't take on your case unless we're confident we can add value. If during the process we hit a wall and can't provide value to you, we refund 100% of our fee.</span></li>
+            </ul></div>
+        </div>
+      </div>
+      <div class="faq-item border-b border-slate-200" data-faq="4">
+        <button onclick="toggleFaq(4)" class="w-full flex items-center justify-between py-6 text-left group">
+          <div class="flex items-center gap-4"><span class="font-medium text-slate-900 text-base">I have a trade-in. How does that work?</span></div>
+          <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-all faq-toggle-icon" data-faq-icon="4">
+            <iconify-icon icon="solar:add-circle-linear" class="w-5 h-5 text-slate-400 transition-transform duration-300"></iconify-icon>
+          </div>
+        </button>
+        <div class="faq-answer overflow-hidden transition-all duration-500 ease-out" style="max-height:0;opacity:0;" data-faq-answer="4">
+          <div class="pb-6 pl-6 pr-4 lg:pl-14 lg:pr-8"><p class="text-slate-600 text-sm leading-relaxed mb-3">Trade-ins are one of the most common places dealers quietly take money from buyers, and one of the areas where we add the most value.</p>
+            <p class="text-slate-600 text-sm leading-relaxed mb-3">We don't just accept the purchasing dealer's first offer. We shop your trade-in across our private network of wholesalers to find the highest market value. We also factor in the provincial tax credit you receive when trading in, in BC, for example, you only pay PST on the difference between the new car price and your trade-in value, which can be worth thousands depending on the deal structure.</p>
+            <p class="text-slate-600 text-sm leading-relaxed">In some cases, selling privately nets you more even after accounting for the lost tax credit. We run the numbers both ways and tell you which path puts more money in your pocket.</p></div>
+        </div>
+      </div>
+      <div class="faq-item border-b border-slate-200" data-faq="5">
+        <button onclick="toggleFaq(5)" class="w-full flex items-center justify-between py-6 text-left group">
+          <div class="flex items-center gap-4"><span class="font-medium text-slate-900 text-base">Where are you based? Do I need to come in person?</span></div>
+          <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-all faq-toggle-icon" data-faq-icon="5">
+            <iconify-icon icon="solar:add-circle-linear" class="w-5 h-5 text-slate-400 transition-transform duration-300"></iconify-icon>
+          </div>
+        </button>
+        <div class="faq-answer overflow-hidden transition-all duration-500 ease-out" style="max-height:0;opacity:0;" data-faq-answer="5">
+          <div class="pb-6 pl-6 pr-4 lg:pl-14 lg:pr-8"><p class="text-slate-600 text-sm leading-relaxed mb-3">Alloc8r is based in Vancouver, BC, but we work with buyers across Canada entirely remotely. Consultations happen over phone or video call. Negotiations happen on your behalf remotely as well.</p>
+            <p class="text-slate-600 text-sm leading-relaxed">The only place you need to go in person is to pick up your car after we find the dealer willing to give you the best price. If you purchase from an out-of-province dealer, we arrange delivery of your vehicle straight to your door.</p></div>
+        </div>
+      </div>
+      <div class="faq-item border-b border-slate-200" data-faq="6">
+        <button onclick="toggleFaq(6)" class="w-full flex items-center justify-between py-6 text-left group">
+          <div class="flex items-center gap-4"><span class="font-medium text-slate-900 text-base">Does the dealership know I'm using Alloc8r?</span></div>
+          <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-all faq-toggle-icon" data-faq-icon="6">
+            <iconify-icon icon="solar:add-circle-linear" class="w-5 h-5 text-slate-400 transition-transform duration-300"></iconify-icon>
+          </div>
+        </button>
+        <div class="faq-answer overflow-hidden transition-all duration-500 ease-out" style="max-height:0;opacity:0;" data-faq-answer="6">
+          <div class="pb-6 pl-6 pr-4 lg:pl-14 lg:pr-8"><p class="text-slate-600 text-sm leading-relaxed">Yes, and that's a feature, not a bug. Dealers prefer working with us because we bring them repeat volume as a trusted partner. In exchange, they skip the back-and-forth and give our clients their lowest price upfront. The same treatment usually reserved for fleet buyers.</p></div>
+        </div>
+      </div>
+      <div class="faq-item border-b border-slate-200" data-faq="7">
+        <button onclick="toggleFaq(7)" class="w-full flex items-center justify-between py-6 text-left group">
+          <div class="flex items-center gap-4"><span class="font-medium text-slate-900 text-base">Do you only help with rare allocations, or can you find a deal on a regular car?</span></div>
+          <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-all faq-toggle-icon" data-faq-icon="7">
+            <iconify-icon icon="solar:add-circle-linear" class="w-5 h-5 text-slate-400 transition-transform duration-300"></iconify-icon>
+          </div>
+        </button>
+        <div class="faq-answer overflow-hidden transition-all duration-500 ease-out" style="max-height:0;opacity:0;" data-faq-answer="7">
+          <div class="pb-6 pl-6 pr-4 lg:pl-14 lg:pr-8"><p class="text-slate-600 text-sm leading-relaxed">Both. These days, even everyday vehicles are getting harder to buy fairly. The Toyota Sienna, Grand Highlander, and new RAV4 are models many people overpay for simply because they don't want to wait years for stock to arrive.</p></div>
+        </div>
+      </div>
+      <div class="faq-item border-b border-slate-200" data-faq="8">
+        <button onclick="toggleFaq(8)" class="w-full flex items-center justify-between py-6 text-left group">
+          <div class="flex items-center gap-4"><span class="font-medium text-slate-900 text-base">How much over MSRP do people pay when they skip the waitlist without help?</span></div>
+          <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center flex-shrink-0 group-hover:bg-blue-50 transition-all faq-toggle-icon" data-faq-icon="8">
+            <iconify-icon icon="solar:add-circle-linear" class="w-5 h-5 text-slate-400 transition-transform duration-300"></iconify-icon>
+          </div>
+        </button>
+        <div class="faq-answer overflow-hidden transition-all duration-500 ease-out" style="max-height:0;opacity:0;" data-faq-answer="8">
+          <div class="pb-6 pl-6 pr-4 lg:pl-14 lg:pr-8"><p class="text-slate-600 text-sm leading-relaxed mb-4">Here's what buyers typically pay in Adjusted Market Value premiums on the used market for our most allocated vehicles. Looking for a different vehicle? <a href="#" onclick="event.preventDefault(); openCalModal();" class="text-blue-500 hover:underline">Contact us to learn more.</a></p>
+            <div class="overflow-x-auto mb-3"><table class="w-full text-sm border border-slate-200 rounded-lg overflow-hidden"><thead><tr class="bg-slate-50"><th class="text-left py-3 px-4 font-medium text-slate-700 border-b border-slate-200">Vehicle</th><th class="text-left py-3 px-4 font-medium text-red-600 border-b border-slate-200">Used Market Premium</th><th class="text-left py-3 px-4 font-medium text-emerald-600 border-b border-slate-200">Alloc8r Fee</th></tr></thead><tbody class="text-slate-600"><tr class="border-b border-slate-100"><td class="py-2.5 px-4 font-medium text-slate-800">Lexus GX 550</td><td class="py-2.5 px-4 text-red-500">Up to +$50,000</td><td class="py-2.5 px-4 text-emerald-600 font-medium">$5,000</td></tr><tr class="border-b border-slate-100"><td class="py-2.5 px-4 font-medium text-slate-800">Porsche 911</td><td class="py-2.5 px-4 text-red-500">Up to +$50,000</td><td class="py-2.5 px-4 text-emerald-600 font-medium">$5,000</td></tr><tr class="border-b border-slate-100"><td class="py-2.5 px-4 font-medium text-slate-800">Mercedes G 63 AMG</td><td class="py-2.5 px-4 text-red-500">Up to +$40,000</td><td class="py-2.5 px-4 text-emerald-600 font-medium">$3,000</td></tr><tr class="border-b border-slate-100"><td class="py-2.5 px-4 font-medium text-slate-800">Toyota Land Cruiser</td><td class="py-2.5 px-4 text-red-500">Up to +$25,000</td><td class="py-2.5 px-4 text-emerald-600 font-medium">$2,500</td></tr><tr><td class="py-2.5 px-4 font-medium text-slate-800">Ford Raptor</td><td class="py-2.5 px-4 text-red-500">Up to +$20,000</td><td class="py-2.5 px-4 text-emerald-600 font-medium">$2,500</td></tr></tbody></table></div>
+            <p class="text-xs text-slate-400 italic">* Estimates subject to change based on current market conditions.</p></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let openFaqIndex = -1;
+      function toggleFaq(index) {
+        var answer = document.querySelector('[data-faq-answer="'+index+'"]');
+        var icon = document.querySelector('[data-faq-icon="'+index+'"] iconify-icon');
+        if (openFaqIndex === index) {
+          answer.style.maxHeight = '0'; answer.style.opacity = '0';
+          icon.setAttribute('icon','solar:add-circle-linear'); icon.style.transform = 'rotate(0deg)';
+          openFaqIndex = -1;
+        } else {
+          if (openFaqIndex >= 0) {
+            var prevAnswer = document.querySelector('[data-faq-answer="'+openFaqIndex+'"]');
+            var prevIcon = document.querySelector('[data-faq-icon="'+openFaqIndex+'"] iconify-icon');
+            if (prevAnswer) { prevAnswer.style.maxHeight = '0'; prevAnswer.style.opacity = '0'; }
+            if (prevIcon) { prevIcon.setAttribute('icon','solar:add-circle-linear'); prevIcon.style.transform = 'rotate(0deg)'; }
+          }
+          answer.style.maxHeight = answer.scrollHeight + 600 + 'px'; answer.style.opacity = '1';
+          icon.setAttribute('icon','solar:close-circle-linear'); icon.style.transform = 'rotate(90deg)';
+          openFaqIndex = index;
+        }
+      }
+    </script>
+  </div>
+
+<!-- ============================================================ -->
+<!-- TESTIMONIALS, Card-flip carousel -->
+<!-- ============================================================ -->
+<section class="relative overflow-hidden bg-[#070d1c] py-24 lg:py-32" id="testimonials">
+
+  <!-- Ambient glows -->
+  <div class="absolute top-0 left-1/4 w-[700px] h-[350px] bg-blue-600/6 rounded-full blur-[130px] pointer-events-none"></div>
+  <div class="absolute bottom-0 right-1/4 w-[500px] h-[300px] bg-indigo-500/5 rounded-full blur-[110px] pointer-events-none"></div>
+  <div class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(rgba(255,255,255,0.022) 1.5px, transparent 1.5px); background-size: 28px 28px;"></div>
+
+  <div class="relative z-10">
+
+    <!-- Header -->
+    <div class="text-center mb-12 px-6">
+      <div class="inline-flex items-center gap-2 bg-white/8 border border-white/12 text-white/70 px-4 py-1.5 rounded-full text-sm font-medium mb-5">
+        <iconify-icon icon="solar:star-bold" width="13" class="text-amber-400"></iconify-icon>
+        Real clients. Real cards.
+      </div>
+      <h2 class="font-display text-3xl lg:text-4xl font-bold text-white tracking-tight">Happy Alloc8r clients.</h2>
+      <p class="mt-3 text-white/45 text-base max-w-sm mx-auto">Tap any card to read their full review.</p>
+    </div>
+
+    <!-- Swipe hint (mobile) -->
+    <div class="flex items-center justify-center gap-2 text-white/35 text-xs mb-6 lg:hidden">
+      <iconify-icon icon="solar:hand-gesture-linear" width="16" class="text-white/40"></iconify-icon>
+      Swipe to see happy Alloc8r clients
+    </div>
+
+    <!-- Carousel wrapper -->
+    <div class="relative">
+
+      <!-- Desktop prev/next arrows -->
+      <button id="t-prev" onclick="testimonialPrev()" class="hidden lg:flex absolute left-6 xl:left-12 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/8 border border-white/15 items-center justify-center text-white hover:bg-white/15 hover:border-white/25 transition-all duration-200 backdrop-blur-sm">
+        <iconify-icon icon="solar:alt-arrow-left-linear" width="20"></iconify-icon>
+      </button>
+      <button id="t-next" onclick="testimonialNext()" class="hidden lg:flex absolute right-6 xl:right-12 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-white/8 border border-white/15 items-center justify-center text-white hover:bg-white/15 hover:border-white/25 transition-all duration-200 backdrop-blur-sm">
+        <iconify-icon icon="solar:alt-arrow-right-linear" width="20"></iconify-icon>
+      </button>
+
+      <!-- Track -->
+      <div id="testimonial-track-outer" class="overflow-hidden px-6 lg:px-24 xl:px-32">
+        <div id="testimonial-track" class="flex gap-5 transition-transform duration-500 ease-out" style="will-change:transform;">
+
+          <!-- ── CARD 1: Sally ── -->
+          <div class="testimonial-slide flex-shrink-0" style="width:280px;">
+            <div class="t-flip-card w-full cursor-pointer" style="height:380px;perspective:1000px;" onclick="flipCard(this)">
+              <div class="t-flip-inner relative w-full h-full" style="transform-style:preserve-3d;transition:transform 0.65s cubic-bezier(0.23,1,0.32,1);">
+                <!-- FRONT: photo -->
+                <div class="t-front absolute inset-0 rounded-2xl overflow-hidden" style="backface-visibility:hidden;-webkit-backface-visibility:hidden;">
+                  <img src="https://i.imgur.com/90kxXsH.png" alt="Thank you card from Sally, 2026 Toyota Sienna"
+                    class="w-full h-full object-cover"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                  <!-- Fallback card if no photo yet -->
+                  <div class="absolute inset-0 flex-col items-center justify-center p-6 hidden" style="background: linear-gradient(135deg,#1e3a5f 0%,#0f2040 100%);display:none;">
+                    <div class="text-5xl mb-4">💌</div>
+                    <p class="text-white/60 text-xs text-center font-medium uppercase tracking-wider">Photo of card coming soon</p>
+                  </div>
+                  <!-- Always-visible overlay at bottom -->
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+                  <div class="absolute bottom-0 left-0 right-0 p-5">
+                    <div class="flex gap-0.5 mb-2">
+                      <iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon>
+                      <iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon>
+                      <iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon>
+                      <iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon>
+                      <iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon>
+                    </div>
+                    <p class="text-white font-semibold text-sm">Sally</p>
+                    <p class="text-white/55 text-xs">2026 Toyota Sienna</p>
+                  </div>
+                  <!-- Tap hint -->
+                  <div class="absolute top-3 right-3 bg-black/40 backdrop-blur-sm rounded-full px-2.5 py-1 flex items-center gap-1.5 border border-white/15">
+                    <iconify-icon icon="solar:hand-point-up-linear" class="text-white/70" width="12"></iconify-icon>
+                    <span class="text-white/70 text-[10px] font-medium">Tap to read</span>
+                  </div>
+                </div>
+                <!-- BACK: review -->
+                <div class="t-back absolute inset-0 rounded-2xl p-6 flex flex-col" style="backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(135deg,#0f2040 0%,#1a1a3e 100%);border:1px solid rgba(255,255,255,0.1);">
+                  <div class="flex gap-0.5 mb-4">
+                    <iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon>
+                    <iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon>
+                    <iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon>
+                    <iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon>
+                    <iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon>
+                  </div>
+                  <blockquote class="text-white/85 text-sm leading-relaxed flex-1">
+                    "As a single mom, it's intimidating to go in alone. Dealers didn't see me as serious until Alloc8r. I was told it was a 2-year minimum wait, but Alloc8r matched me with a dealer who had an incoming allocation that fit my budget. <span class="text-white font-medium">Why wasn't there anything like this before?</span>"
+                  </blockquote>
+                  <div class="mt-4 pt-4 border-t border-white/10 flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-indigo-500 flex items-center justify-center flex-shrink-0"><span class="text-white font-bold text-xs">S</span></div>
+                    <div><p class="text-white font-semibold text-xs">Sally</p><p class="text-white/40 text-[11px]">2026 Toyota Sienna</p></div>
+                    <div class="ml-auto"><span class="text-[10px] text-emerald-400 bg-emerald-500/15 border border-emerald-500/20 rounded-full px-2 py-0.5">2yr → weeks</span></div>
+                  </div>
+                  <p class="text-center text-white/25 text-[10px] mt-3 flex items-center justify-center gap-1"><iconify-icon icon="solar:restart-linear" width="10"></iconify-icon>Tap to flip back</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── CARD 2: Leon ── -->
+          <div class="testimonial-slide flex-shrink-0" style="width:280px;">
+            <div class="t-flip-card w-full cursor-pointer" style="height:380px;perspective:1000px;" onclick="flipCard(this)">
+              <div class="t-flip-inner relative w-full h-full" style="transform-style:preserve-3d;transition:transform 0.65s cubic-bezier(0.23,1,0.32,1);">
+                <div class="t-front absolute inset-0 rounded-2xl overflow-hidden" style="backface-visibility:hidden;-webkit-backface-visibility:hidden;">
+                  <img src="https://i.imgur.com/Trqfgjc.jpeg" alt="Thank you card from Leon, 2026 Lexus GX 550"
+                    class="w-full h-full object-cover"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                  <div class="absolute inset-0 flex-col items-center justify-center p-6 hidden" style="background:linear-gradient(135deg,#2d1b69 0%,#1a0f3e 100%);display:none;">
+                    <div class="text-5xl mb-4">💌</div>
+                    <p class="text-white/60 text-xs text-center font-medium uppercase tracking-wider">Photo of card coming soon</p>
+                  </div>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+                  <div class="absolute bottom-0 left-0 right-0 p-5">
+                    <div class="flex gap-0.5 mb-2"><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon></div>
+                    <p class="text-white font-semibold text-sm">Leon</p>
+                    <p class="text-white/55 text-xs">2026 Lexus GX 550</p>
+                  </div>
+                  <div class="absolute top-3 right-3 bg-black/40 backdrop-blur-sm rounded-full px-2.5 py-1 flex items-center gap-1.5 border border-white/15"><iconify-icon icon="solar:hand-point-up-linear" class="text-white/70" width="12"></iconify-icon><span class="text-white/70 text-[10px] font-medium">Tap to read</span></div>
+                </div>
+                <div class="t-back absolute inset-0 rounded-2xl p-6 flex flex-col" style="backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(135deg,#1a0f3e 0%,#200d3a 100%);border:1px solid rgba(255,255,255,0.1);">
+                  <div class="flex gap-0.5 mb-4"><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon></div>
+                  <blockquote class="text-white/85 text-sm leading-relaxed flex-1">"While I definitely saved money, Jerick makes the process so seamless he's <span class="text-white font-medium italic">actually dangerous for my bank account.</span> I'm already looking at what's next. If you're tired of the runaround, he's your guy."</blockquote>
+                  <div class="mt-4 pt-4 border-t border-white/10 flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center flex-shrink-0"><span class="text-white font-bold text-xs">L</span></div>
+                    <div><p class="text-white font-semibold text-xs">Leon</p><p class="text-white/40 text-[11px]">2026 Lexus GX 550</p></div>
+                  </div>
+                  <p class="text-center text-white/25 text-[10px] mt-3 flex items-center justify-center gap-1"><iconify-icon icon="solar:restart-linear" width="10"></iconify-icon>Tap to flip back</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── CARD 3: Mikey ── -->
+          <div class="testimonial-slide flex-shrink-0" style="width:280px;">
+            <div class="t-flip-card w-full cursor-pointer" style="height:380px;perspective:1000px;" onclick="flipCard(this)">
+              <div class="t-flip-inner relative w-full h-full" style="transform-style:preserve-3d;transition:transform 0.65s cubic-bezier(0.23,1,0.32,1);">
+                <div class="t-front absolute inset-0 rounded-2xl overflow-hidden" style="backface-visibility:hidden;-webkit-backface-visibility:hidden;">
+                  <img src="https://i.imgur.com/VptPorM.png" alt="Thank you card from Mikey, 2026 Ford Raptor"
+                    class="w-full h-full object-cover"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                  <div class="absolute inset-0 flex-col items-center justify-center p-6 hidden" style="background:linear-gradient(135deg,#3d1a00 0%,#1f0e00 100%);display:none;">
+                    <div class="text-5xl mb-4">💌</div>
+                    <p class="text-white/60 text-xs text-center font-medium uppercase tracking-wider">Photo of card coming soon</p>
+                  </div>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+                  <div class="absolute bottom-0 left-0 right-0 p-5">
+                    <div class="flex gap-0.5 mb-2"><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon></div>
+                    <p class="text-white font-semibold text-sm">Mikey</p>
+                    <p class="text-white/55 text-xs">2026 Ford Raptor</p>
+                  </div>
+                  <div class="absolute top-3 right-3 bg-black/40 backdrop-blur-sm rounded-full px-2.5 py-1 flex items-center gap-1.5 border border-white/15"><iconify-icon icon="solar:hand-point-up-linear" class="text-white/70" width="12"></iconify-icon><span class="text-white/70 text-[10px] font-medium">Tap to read</span></div>
+                </div>
+                <div class="t-back absolute inset-0 rounded-2xl p-6 flex flex-col" style="backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(135deg,#1f0e00 0%,#2d1500 100%);border:1px solid rgba(255,255,255,0.1);">
+                  <div class="flex gap-0.5 mb-4"><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon></div>
+                  <blockquote class="text-white/85 text-sm leading-relaxed flex-1">"I was skeptical. But Alloc8r actually delivered. I wanted a 2026 Raptor in Code Orange, and every local dealer had a six-month wait. They found one on the island. <span class="text-white font-medium">I used the savings to take my family out there.</span>"</blockquote>
+                  <div class="mt-4 pt-4 border-t border-white/10 flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center flex-shrink-0"><span class="text-white font-bold text-xs">M</span></div>
+                    <div><p class="text-white font-semibold text-xs">Mikey</p><p class="text-white/40 text-[11px]">2026 Ford Raptor</p></div>
+                  </div>
+                  <p class="text-center text-white/25 text-[10px] mt-3 flex items-center justify-center gap-1"><iconify-icon icon="solar:restart-linear" width="10"></iconify-icon>Tap to flip back</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── CARD 4: Ben ── -->
+          <div class="testimonial-slide flex-shrink-0" style="width:280px;">
+            <div class="t-flip-card w-full cursor-pointer" style="height:380px;perspective:1000px;" onclick="flipCard(this)">
+              <div class="t-flip-inner relative w-full h-full" style="transform-style:preserve-3d;transition:transform 0.65s cubic-bezier(0.23,1,0.32,1);">
+                <div class="t-front absolute inset-0 rounded-2xl overflow-hidden" style="backface-visibility:hidden;-webkit-backface-visibility:hidden;">
+                  <img src="https://i.imgur.com/jdl2jWF.png" alt="Thank you card from Ben, 2025 BMW M4"
+                    class="w-full h-full object-cover"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                  <div class="absolute inset-0 flex-col items-center justify-center p-6 hidden" style="background:linear-gradient(135deg,#003366 0%,#001a33 100%);display:none;">
+                    <div class="text-5xl mb-4">💌</div>
+                    <p class="text-white/60 text-xs text-center font-medium uppercase tracking-wider">Photo of card coming soon</p>
+                  </div>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+                  <div class="absolute bottom-0 left-0 right-0 p-5">
+                    <div class="flex gap-0.5 mb-2"><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon></div>
+                    <p class="text-white font-semibold text-sm">Ben</p>
+                    <p class="text-white/55 text-xs">2025 BMW M4</p>
+                  </div>
+                  <div class="absolute top-3 right-3 bg-black/40 backdrop-blur-sm rounded-full px-2.5 py-1 flex items-center gap-1.5 border border-white/15"><iconify-icon icon="solar:hand-point-up-linear" class="text-white/70" width="12"></iconify-icon><span class="text-white/70 text-[10px] font-medium">Tap to read</span></div>
+                </div>
+                <div class="t-back absolute inset-0 rounded-2xl p-6 flex flex-col" style="backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(135deg,#001a33 0%,#001428 100%);border:1px solid rgba(255,255,255,0.1);">
+                  <div class="flex gap-0.5 mb-4"><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon></div>
+                  <blockquote class="text-white/85 text-sm leading-relaxed flex-1">"Jerick was amazing, he helped me so much and went out of his way multiple times to get me the best deal. Thank you Jerick for all your help and <span class="text-white font-medium">your friendship after the fact.</span> I highly recommend Jerick to all buyers. Shop with confidence!"</blockquote>
+                  <div class="mt-4 pt-4 border-t border-white/10 flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-blue-400 to-cyan-500 flex items-center justify-center flex-shrink-0"><span class="text-white font-bold text-xs">B</span></div>
+                    <div><p class="text-white font-semibold text-xs">Ben</p><p class="text-white/40 text-[11px]">2025 BMW M4</p></div>
+                  </div>
+                  <p class="text-center text-white/25 text-[10px] mt-3 flex items-center justify-center gap-1"><iconify-icon icon="solar:restart-linear" width="10"></iconify-icon>Tap to flip back</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── CARD 5: Rashidul ── -->
+          <div class="testimonial-slide flex-shrink-0" style="width:280px;">
+            <div class="t-flip-card w-full cursor-pointer" style="height:380px;perspective:1000px;" onclick="flipCard(this)">
+              <div class="t-flip-inner relative w-full h-full" style="transform-style:preserve-3d;transition:transform 0.65s cubic-bezier(0.23,1,0.32,1);">
+                <div class="t-front absolute inset-0 rounded-2xl overflow-hidden" style="backface-visibility:hidden;-webkit-backface-visibility:hidden;">
+                  <img src="https://i.imgur.com/TUW3Ytl.png" alt="Thank you card from Rashidul, 2025 Toyota RAV4"
+                    class="w-full h-full object-cover"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                  <div class="absolute inset-0 flex-col items-center justify-center p-6 hidden" style="background:linear-gradient(135deg,#004d26 0%,#002614 100%);display:none;">
+                    <div class="text-5xl mb-4">💌</div>
+                    <p class="text-white/60 text-xs text-center font-medium uppercase tracking-wider">Photo of card coming soon</p>
+                  </div>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+                  <div class="absolute bottom-0 left-0 right-0 p-5">
+                    <div class="flex gap-0.5 mb-2"><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon></div>
+                    <p class="text-white font-semibold text-sm">Rashidul</p>
+                    <p class="text-white/55 text-xs">2025 Toyota RAV4</p>
+                  </div>
+                  <div class="absolute top-3 right-3 bg-black/40 backdrop-blur-sm rounded-full px-2.5 py-1 flex items-center gap-1.5 border border-white/15"><iconify-icon icon="solar:hand-point-up-linear" class="text-white/70" width="12"></iconify-icon><span class="text-white/70 text-[10px] font-medium">Tap to read</span></div>
+                </div>
+                <div class="t-back absolute inset-0 rounded-2xl p-6 flex flex-col" style="backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(135deg,#002614 0%,#003320 100%);border:1px solid rgba(255,255,255,0.1);">
+                  <div class="flex items-center gap-2 mb-4">
+                    <div class="flex gap-0.5"><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon></div>
+                    <span class="text-amber-400 text-xs font-bold">7/5 stars</span>
+                  </div>
+                  <blockquote class="text-white/85 text-sm leading-relaxed flex-1">"What a great guy. Truly friendly and accommodating. <span class="text-white font-medium">I'd rate him 7 stars if it was possible.</span> Highly recommended."</blockquote>
+                  <div class="mt-4 pt-4 border-t border-white/10 flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center flex-shrink-0"><span class="text-white font-bold text-xs">R</span></div>
+                    <div><p class="text-white font-semibold text-xs">Rashidul</p><p class="text-white/40 text-[11px]">2025 Toyota RAV4</p></div>
+                  </div>
+                  <p class="text-center text-white/25 text-[10px] mt-3 flex items-center justify-center gap-1"><iconify-icon icon="solar:restart-linear" width="10"></iconify-icon>Tap to flip back</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ── CARD 6: Nguyen ── -->
+          <div class="testimonial-slide flex-shrink-0" style="width:280px;">
+            <div class="t-flip-card w-full cursor-pointer" style="height:380px;perspective:1000px;" onclick="flipCard(this)">
+              <div class="t-flip-inner relative w-full h-full" style="transform-style:preserve-3d;transition:transform 0.65s cubic-bezier(0.23,1,0.32,1);">
+                <div class="t-front absolute inset-0 rounded-2xl overflow-hidden" style="backface-visibility:hidden;-webkit-backface-visibility:hidden;">
+                  <img src="https://i.imgur.com/xLXNwDM.png" alt="Thank you card from Nguyen, 2025 Subaru Forester"
+                    class="w-full h-full object-cover"
+                    onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+                  <div class="absolute inset-0 flex-col items-center justify-center p-6 hidden" style="background:linear-gradient(135deg,#2d0a4e 0%,#1a0530 100%);display:none;">
+                    <div class="text-5xl mb-4">💌</div>
+                    <p class="text-white/60 text-xs text-center font-medium uppercase tracking-wider">Photo of card coming soon</p>
+                  </div>
+                  <div class="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent"></div>
+                  <div class="absolute bottom-0 left-0 right-0 p-5">
+                    <div class="flex gap-0.5 mb-2"><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="13"></iconify-icon></div>
+                    <p class="text-white font-semibold text-sm">Nguyen</p>
+                    <p class="text-white/55 text-xs">2025 Subaru Forester</p>
+                  </div>
+                  <div class="absolute top-3 right-3 bg-black/40 backdrop-blur-sm rounded-full px-2.5 py-1 flex items-center gap-1.5 border border-white/15"><iconify-icon icon="solar:hand-point-up-linear" class="text-white/70" width="12"></iconify-icon><span class="text-white/70 text-[10px] font-medium">Tap to read</span></div>
+                </div>
+                <div class="t-back absolute inset-0 rounded-2xl p-6 flex flex-col" style="backface-visibility:hidden;-webkit-backface-visibility:hidden;transform:rotateY(180deg);background:linear-gradient(135deg,#1a0530 0%,#250a40 100%);border:1px solid rgba(255,255,255,0.1);">
+                  <div class="flex gap-0.5 mb-4"><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon><iconify-icon icon="solar:star-bold" class="text-amber-400" width="14"></iconify-icon></div>
+                  <blockquote class="text-white/85 text-sm leading-relaxed flex-1">"Jerick was honest and hilarious! <span class="text-white font-medium">He explained everything I didn't understand with patience.</span> If you want someone who truly knows what they're selling, it's him."</blockquote>
+                  <div class="mt-4 pt-4 border-t border-white/10 flex items-center gap-2.5">
+                    <div class="w-8 h-8 rounded-full bg-gradient-to-br from-indigo-400 to-violet-500 flex items-center justify-center flex-shrink-0"><span class="text-white font-bold text-xs">N</span></div>
+                    <div><p class="text-white font-semibold text-xs">Nguyen</p><p class="text-white/40 text-[11px]">2025 Subaru Forester</p></div>
+                  </div>
+                  <p class="text-center text-white/25 text-[10px] mt-3 flex items-center justify-center gap-1"><iconify-icon icon="solar:restart-linear" width="10"></iconify-icon>Tap to flip back</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- /track -->
+      </div><!-- /outer -->
+
+      <!-- Dot navigation -->
+      <div class="flex justify-center gap-2 mt-8" id="t-dots"></div>
+
+      </div><!-- /relative -->
+  </div><!-- /z-10 -->
+
+  <!-- Carousel JS -->
+  <script>
+  (function() {
+    var CARD_W = 280;
+    var GAP = 20;
+    var STEP = CARD_W + GAP;
+    var totalCards = 6;
+    var currentT = 0;
+
+    var track = document.getElementById('testimonial-track');
+    var dotsContainer = document.getElementById('t-dots');
+
+    // Build dots
+    for (var i = 0; i < totalCards; i++) {
+      var d = document.createElement('button');
+      d.className = 'transition-all duration-300 rounded-full h-2 ' + (i === 0 ? 'w-6 bg-white' : 'w-2 bg-white/25');
+      d.setAttribute('data-ti', i);
+      d.onclick = (function(idx) { return function() { goTo(idx); }; })(i);
+      dotsContainer.appendChild(d);
+    }
+
+    function goTo(idx) {
+      currentT = Math.max(0, Math.min(totalCards - 1, idx));
+      // On desktop show up to 3 cards so offset less aggressively
+      var visibleOnDesktop = window.innerWidth >= 1024 ? 3 : 1;
+      var maxOffset = Math.max(0, totalCards - visibleOnDesktop);
+      var offset = Math.min(currentT, maxOffset);
+      track.style.transform = 'translateX(-' + (offset * STEP) + 'px)';
+      updateDots();
+    }
+
+    function updateDots() {
+      var dots = dotsContainer.querySelectorAll('button');
+      dots.forEach(function(d, i) {
+        d.className = 'transition-all duration-300 rounded-full h-2 ' + (i === currentT ? 'w-6 bg-white' : 'w-2 bg-white/25');
+      });
+    }
+
+    window.testimonialPrev = function() { goTo(currentT - 1); };
+    window.testimonialNext = function() { goTo(currentT + 1); };
+
+    // Touch swipe
+    var outer = document.getElementById('testimonial-track-outer');
+    var touchStartX = 0;
+    var touchStartY = 0;
+    var isDragging = false;
+
+    outer.addEventListener('touchstart', function(e) {
+      touchStartX = e.touches[0].clientX;
+      touchStartY = e.touches[0].clientY;
+      isDragging = false;
+    }, { passive: true });
+
+    outer.addEventListener('touchmove', function(e) {
+      var dx = Math.abs(e.touches[0].clientX - touchStartX);
+      var dy = Math.abs(e.touches[0].clientY - touchStartY);
+      if (dx > dy) isDragging = true;
+    }, { passive: true });
+
+    outer.addEventListener('touchend', function(e) {
+      if (!isDragging) return;
+      var diff = touchStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) goTo(currentT + 1);
+        else goTo(currentT - 1);
+      }
+    }, { passive: true });
+
+    // Mouse drag (desktop)
+    var mouseDown = false, mouseStartX = 0;
+    outer.addEventListener('mousedown', function(e) { mouseDown = true; mouseStartX = e.clientX; });
+    window.addEventListener('mouseup', function(e) {
+      if (!mouseDown) return;
+      var diff = mouseStartX - e.clientX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) goTo(currentT + 1);
+        else goTo(currentT - 1);
+      }
+      mouseDown = false;
+    });
+
+    // Recalculate on resize
+    window.addEventListener('resize', function() { goTo(currentT); });
+
+    // Flip card function (globally scoped)
+    window.flipCard = function(cardEl) {
+      var inner = cardEl.querySelector('.t-flip-inner');
+      var isFlipped = inner.style.transform === 'rotateY(180deg)';
+      inner.style.transform = isFlipped ? 'rotateY(0deg)' : 'rotateY(180deg)';
+    };
+
+    goTo(0);
+  })();
+  </script>
+
+</section>
+
+</section>
+
+<!-- ============================================================ -->
+<!-- FINAL CTA -->
+<!-- ============================================================ -->
+<section id="book" class="relative pt-16 pb-24 lg:pt-20 lg:pb-32 overflow-hidden" style="background:#070d1c;">
+  <!-- Subtle radial glow top-center -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-blue-600/6 rounded-full blur-[100px] pointer-events-none"></div>
+  <div class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(rgba(255,255,255,0.018) 1.5px, transparent 1.5px); background-size: 28px 28px;"></div>
+  <div class="max-w-6xl z-10 mr-auto ml-auto pr-6 pl-6 relative">
+    <div class="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+      <div class="lg:w-1/2 text-center lg:text-left reveal active">
+        <h2 class="lg:text-5xl text-4xl font-semibold text-white tracking-tight mb-6 font-display">
+          Your Free Consultation is
+          <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">One Tap Away.</span>
+        </h2>
+        <p class="lg:mx-0 text-lg text-slate-400 max-w-md mr-auto mb-2 ml-auto">Tap the <strong class="text-white">Calendar</strong> or <strong class="text-white">SMS</strong> icon on the phone to get in touch with us!</p>
+        <div class="flex items-center gap-4 mt-8 justify-center lg:justify-start">
+          <div class="flex -space-x-2">
+            <div class="w-8 h-8 rounded-full bg-slate-700 border-2 border-slate-800 overflow-hidden"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=64&h=64" class="w-full h-full object-cover"></div>
+            <div class="w-8 h-8 rounded-full bg-slate-700 border-2 border-slate-800 overflow-hidden"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=64&h=64" class="w-full h-full object-cover"></div>
+            <div class="w-8 h-8 rounded-full bg-slate-700 border-2 border-slate-800 overflow-hidden"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=64&h=64" class="w-full h-full object-cover"></div>
+          </div>
+          <p class="text-sm text-slate-400">Join hundreds of confident Canadian buyers</p>
+        </div>
+      </div>
+      <div class="lg:w-1/2 flex justify-center reveal reveal-delay-200 active">
+        <div class="relative bg-slate-800 rounded-[3rem] p-2 shadow-2xl border border-slate-700/50" style="width:320px;max-width:85vw;">
+          <div class="absolute top-2 left-1/2 -translate-x-1/2 z-30 bg-black rounded-full" style="width:90px;height:28px;"></div>
+          <div class="bg-black rounded-[2.5rem] overflow-hidden relative" style="aspect-ratio:9/19.5;">
+            <div id="iphone-home" class="absolute inset-0 flex flex-col bg-gradient-to-b from-slate-800 to-slate-900 z-10 transition-all duration-500">
+              <div class="h-14"></div>
+              <div class="text-center mt-4">
+                <p class="text-white text-5xl font-thin" id="iphone-time">12:00</p>
+                <p class="text-white/60 text-sm mt-1" id="iphone-date">Saturday, February 28</p>
+              </div>
+              <div class="flex-1 flex flex-col justify-center px-6">
+                <div class="grid grid-cols-4 gap-4 mb-8">
+                  <button onclick="openCalendar()" class="flex flex-col items-center gap-1 group">
+                    <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                      <div class="text-center"><p class="text-[8px] text-red-500 font-bold uppercase leading-none" id="iphone-cal-month">Feb</p><p class="text-lg font-bold text-slate-900 leading-none" id="iphone-cal-day">28</p></div>
+                    </div>
+                    <span class="text-[10px] text-white/80">Calendar</span>
+                  </button>
+                  <div class="flex flex-col items-center gap-1 opacity-0 pointer-events-none"><div class="w-14 h-14 rounded-2xl"></div><span class="text-[10px]">_</span></div>
+                  <button onclick="openGallery()" class="flex flex-col items-center gap-1 group"><div class="w-14 h-14 bg-purple-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform"><iconify-icon icon="solar:camera-linear" class="text-white" width="24"></iconify-icon></div><span class="text-[10px] text-white/80">Camera</span></button>
+
+                </div>
+              </div>
+              <div class="px-4 pb-4">
+                <div class="bg-white/10 backdrop-blur-xl rounded-3xl p-3 flex justify-around items-center">
+                  <a href="tel:6728002023" class="flex flex-col items-center gap-0.5 group"><div class="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg"><iconify-icon icon="solar:phone-linear" class="text-white" width="22"></iconify-icon></div><span class="text-[9px] text-white/70">Phone</span></a>
+                  <a href="sms:6728002023" class="flex flex-col items-center gap-0.5 group"><div class="w-12 h-12 bg-green-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg"><iconify-icon icon="solar:chat-round-linear" class="text-white" width="22"></iconify-icon></div><span class="text-[9px] text-white/70">Messages</span></a>
+                  <a href="/cdn-cgi/l/email-protection#167c797e7856777a7a79752e64387577" class="flex flex-col items-center gap-0.5 group"><div class="w-12 h-12 bg-blue-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg"><iconify-icon icon="solar:letter-linear" class="text-white" width="22"></iconify-icon></div><span class="text-[9px] text-white/70">Mail</span></a>
+                  <button onclick="openCalendar()" class="flex flex-col items-center gap-0.5 group"><div class="w-12 h-12 bg-indigo-500 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform shadow-lg"><iconify-icon icon="solar:calendar-linear" class="text-white" width="22"></iconify-icon></div><span class="text-[9px] text-white/70">Book</span></button>
+                </div>
+              </div>
+              <div class="flex justify-center pb-2"><div class="w-28 h-1 bg-white/30 rounded-full"></div></div>
+            </div><!-- /iphone-home -->
+            <!-- Gallery Screen -->
+            <div id="iphone-gallery" class="absolute inset-0 flex flex-col bg-black z-20 transition-all duration-500 translate-y-full">
+              <!-- Header -->
+              <div class="flex items-center justify-between px-4 flex-shrink-0" style="padding-top:44px;padding-bottom:12px;background:#111;">
+                <button onclick="closeGallery()" class="text-white/70 text-sm flex items-center gap-1 hover:text-white transition-colors">
+                  <iconify-icon icon="solar:alt-arrow-left-linear" width="18"></iconify-icon>Back
+                </button>
+                <span class="text-white text-sm font-semibold">Client Cars</span>
+                <div class="w-8"></div>
+              </div>
+              <!-- Grid -->
+              <div class="flex-1 overflow-y-auto" style="-webkit-overflow-scrolling:touch;">
+                <div class="grid grid-cols-2 gap-0.5 bg-black p-0.5">
+                  <div class="relative aspect-square overflow-hidden cursor-pointer group" onclick="openPhoto(0)">
+                    <img src="https://i.imgur.com/90kxXsH.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Sally, 2026 Toyota Sienna">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-2 py-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <p class="text-white text-[9px] font-medium">Sally · Sienna</p>
+                    </div>
+                  </div>
+                  <div class="relative aspect-square overflow-hidden cursor-pointer group" onclick="openPhoto(1)">
+                    <img src="https://i.imgur.com/Trqfgjc.jpeg" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Leon, 2026 Lexus GX 550">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-2 py-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <p class="text-white text-[9px] font-medium">Leon · GX 550</p>
+                    </div>
+                  </div>
+                  <div class="relative aspect-square overflow-hidden cursor-pointer group" onclick="openPhoto(2)">
+                    <img src="https://i.imgur.com/VptPorM.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Mikey, 2026 Ford Raptor">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-2 py-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <p class="text-white text-[9px] font-medium">Mikey · Raptor</p>
+                    </div>
+                  </div>
+                  <div class="relative aspect-square overflow-hidden cursor-pointer group" onclick="openPhoto(3)">
+                    <img src="https://i.imgur.com/jdl2jWF.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Ben, 2025 BMW M4">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-2 py-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <p class="text-white text-[9px] font-medium">Ben · BMW M4</p>
+                    </div>
+                  </div>
+                  <div class="relative aspect-square overflow-hidden cursor-pointer group" onclick="openPhoto(4)">
+                    <img src="https://i.imgur.com/TUW3Ytl.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Rashidul, 2025 Toyota RAV4">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-2 py-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <p class="text-white text-[9px] font-medium">Rashidul · RAV4</p>
+                    </div>
+                  </div>
+                  <div class="relative aspect-square overflow-hidden cursor-pointer group" onclick="openPhoto(5)">
+                    <img src="https://i.imgur.com/xLXNwDM.png" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" alt="Nguyen, 2025 Subaru Forester">
+                    <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent px-2 py-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
+                      <p class="text-white text-[9px] font-medium">Nguyen · Forester</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Home indicator -->
+              <div class="flex justify-center py-2 bg-black flex-shrink-0"><div class="w-24 h-1 bg-white/30 rounded-full"></div></div>
+            </div>
+
+            <!-- Full-screen photo viewer -->
+            <div id="iphone-photo" class="absolute inset-0 flex flex-col bg-black z-30 transition-all duration-400 translate-y-full">
+              <div class="flex items-center justify-between px-4 flex-shrink-0" style="padding-top:44px;padding-bottom:12px;">
+                <button onclick="closePhoto()" class="text-white/70 text-sm flex items-center gap-1 hover:text-white transition-colors">
+                  <iconify-icon icon="solar:alt-arrow-left-linear" width="18"></iconify-icon>Back
+                </button>
+                <span class="text-white text-sm font-semibold" id="iphone-photo-label"></span>
+                <div class="w-8"></div>
+              </div>
+              <div class="flex-1 flex items-center justify-center p-2">
+                <img id="iphone-photo-img" src="" class="max-w-full max-h-full object-contain rounded-lg" alt="">
+              </div>
+              <div class="flex justify-center py-2 flex-shrink-0"><div class="w-24 h-1 bg-white/30 rounded-full"></div></div>
+            </div>
+            <!-- Calendar Screen (inside iPhone screen container) -->
+            <div id="iphone-cal" class="absolute inset-0 flex flex-col bg-white z-20 transition-all duration-500 translate-y-full">
+              <div class="bg-slate-50 pb-3 px-4 flex items-center justify-between border-b border-slate-200 flex-shrink-0" style="padding-top:40px;">
+                <button onclick="closeCalendar()" class="text-blue-500 text-sm font-medium flex items-center gap-1"><iconify-icon icon="solar:alt-arrow-left-linear" width="18"></iconify-icon>Back</button>
+                <span class="text-sm font-semibold text-slate-900">Book Consultation</span>
+                <div class="w-12"></div>
+              </div>
+              <div class="flex-1 relative overflow-hidden">
+                <iframe id="iphone-cal-iframe" src="about:blank" class="absolute inset-0 border-0" style="width:200%;height:200%;transform:scale(0.5);transform-origin:top left;" title="Book a consultation"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- GLOBAL SCRIPTS -->
+<!-- ============================================================ -->
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // ── iPhone Gallery ──
+  var galleryPhotos = [
+    { src: 'https://i.imgur.com/90kxXsH.png', label: 'Sally · Toyota Sienna' },
+    { src: 'https://i.imgur.com/Trqfgjc.jpeg', label: 'Leon · Lexus GX 550' },
+    { src: 'https://i.imgur.com/VptPorM.png', label: 'Mikey · Ford Raptor' },
+    { src: 'https://i.imgur.com/jdl2jWF.png', label: 'Ben · BMW M4' },
+    { src: 'https://i.imgur.com/TUW3Ytl.png', label: 'Rashidul · Toyota RAV4' },
+    { src: 'https://i.imgur.com/xLXNwDM.png', label: 'Nguyen · Subaru Forester' }
+  ];
+  function openGallery() {
+    var g = document.getElementById('iphone-gallery');
+    if (g) { g.classList.remove('translate-y-full'); g.classList.add('translate-y-0'); }
+  }
+  function closeGallery() {
+    var g = document.getElementById('iphone-gallery');
+    if (g) { g.classList.remove('translate-y-0'); g.classList.add('translate-y-full'); }
+  }
+  function openPhoto(idx) {
+    var p = document.getElementById('iphone-photo');
+    var img = document.getElementById('iphone-photo-img');
+    var label = document.getElementById('iphone-photo-label');
+    if (!p || !img || !label) return;
+    img.src = galleryPhotos[idx].src;
+    img.alt = galleryPhotos[idx].label;
+    label.textContent = galleryPhotos[idx].label;
+    p.classList.remove('translate-y-full'); p.classList.add('translate-y-0');
+  }
+  function closePhoto() {
+    var p = document.getElementById('iphone-photo');
+    if (p) { p.classList.remove('translate-y-0'); p.classList.add('translate-y-full'); }
+  }
+  // ── Cal Modal ──
+  function openCalModal() {
+    var modal = document.getElementById('cal-modal');
+    var iframe = document.getElementById('cal-modal-iframe');
+    if (iframe && (iframe.src === 'about:blank' || iframe.src === '')) { iframe.src = 'https://cal.com/alloc8r/freeconsultation'; }
+    modal.classList.replace('hidden', 'flex');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeCalModal() {
+    var modal = document.getElementById('cal-modal');
+    modal.classList.replace('flex', 'hidden');
+    document.body.style.overflow = '';
+  }
+
+  // ── iPhone Cal ──
+  function openCalendar() {
+    var cal = document.getElementById('iphone-cal');
+    var calIframe = document.getElementById('iphone-cal-iframe');
+    if (calIframe && (calIframe.src === 'about:blank' || calIframe.src === '')) { calIframe.src = 'https://cal.com/alloc8r/freeconsultation'; }
+    if (cal) { cal.classList.remove('translate-y-full'); cal.classList.add('translate-y-0'); }
+  }
+  function closeCalendar() {
+    var cal = document.getElementById('iphone-cal');
+    if (cal) { cal.classList.remove('translate-y-0'); cal.classList.add('translate-y-full'); }
+  }
+
+  // ── Mobile Menu ──
+  function toggleMenu() {
+    var menu = document.getElementById('mobile-menu');
+    var iconMenu = document.getElementById('icon-menu');
+    var iconClose = document.getElementById('icon-close');
+    if (menu.classList.contains('hidden')) {
+      menu.classList.remove('hidden');
+      requestAnimationFrame(function() { menu.classList.remove('opacity-0','-translate-y-4'); menu.classList.add('opacity-100','translate-y-0'); });
+      iconMenu.classList.add('hidden'); iconClose.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    } else {
+      menu.classList.add('opacity-0','-translate-y-4'); menu.classList.remove('opacity-100','translate-y-0');
+      setTimeout(function() { menu.classList.add('hidden'); }, 300);
+      iconMenu.classList.remove('hidden'); iconClose.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+  }
+
+  // ── iPhone Time ──
+  function updateIphoneTime() {
+    var now = new Date();
+    var hours = now.getHours();
+    var minutes = now.getMinutes().toString().padStart(2, '0');
+    var timeEl = document.getElementById('iphone-time');
+    if (timeEl) timeEl.textContent = hours + ':' + minutes;
+    var dateEl = document.getElementById('iphone-date');
+    if (dateEl) {
+      var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+      var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      dateEl.textContent = days[now.getDay()] + ', ' + months[now.getMonth()] + ' ' + now.getDate();
+    }
+    var calDay = document.getElementById('iphone-cal-day');
+    if (calDay) calDay.textContent = now.getDate();
+    var calMonth = document.getElementById('iphone-cal-month');
+    if (calMonth) {
+      var shortMonths = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      calMonth.textContent = shortMonths[now.getMonth()];
+    }
+  }
+  updateIphoneTime();
+  setInterval(updateIphoneTime, 30000);
+
+  // ── Reveal Animations ──
+  var revealObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) { if (entry.isIntersecting) entry.target.classList.add('active'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function(el) { revealObserver.observe(el); });
+
+  // ── Quiz: Tier Data ──
+  var tierData = [
+    {
+      badge: 'No Commitment',
+      badgeBg: 'bg-green-50 text-green-700 border-green-100',
+      name: 'The Free Consultation',
+      price: 'Free',
+      priceNote: 'Zero pressure',
+      description: "Not sure what you need? Start here. We'll analyze your situation and tell you the most cost-effective path forward, in 30 minutes.",
+      accent: '#22c55e',
+      accentLight: 'bg-green-50',
+      iconColor: 'text-green-600',
+      features: [
+        { icon: 'solar:magnifer-linear', title: 'Needs Analysis', desc: 'We pinpoint your goals and match you with the right level of support.' },
+        { icon: 'solar:lightbulb-linear', title: 'Unbiased Expert Insight', desc: 'Advice across all brands, we have no financial stake in what you drive.' },
+        { icon: 'solar:route-linear', title: 'Clear Next Steps', desc: 'Leave knowing exactly what to do and how much professional help you need.' }
+      ],
+      cta: 'Book Free Consultation',
+      dark: false,
+      popular: false
+    },
+    {
+      badge: 'DIY Power',
+      badgeBg: 'bg-amber-50 text-amber-700 border-amber-100',
+      name: "The Negotiator's Playbook",
+      price: '$500',
+      priceNote: 'One-time fee',
+      description: "Want to negotiate yourself? We hand you a data-backed game plan built on real dealer cost sheets, so you walk in with the exact numbers.",
+      accent: '#f59e0b',
+      accentLight: 'bg-amber-50',
+      iconColor: 'text-amber-600',
+      features: [
+        { icon: 'solar:target-linear', title: 'Choose Your Focus', desc: 'Pricing, financing, trade-ins, or all three. We guide the areas you need most.' },
+        { icon: 'solar:calculator-linear', title: 'Lease vs. Finance Mastery', desc: 'We run the real numbers to identify which method saves you more after all incentives.' },
+        { icon: 'solar:chart-2-linear', title: 'Data-Backed Game Plan', desc: 'A precise target price based on actual dealer costs and live market demand.' }
+      ],
+      cta: 'Get the Playbook',
+      dark: false,
+      popular: false
+    },
+    {
+      badge: 'Most Popular',
+      badgeBg: 'bg-blue-500 text-white border-blue-600',
+      name: 'The Full-Service Concierge',
+      price: '$1,500',
+      priceNote: 'All-in fee',
+      description: "We sit across the table from the dealer, on your side. You choose the car; we handle everything else. Walk in, sign, drive.",
+      accent: '#3b82f6',
+      accentLight: 'bg-blue-500/10',
+      iconColor: 'text-blue-400',
+      features: [
+        { icon: 'solar:magnifer-linear', title: 'Complete Nationwide Sourcing', desc: 'We search across Canada to find your exact vehicle at the lowest possible price.' },
+        { icon: 'solar:shield-check-linear', title: 'The Professional Shield', desc: 'From floor price to back-office upsells, you only pay for what genuinely benefits you.' },
+        { icon: 'solar:clock-circle-linear', title: 'Pre-Negotiated Walk-in Price', desc: 'No back-and-forth. Walk in with a locked price and drive away stress-free.' }
+      ],
+      cta: 'Start Full Concierge',
+      dark: true,
+      popular: true
+    },
+    {
+      badge: 'Exclusive Access',
+      badgeBg: 'bg-purple-50 text-purple-700 border-purple-100',
+      name: 'The Allocation Hunter',
+      price: '$2,500+',
+      priceNote: 'Varies by vehicle',
+      description: "Chasing a GX 550, G63, or 911? Or looking for a different hard-to-find vehicle? We turn a 2–4 year waitlist into a few months, or as little as weeks, without paying Adjusted Market Value on the used market. Contact us to see estimated waiting times for your car.",
+      accent: '#a855f7',
+      accentLight: 'bg-purple-50',
+      iconColor: 'text-purple-600',
+      features: [
+        { icon: 'solar:rocket-2-linear', title: 'Waitlist Bypass', desc: 'We pre-invest in dealer allocations so your wait goes from years to weeks.' },
+        { icon: 'solar:tag-price-linear', title: 'Market Correction', desc: 'Brand-new at MSRP vs. "market-adjusted" used, the savings are often enormous.' },
+        { icon: 'solar:graph-down-new-linear', title: 'Data-Driven Confidence', desc: 'Hard data eliminates FOMO pricing, ensuring you never overpay out of urgency.' }
+      ],
+      cta: 'Hunt My Allocation',
+      dark: false,
+      popular: false
+    },
+    {
+      badge: 'Zero Risk',
+      badgeBg: 'bg-emerald-50 text-emerald-700 border-emerald-100',
+      name: 'The Deal Audit',
+      price: '$0 Upfront',
+      priceNote: '50% of net savings',
+      description: "Already have a dealer offer? We challenge it. We share the savings if we find a better price, and you pay nothing if we can't.",
+      accent: '#10b981',
+      accentLight: 'bg-emerald-50',
+      iconColor: 'text-emerald-600',
+      features: [
+        { icon: 'solar:map-point-wave-linear', title: 'National Price Match', desc: 'We benchmark your offer against our dealer network coast-to-coast.' },
+        { icon: 'solar:eye-scan-linear', title: 'Shadow Markup Review', desc: 'We identify every hidden fee and inflated trade-in value the dealer profits from.' },
+        { icon: 'solar:hand-shake-linear', title: 'Split the Savings', desc: 'Zero upfront cost. If we beat your deal, we split the new net savings 50/50.' }
+      ],
+      cta: 'Audit My Deal',
+      dark: false,
+      popular: false
+    }
+  ];
+
+  var allServicesOpen = false;
+
+  function toggleAllServices() {
+    allServicesOpen = !allServicesOpen;
+    var list = document.getElementById('all-services-list');
+    var label = document.getElementById('browse-all-label');
+    var arrow = document.getElementById('browse-all-arrow');
+    if (allServicesOpen) {
+      list.classList.remove('hidden');
+      label.textContent = 'Hide all services';
+      arrow.style.transform = 'rotate(180deg)';
+    } else {
+      list.classList.add('hidden');
+      label.textContent = 'Browse all 5 services';
+      arrow.style.transform = 'rotate(0deg)';
+    }
+  }
+
+  function selectSituation(tierIndex) {
+    var grid = document.getElementById('quiz-grid');
+    var result = document.getElementById('quiz-result');
+    var tier = tierData[tierIndex];
+
+    // Fade out grid
+    grid.style.opacity = '0';
+    grid.style.transform = 'translateY(-10px)';
+
+    setTimeout(function() {
+      grid.classList.add('hidden');
+      // Build result card HTML
+      var dark = tier.dark;
+      var cardBg = dark ? 'bg-slate-900 border-slate-700' : 'bg-white border-slate-200';
+      var headingColor = dark ? 'text-white' : 'text-slate-900';
+      var priceColor = dark ? 'text-white' : 'text-slate-900';
+      var descColor = dark ? 'text-slate-300' : 'text-slate-600';
+      var featureText = dark ? 'text-slate-300' : 'text-slate-600';
+      var featureTitle = dark ? 'text-white' : 'text-slate-900';
+      var iconBg = dark ? 'bg-white/10 border-white/15' : tier.accentLight + ' border-transparent';
+      var ctaBg = dark ? 'bg-white text-slate-900 hover:bg-slate-100' : 'bg-slate-900 text-white hover:bg-slate-800';
+
+      var featuresHtml = tier.features.map(function(f, i) {
+        return '<li class="tier-feature flex items-start gap-3" style="opacity:0;transform:translateY(12px);transition:all 0.4s ease-out '+(0.1 + i*0.1)+'s;">'
+          +'<div class="w-8 h-8 rounded-lg '+iconBg+' flex items-center justify-center flex-shrink-0 mt-0.5 border">'
+          +'<iconify-icon icon="'+f.icon+'" class="w-4 h-4 '+tier.iconColor+'" width="16"></iconify-icon></div>'
+          +'<div><strong class="font-medium '+featureTitle+'">'+f.title+':</strong> '
+          +'<span class="text-sm '+featureText+'">'+f.desc+'</span></div></li>';
+      }).join('');
+
+      var popularBadge = tier.popular ? '<div class="absolute top-0 right-0 bg-blue-500 text-white text-[10px] font-semibold px-3 py-1 rounded-bl-xl uppercase tracking-wider">Most Popular</div>' : '';
+
+      document.getElementById('quiz-result-card').innerHTML =
+        '<div class="rounded-2xl border shadow-xl overflow-hidden '+cardBg+' relative">'
+        + popularBadge
+        +'<div class="p-8 lg:p-10">'
+        +'<div class="flex flex-col lg:flex-row lg:items-start lg:gap-12">'
+        +'<div class="lg:w-1/3 mb-8 lg:mb-0">'
+        +'<span class="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-1.5 rounded-full border '+tier.badgeBg+' mb-4">'+tier.badge+'</span>'
+        +'<h3 class="text-2xl font-semibold '+headingColor+' tracking-tight mb-2">'+tier.name+'</h3>'
+        +'<p class="text-3xl font-bold '+priceColor+' font-display">'+tier.price+'</p>'
+        +'<p class="text-sm text-slate-400 mt-1">'+tier.priceNote+'</p>'
+        +'<p class="text-sm '+descColor+' mt-4 leading-relaxed">'+tier.description+'</p>'
+        +'<a href="#" onclick="event.preventDefault(); openCalModal();" class="mt-6 inline-flex justify-center items-center w-full py-3.5 px-6 rounded-xl font-semibold '+ctaBg+' transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 duration-300 text-sm">'+tier.cta+'</a>'
+        +'</div>'
+        +'<div class="lg:w-2/3"><ul class="space-y-5">'+featuresHtml+'</ul></div>'
+        +'</div></div></div>';
+
+      // Show result
+      result.classList.remove('hidden');
+      result.style.opacity = '0';
+      result.style.transform = 'translateY(14px)';
+
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          result.style.opacity = '1';
+          result.style.transform = 'translateY(0)';
+          // Animate features
+          setTimeout(function() {
+            result.querySelectorAll('.tier-feature').forEach(function(f) {
+              f.classList.add('fv');
+            });
+          }, 150);
+        });
+      });
+    }, 280);
+  }
+
+  function backToQuiz() {
+    var grid = document.getElementById('quiz-grid');
+    var result = document.getElementById('quiz-result');
+
+    result.style.opacity = '0';
+    result.style.transform = 'translateY(-10px)';
+
+    setTimeout(function() {
+      result.classList.add('hidden');
+      grid.classList.remove('hidden');
+      grid.style.opacity = '0';
+      grid.style.transform = 'translateY(10px)';
+      requestAnimationFrame(function() {
+        requestAnimationFrame(function() {
+          grid.style.opacity = '1';
+          grid.style.transform = 'translateY(0)';
+        });
+      });
+    }, 280);
+  }
+</script>
+
+<!-- CAL.COM MODAL -->
+<div id="cal-modal" class="hidden fixed inset-0 z-[9999] items-center justify-center bg-black/60 backdrop-blur-sm" onclick="if(event.target===this){closeCalModal();}">
+  <div class="relative w-full max-w-2xl mx-4 bg-white rounded-2xl shadow-2xl overflow-hidden" style="max-height:90vh;">
+    <button onclick="closeCalModal();" class="absolute top-4 right-4 z-10 w-8 h-8 rounded-full bg-slate-100 hover:bg-slate-200 flex items-center justify-center transition-colors">
+      <iconify-icon icon="solar:close-circle-linear" class="w-5 h-5 text-slate-500"></iconify-icon>
+    </button>
+    <iframe src="about:blank" class="w-full border-0" style="height:85vh;" id="cal-modal-iframe"></iframe>
+  </div>
+</div>
+
+<style>
+  #cal-modal-iframe { background: white; }
+  #iphone-cal-iframe { background: white; }
+</style>
+</body>
+</html>
