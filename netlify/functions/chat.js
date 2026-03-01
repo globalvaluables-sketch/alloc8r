@@ -29,7 +29,7 @@ Keep responses concise — 2-4 sentences max unless they ask something that need
 function callAnthropic(apiKey, messages) {
   return new Promise(function(resolve, reject) {
     var body = JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
+      model: 'claude-3-5-haiku-20241022',
       max_tokens: 400,
       system: SYSTEM_PROMPT,
       messages: messages
