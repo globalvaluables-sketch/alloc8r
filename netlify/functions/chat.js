@@ -24,7 +24,8 @@ Keep replies to 2-4 sentences. Be conversational, not salesy.`;
 function callAnthropic(apiKey, messages) {
   return new Promise(function(resolve, reject) {
     var body = JSON.stringify({
-      model: 'claude-3-haiku-20240307',
+      model: 'claude-haiku-4-5-20251001',
+
       max_tokens: 400,
       system: SYSTEM_PROMPT,
       messages: messages
