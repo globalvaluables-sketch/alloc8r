@@ -2231,7 +2231,7 @@ window.KarleyBot = (function () {
 
       if (leadComplete && !state.leadSent) {
         state.leadSent = true;
-        fireLead();
+        fireLead(data);
         setTimeout(showCTAs, 600);
       }
 
@@ -2247,41 +2247,32 @@ window.KarleyBot = (function () {
   }
 
   // ── Fire EmailJS lead ──
-  function fireLead() {
-    // Build a readable transcript from messages
+  function fireLead(data) {
+    var name     = data.leadName     || 'New Lead';
+    var phone    = data.leadPhone    || 'Not provided';
+    var car      = data.leadCar      || 'Not specified';
+    var tradeIn  = data.leadTradeIn  || 'None';
+    var timeline = data.leadTimeline || 'Not specified';
+
     var transcript = state.messages.map(function (m) {
-      var who = m.role === 'user' ? 'Visitor' : 'Karley';
-      return who + ': ' + m.content;
+      return (m.role === 'user' ? 'Visitor' : 'Karley') + ': ' + m.content;
     }).join('\n\n');
 
-    // Try to extract name and phone from the last few assistant+user exchanges
-    var name = '';
-    var phone = '';
-    for (var i = state.messages.length - 1; i >= 0; i--) {
-      var msg = state.messages[i];
-      if (msg.role === 'user') {
-        // Phone: look for digits-heavy short answers after the phone question
-        if (!phone && /^[\d\s\-().+]{7,}$/.test(msg.content.trim())) {
-          phone = msg.content.trim();
-        }
-        // Name: short answer (1-3 words, no digits) that came after name question
-        if (!name && /^[a-zA-Z\s'-]{2,30}$/.test(msg.content.trim()) && msg.content.trim().split(' ').length <= 3) {
-          name = msg.content.trim();
-        }
-      }
-    }
-
     emailjs.send('service_eru4dw6', 'template_kef0gxs', {
-      user_name:  name  || 'New Lead',
-      user_email: phone || '(phone provided — see transcript)',
-      message:    'New Alloc8r lead via Karley AI Chatbot\n\n' +
-                  (name  ? 'Name: '  + name  + '\n' : '') +
-                  (phone ? 'Phone: ' + phone + '\n' : '') +
-                  '\n--- Full Conversation ---\n\n' + transcript
+      user_name:  name,
+      user_email: phone,
+      message:
+        'New Alloc8r lead via Karley AI Chatbot\n\n' +
+        'Name: '     + name     + '\n' +
+        'Phone: '    + phone    + '\n' +
+        'Car: '      + car      + '\n' +
+        'Trade-in: ' + tradeIn  + '\n' +
+        'Timeline: ' + timeline + '\n\n' +
+        '--- Full Conversation ---\n\n' + transcript
     }).then(function () {
-      console.log('[Karley] Lead email sent via EmailJS.');
+      console.log('[Karley] Lead sent via EmailJS.');
     }, function (err) {
-      console.warn('[Karley] EmailJS failed:', err);
+      console.warn('[Karley] EmailJS error:', err);
     });
   }
 
