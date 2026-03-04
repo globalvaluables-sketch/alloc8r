@@ -54,7 +54,6 @@ When someone says they're not sure how much help they need, OR asks about servic
 
 Say: "No worries — two quick questions and I'll point you to the right fit."
 
-
 Q1: "Do you already have a quote from a dealer?"
 → YES → Deal Audit ($0 upfront, split savings 50/50)
 → NO → ask Q2
@@ -111,8 +110,8 @@ WAIT TIMES (reference only, share when relevant)
 TRADE-IN GUIDANCE
 ━━━━━━━━━━━━━━━━━━━━━━
 When they say yes to a trade-in:
-• Ask Year, Make, Model (one ask, all three).
-• Note: Dealers often undervalue trade-ins, especially when the buyer is eager on an allocated car. We shop trade-ins across our network. In BC, PST is only charged on the price difference — worth thousands.
+• Ask Year, Make, Model, and estimated mileage (one ask, all four).
+• Note: Dealers often undervalue trade-ins. We shop trade-ins across our network. In BC, PST is only charged on the price difference — worth thousands.
 • Never quote a trade-in value. Always redirect to Jerick for real numbers.
 
 ━━━━━━━━━━━━━━━━━━━━━━
@@ -129,14 +128,16 @@ Collect these in order, one per message:
 
 Step 1 — Car: "What car are you looking at?" (if not already known)
 Step 2 — Trade-in: "Do you have a trade-in?" [[OPTIONS: Yes | No]]
-  → If yes: "What's the year, make, and model?"
+  → If yes: "What's the year, make, model, and estimated mileage?"
 Step 3 — Timeline: "When are you looking to buy?" [[OPTIONS: ASAP | 1–3 months | 3–6 months | Just researching]]
 Step 4 — Name: "What's your name?" (no options needed)
 Step 5 — Phone: "And the best number to reach you?" (no options needed)
 
 After collecting all five, say something warm like:
 "Perfect, I've got everything I need. Jerick will reach out to you directly — usually within a day. He'll go over everything and get the ball rolling."
-Then append [[LEAD_COMPLETE]] at the very end (hidden from display).
+Then append [[LEAD_COMPLETE]] at the very end (hidden from display), followed immediately by a structured data tag on the same line:
+[[LEAD_DATA:name=THEIR_NAME|phone=THEIR_PHONE|car=CAR_THEY_WANT|tradein=TRADE_IN_DETAILS_OR_NONE|timeline=THEIR_TIMELINE]]
+Fill in each field with the actual values collected. Hidden from display.
 
 ━━━━━━━━━━━━━━━━━━━━━━
 CONTACT
@@ -174,33 +175,22 @@ Free consultation: Book via calendar on the site`;
     // Parse [[LEAD_COMPLETE]]
     const leadComplete = raw.includes('[[LEAD_COMPLETE]]');
 
-    // Extract lead fields by scanning the conversation history
-    // Look at each user message and what Karley asked just before it
-    let leadName = '';
-    let leadPhone = '';
-    let leadCar = '';
-    let leadTradeIn = '';
-    let leadTimeline = '';
-
+    // Parse [[LEAD_DATA:name=...|phone=...|car=...|tradein=...|timeline=...]]
+    let leadName = '', leadPhone = '', leadCar = '', leadTradeIn = '', leadTimeline = '';
     if (leadComplete) {
-      for (let i = 1; i < messages.length; i++) {
-        const msg = messages[i];
-        const prev = messages[i - 1];
-        if (msg.role === 'user' && prev.role === 'assistant') {
-          const q = prev.content.toLowerCase();
-          const a = msg.content.trim();
-          if (q.includes("what's your name") || q.includes("what is your name")) {
-            leadName = a;
-          } else if (q.includes("best number") || q.includes("reach you")) {
-            leadPhone = a;
-          } else if (q.includes("what car") || q.includes("looking at")) {
-            leadCar = a;
-          } else if (q.includes("trade-in") && a.toLowerCase() !== 'no') {
-            leadTradeIn = a;
-          } else if (q.includes("when are you looking") || q.includes("timeline") || q.includes("looking to buy")) {
-            leadTimeline = a;
-          }
-        }
+      const dataMatch = raw.match(/\[\[LEAD_DATA:([^\]]+)\]\]/i);
+      if (dataMatch) {
+        dataMatch[1].split('|').forEach(pair => {
+          const eqIdx = pair.indexOf('=');
+          if (eqIdx === -1) return;
+          const key = pair.slice(0, eqIdx).trim().toLowerCase();
+          const val = pair.slice(eqIdx + 1).trim();
+          if (key === 'name')     leadName     = val;
+          if (key === 'phone')    leadPhone    = val;
+          if (key === 'car')      leadCar      = val;
+          if (key === 'tradein')  leadTradeIn  = val;
+          if (key === 'timeline') leadTimeline = val;
+        });
       }
     }
 
@@ -208,22 +198,15 @@ Free consultation: Book via calendar on the site`;
     const reply = raw
       .replace(/\[\[OPTIONS:\s*.*?\]\]/gi, '')
       .replace(/\[\[LEAD_COMPLETE\]\]/gi, '')
+      .replace(/\[\[LEAD_DATA:[^\]]*\]\]/gi, '')
       .trim();
 
     return {
       statusCode: 200,
       headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-      body: JSON.stringify({
-        reply,
-        options,
-        leadComplete,
-        leadName,
-        leadPhone,
-        leadCar,
-        leadTradeIn,
-        leadTimeline,
-      }),
+      body: JSON.stringify({ reply, options, leadComplete, leadName, leadPhone, leadCar, leadTradeIn, leadTimeline }),
     };
+
   } catch (err) {
     return {
       statusCode: 500,
