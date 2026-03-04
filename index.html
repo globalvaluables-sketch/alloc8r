@@ -2189,25 +2189,15 @@ html { scroll-padding-top: 5rem; }
 
 <script>
 (function() {
-  // ─────────────────────────────────────────────
-  // CONFIG
-  // ─────────────────────────────────────────────
   var CONFIG = {
-    // 1. Set up EmailJS free at https://emailjs.com
-    //    Then fill in these three values:
-   emailjs_public_key:  'A2riU5n09GsRoGWq-',
-emailjs_service_id: 'service_eru4dw6',
-emailjs_template_id: 'template_kef0gxs',
-    // 2. Your notification email (already set!)
+    emailjs_public_key:  'A2riU5n09GsRoGWq-',
+    emailjs_service_id:  'service_eru4dw6',
+    emailjs_template_id: 'template_kef0gxs',
     notification_email:  'hello@alloc8r.ca',
-    // 3. Your Netlify function URL — works automatically on Netlify
     chat_api_url: '/.netlify/functions/chat',
   };
 
-  var state = {
-    open: false, messages: [], started: false,
-    leadCaptured: false, typing: false
-  };
+  var state = { open: false, messages: [], started: false, leadCaptured: false, typing: false };
 
   var initialChips = [
     ['Skip a waitlist 🚘', "I'm trying to skip a waitlist for a specific car"],
@@ -2225,7 +2215,6 @@ emailjs_template_id: 'template_kef0gxs',
     document.getElementById('a8r-chat-bubble').classList.toggle('open', state.open);
     document.getElementById('a8r-chat-panel').classList.toggle('visible', state.open);
     document.getElementById('a8r-notif-dot').style.display = 'none';
-
     if (state.open && !state.started) {
       state.started = true;
       setTimeout(function() {
@@ -2309,15 +2298,9 @@ emailjs_template_id: 'template_kef0gxs',
     .then(function(data) {
       a8rHideTyping();
       document.getElementById('a8r-send-btn').disabled = false;
-      if (data.error) {
-        a8rAddMessage('ai', "Sorry, hit a snag — try again or book directly via the button above 🙂");
-        return;
-      }
+      if (data.error) { a8rAddMessage('ai', "Sorry, hit a snag — try again or book directly via the button above 🙂"); return; }
       a8rAddMessage('ai', data.text);
-      if (data.lead && !state.leadCaptured) {
-        state.leadCaptured = true;
-        a8rCaptureLead(data.lead);
-      }
+      if (data.lead && !state.leadCaptured) { state.leadCaptured = true; a8rCaptureLead(data.lead); }
     })
     .catch(function() {
       a8rHideTyping();
@@ -2349,29 +2332,22 @@ emailjs_template_id: 'template_kef0gxs',
       }).catch(function(e) {
         console.error('[Alloc8r] EmailJS error:', e);
       });
-    } else {
-      // EmailJS not yet configured — lead logged to console until you set it up
-      console.log('[Alloc8r] 🎯 QUALIFIED LEAD (configure EmailJS to receive these by email):', lead);
     }
   }
 
-  // Auto-grow textarea
   document.getElementById('a8r-input').addEventListener('input', function() {
     this.style.height = 'auto';
     this.style.height = Math.min(this.scrollHeight, 80) + 'px';
   });
-  // Enter to send
   document.getElementById('a8r-input').addEventListener('keydown', function(e) {
     if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); a8rSend(); }
   });
-  // Show red dot after 10s if chat not opened
   setTimeout(function() {
     if (!state.open) document.getElementById('a8r-notif-dot').style.display = 'block';
   }, 10000);
 })();
 </script>
-<!-- ============================================================ -->
-<!-- END AI CHAT WIDGET                                           -->
-<!-- ============================================================ -->
+<!-- END AI CHAT WIDGET -->
+
 </body>
 </html>
