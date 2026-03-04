@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alloc8r Vancouver | Skip the Car Waitlist & Beat Dealer Markups</title>
+<title>Alloc8r: Secure Your Canadian Car Allocation Without the Wait</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init("A2riU5n09GsRoGWq-");</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&display=swap" rel="stylesheet">
@@ -1997,7 +1999,6 @@ html { scroll-padding-top: 5rem; }
   #cal-modal-iframe { background: white; }
   #iphone-cal-iframe { background: white; }
 </style>
-
 <!-- ============================================================ -->
 <!-- KARLEY CHATBOT WIDGET -->
 <!-- ============================================================ -->
@@ -2009,8 +2010,7 @@ html { scroll-padding-top: 5rem; }
     border: 2px solid rgba(255,255,255,0.15);
     box-shadow: 0 8px 32px rgba(79,70,229,0.5), 0 2px 8px rgba(0,0,0,0.3);
     cursor: pointer; display: flex; align-items: center; justify-content: center;
-    transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s; outline: none;
-    padding: 0;
+    transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s; outline: none; padding: 0;
   }
   #karley-launcher:hover { transform: scale(1.1) translateY(-2px); box-shadow: 0 14px 40px rgba(79,70,229,0.6); }
   .k-pulse { position: absolute; inset: -6px; border-radius: 50%; border: 2px solid rgba(99,102,241,0.45); animation: kPulse 2.5s ease-out infinite; pointer-events: none; }
@@ -2031,7 +2031,6 @@ html { scroll-padding-top: 5rem; }
   }
   #karley-panel.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
 
-  /* Header */
   #k-header { display:flex; align-items:center; gap:11px; padding:14px 16px; background:rgba(255,255,255,0.035); border-bottom:1px solid rgba(255,255,255,0.07); flex-shrink:0; }
   .k-av { width:38px; height:38px; border-radius:50%; background:linear-gradient(135deg,#6366f1,#8b5cf6); display:flex; align-items:center; justify-content:center; font-weight:800; font-size:15px; color:#fff; flex-shrink:0; position:relative; font-family:'Syne',sans-serif; }
   .k-av-dot { position:absolute; bottom:1px; right:1px; width:9px; height:9px; border-radius:50%; background:#22c55e; border:2px solid #070d1c; }
@@ -2040,12 +2039,6 @@ html { scroll-padding-top: 5rem; }
   #k-close { width:28px; height:28px; border-radius:50%; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.45); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all 0.2s; margin-left:auto; font-size:15px; flex-shrink:0; }
   #k-close:hover { background:rgba(255,255,255,0.12); color:#fff; }
 
-  /* Quick starts */
-  #k-quickstart { padding:10px 12px 4px; display:flex; gap:6px; flex-wrap:wrap; flex-shrink:0; }
-  .k-qs { font-size:11.5px; padding:5px 11px; border-radius:20px; background:rgba(255,255,255,0.055); border:1px solid rgba(255,255,255,0.11); color:rgba(255,255,255,0.58); cursor:pointer; transition:all 0.2s; white-space:nowrap; }
-  .k-qs:hover { background:rgba(99,102,241,0.22); border-color:rgba(99,102,241,0.45); color:#fff; }
-
-  /* Messages */
   #k-msgs { flex:1; overflow-y:auto; padding:12px 13px 6px; display:flex; flex-direction:column; gap:10px; scroll-behavior:smooth; }
   #k-msgs::-webkit-scrollbar { width:3px; }
   #k-msgs::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.09); border-radius:2px; }
@@ -2057,19 +2050,17 @@ html { scroll-padding-top: 5rem; }
   .k-msg.bot .k-bub { background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.1); color:rgba(255,255,255,0.88); border-bottom-left-radius:5px; }
   .k-msg.user .k-bub { background:linear-gradient(135deg,#4f46e5,#6366f1); color:#fff; border-bottom-right-radius:5px; }
 
-  /* Typing dots */
   .k-typing .k-bub { display:flex; align-items:center; gap:4px; padding:12px 15px; }
   .k-dot { width:6px; height:6px; border-radius:50%; background:rgba(255,255,255,0.38); animation:kDot 1.2s ease-in-out infinite; }
   .k-dot:nth-child(2){animation-delay:.18s} .k-dot:nth-child(3){animation-delay:.36s}
   @keyframes kDot { 0%,60%,100%{transform:translateY(0);opacity:.38} 30%{transform:translateY(-6px);opacity:1} }
 
-  /* Clickable option buttons */
-  .k-options { display:flex; flex-wrap:wrap; gap:7px; padding:4px 2px 2px 2px; animation:kIn 0.35s cubic-bezier(0.16,1,0.3,1); }
-  .k-opt { font-size:12.5px; padding:7px 14px; border-radius:20px; background:rgba(99,102,241,0.12); border:1px solid rgba(99,102,241,0.32); color:rgba(255,255,255,0.8); cursor:pointer; transition:all 0.2s; font-family:'DM Sans',sans-serif; }
+  .k-options { display:flex; flex-wrap:wrap; gap:7px; padding:4px 2px 2px; animation:kIn 0.35s cubic-bezier(0.16,1,0.3,1); }
+  .k-opt { font-size:12.5px; padding:7px 14px; border-radius:20px; background:rgba(99,102,241,0.12); border:1px solid rgba(99,102,241,0.32); color:rgba(255,255,255,0.8); cursor:pointer; transition:all 0.2s; font-family:'DM Sans',sans-serif; display:inline-flex; align-items:center; gap:6px; }
+  .k-opt-icon { font-size:14px; line-height:1; flex-shrink:0; }
   .k-opt:hover { background:rgba(99,102,241,0.28); border-color:rgba(99,102,241,0.6); color:#fff; transform:translateY(-1px); }
-  .k-opts-used .k-opt { opacity:0.35; pointer-events:none; cursor:default; }
+  .k-opts-used .k-opt { opacity:0.32; pointer-events:none; cursor:default; transform:none; }
 
-  /* Lead success card */
   .k-success { background:linear-gradient(135deg,rgba(34,197,94,0.15),rgba(16,185,129,0.1)); border:1px solid rgba(34,197,94,0.3); border-radius:16px; padding:16px; animation:kIn 0.4s cubic-bezier(0.16,1,0.3,1); }
   .k-success-title { color:#4ade80; font-weight:700; font-size:13.5px; margin-bottom:6px; }
   .k-success-body { color:rgba(255,255,255,0.7); font-size:12.5px; line-height:1.55; }
@@ -2079,7 +2070,6 @@ html { scroll-padding-top: 5rem; }
   .k-cal-btn { display:flex; align-items:center; justify-content:center; gap:7px; padding:9px 14px; border-radius:11px; background:rgba(255,255,255,0.07); border:1px solid rgba(255,255,255,0.13); color:rgba(255,255,255,0.75); font-size:12.5px; font-weight:600; cursor:pointer; transition:all 0.2s; }
   .k-cal-btn:hover { background:rgba(255,255,255,0.11); }
 
-  /* Input bar */
   #k-bar { display:flex; align-items:center; gap:8px; padding:11px 13px; border-top:1px solid rgba(255,255,255,0.07); background:rgba(255,255,255,0.018); flex-shrink:0; }
   #k-input { flex:1; background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.11); border-radius:11px; padding:9px 12px; font-size:13.5px; color:#fff; outline:none; font-family:'DM Sans',sans-serif; resize:none; line-height:1.4; transition:border-color 0.2s,background 0.2s; }
   #k-input::placeholder { color:rgba(255,255,255,0.25); }
@@ -2090,7 +2080,6 @@ html { scroll-padding-top: 5rem; }
   .k-foot { text-align:center; font-size:10px; color:rgba(255,255,255,0.15); padding:5px; flex-shrink:0; }
 </style>
 
-<!-- Launcher button -->
 <button id="karley-launcher" onclick="karleyToggle()" aria-label="Chat with Karley">
   <div class="k-pulse"></div>
   <div class="k-badge" id="k-badge" style="display:none;">1</div>
@@ -2098,10 +2087,7 @@ html { scroll-padding-top: 5rem; }
   <svg id="k-ico-x" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
 </button>
 
-<!-- Panel -->
 <div id="karley-panel" role="dialog" aria-label="Karley — Alloc8r Car Advisor">
-
-  <!-- Header -->
   <div id="k-header">
     <div class="k-av">K<div class="k-av-dot"></div></div>
     <div>
@@ -2110,19 +2096,7 @@ html { scroll-padding-top: 5rem; }
     </div>
     <button id="k-close" onclick="karleyToggle()">✕</button>
   </div>
-
-  <!-- Quick starts -->
-  <div id="k-quickstart">
-    <button class="k-qs" onclick="karleyQuick('Help me pick a car')">🚗 Pick a car</button>
-    <button class="k-qs" onclick="karleyQuick('I want to skip the waitlist')">⚡ Skip waitlist</button>
-    <button class="k-qs" onclick="karleyQuick('I already have a dealer offer')">📋 Have an offer</button>
-    <button class="k-qs" onclick="karleyQuick('What services do you offer?')">💬 Services</button>
-  </div>
-
-  <!-- Messages -->
   <div id="k-msgs"></div>
-
-  <!-- Input -->
   <div id="k-bar">
     <textarea id="k-input" placeholder="Ask me anything about cars…" rows="1" maxlength="500"></textarea>
     <button id="k-send" onclick="karleySend()" aria-label="Send">
@@ -2134,10 +2108,10 @@ html { scroll-padding-top: 5rem; }
 
 <script>
 (function () {
-  var isOpen = false;
-  var busy = false;
+  var isOpen = false, busy = false, leadDone = false;
   var history = [];
-  var leadDone = false;
+  var leadData = { car: '', tradein: '', timeline: '', name: '', phone: '' };
+
   var panel = document.getElementById('karley-panel');
   var msgs = document.getElementById('k-msgs');
   var input = document.getElementById('k-input');
@@ -2147,7 +2121,13 @@ html { scroll-padding-top: 5rem; }
   var icoX = document.getElementById('k-ico-x');
 
   var GREETING = "Hey! I'm Karley 👋 I'm here to help you navigate buying a car in Canada — no dealership games. Do you already know which car you want, or would you like some help choosing?";
-  var GREETING_OPTS = ['I know what I want', "Help me choose", 'I want to skip a waitlist', 'I have a dealer offer'];
+  var GREETING_OPTS = [
+    { label: 'I know what I want',               icon: '🎯' },
+    { label: 'Help me choose',                   icon: '🤔' },
+    { label: 'Skip a waitlist',                  icon: '⚡' },
+    { label: 'I have a dealer offer',            icon: '📋' },
+    { label: 'Not sure how much help I need',    icon: '🧭' }
+  ];
 
   function addMsg(role, text) {
     var w = document.createElement('div');
@@ -2158,29 +2138,35 @@ html { scroll-padding-top: 5rem; }
     w.appendChild(b);
     msgs.appendChild(w);
     scroll();
-    return w;
   }
 
-  function addOptions(opts, parentOptionsEl) {
-    // Disable previous option set if exists
-    if (parentOptionsEl) parentOptionsEl.classList.add('k-opts-used');
-
+  function addOptions(opts) {
+    msgs.querySelectorAll('.k-options:not(.k-opts-used)').forEach(function(el){ el.classList.add('k-opts-used'); });
     var wrap = document.createElement('div');
     wrap.className = 'k-options';
     opts.forEach(function (o) {
+      var isObj = typeof o === 'object';
+      var label = isObj ? o.label : o;
+      var icon  = isObj ? o.icon  : null;
       var btn = document.createElement('button');
       btn.className = 'k-opt';
-      btn.textContent = o;
+      if (icon) {
+        var sp = document.createElement('span');
+        sp.className = 'k-opt-icon';
+        sp.textContent = icon;
+        btn.appendChild(sp);
+      }
+      var txt = document.createElement('span');
+      txt.textContent = label;
+      btn.appendChild(txt);
       btn.onclick = function () {
         wrap.classList.add('k-opts-used');
-        input.value = o;
-        karleySend();
+        _send(label);
       };
       wrap.appendChild(btn);
     });
     msgs.appendChild(wrap);
     scroll();
-    return wrap;
   }
 
   function showTyping() {
@@ -2193,113 +2179,119 @@ html { scroll-padding-top: 5rem; }
   }
   function removeTyping() { var t = document.getElementById('k-typing'); if (t) t.remove(); }
 
+  function buildTranscript() {
+    return history.map(function (m) {
+      return (m.role === 'user' ? 'CLIENT: ' : 'KARLEY: ') + m.content;
+    }).join('\n\n');
+  }
+
+  // Scan conversation history for lead data after each message
+  function scanLeadData(userText) {
+    var t = userText.trim();
+    // Phone number
+    var phoneMatch = t.match(/\b(\+?1?[-.]?\(?\d{3}\)?[-.]?\d{3}[-.]?\d{4})\b/);
+    if (phoneMatch) leadData.phone = phoneMatch[0];
+    // Timeline keywords
+    if (/asap|right away|immediately|now|ready/i.test(t)) leadData.timeline = 'ASAP';
+    else if (/1|2|3.*(month|wk|week)/i.test(t)) leadData.timeline = '1-3 months';
+    else if (/3|4|5|6.*(month|wk|week)/i.test(t)) leadData.timeline = '3-6 months';
+    else if (/research|just look|browsing|not sure/i.test(t)) leadData.timeline = 'Just researching';
+    // Car model hints
+    var carKeywords = ['GX 550','GX550','Lexus','Porsche','911','G63','G 63','Raptor','Land Cruiser','RAV4','Highlander','Sienna','Tacoma','F-150','BMW','Mercedes','Audi','Telluride','Pilot','CR-V','Polestar','Rivian','Tesla'];
+    carKeywords.forEach(function(k){ if (new RegExp(k,'i').test(t) && !leadData.car) leadData.car = k; });
+    // Trade-in year/make/model pattern e.g. "2020 Honda Civic"
+    var tradeMatch = t.match(/\b(20\d{2}|19\d{2})\s+[A-Za-z]+\s+[A-Za-z]+/);
+    if (tradeMatch) leadData.tradein = tradeMatch[0];
+    else if (/no trade|don't have|no car/i.test(t)) leadData.tradein = 'None';
+    // Name — rough heuristic: short response after Karley asked for name
+    var lastBot = '';
+    for (var i = history.length - 1; i >= 0; i--) {
+      if (history[i].role === 'assistant') { lastBot = history[i].content.toLowerCase(); break; }
+    }
+    if ((lastBot.includes('your name') || lastBot.includes('what's your name')) && t.split(' ').length <= 4 && !phoneMatch) {
+      leadData.name = t;
+    }
+  }
+
+  function submitLead() {
+    var transcript = buildTranscript();
+    var params = {
+      lead_name:     leadData.name     || 'Not captured',
+      lead_phone:    leadData.phone    || 'Not captured',
+      lead_car:      leadData.car      || 'Not captured',
+      lead_tradein:  leadData.tradein  || 'Not captured',
+      lead_timeline: leadData.timeline || 'Not captured',
+      transcript:    transcript,
+      reply_to:      'karley@alloc8r.ca'
+    };
+    emailjs.send('service_eru4dw6', 'template_kef0gxs', params)
+      .then(function(){ console.log('Lead email sent ✓'); })
+      .catch(function(err){ console.error('EmailJS error:', err); });
+  }
+
   function showSuccess() {
     if (leadDone) return;
     leadDone = true;
+    submitLead();
     var card = document.createElement('div');
     card.className = 'k-success';
-    card.innerHTML = '<div class="k-success-title">✓ You\'re all set!</div>'
+    card.innerHTML =
+      '<div class="k-success-title">✓ You're all set!</div>'
       + '<div class="k-success-body">Jerick will reach out to you directly — usually within a few hours. In the meantime, feel free to text him or book a call.</div>'
       + '<div class="k-success-btns">'
       + '<a href="sms:6728002023?body=Hi%20Jerick%2C%20Karley%20just%20submitted%20my%20info.%20Looking%20forward%20to%20chatting!" class="k-sms-btn">'
-      + '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>Text Jerick Now</a>'
+      + '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>'
+      + 'Text Jerick Now</a>'
       + '<button class="k-cal-btn" onclick="karleyToggle();openCalModal();">'
-      + '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book Free Consultation</button>'
+      + '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>'
+      + 'Book Free Consultation</button>'
       + '</div>';
     msgs.appendChild(card);
     scroll();
   }
 
-  function buildTranscript() {
-    return history.map(function (m) {
-      return (m.role === 'user' ? 'Client: ' : 'Karley: ') + m.content;
-    }).join('\n\n');
-  }
+  function scroll() { setTimeout(function(){ msgs.scrollTop = msgs.scrollHeight; }, 40); }
 
-  function extractLeadSummary() {
-    var transcript = buildTranscript();
-    // Simple keyword extraction from conversation — Jerick sees full transcript anyway
-    var car = '', tradein = 'None', timeline = '', name = '', phone = '';
-
-    history.forEach(function (m) {
-      if (m.role === 'user') {
-        var t = m.content;
-        if (/\d{3}[-.\s]?\d{3}[-.\s]?\d{4}/.test(t)) phone = t.match(/\d{3}[-.\s]?\d{3}[-.\s]?\d{4}/)[0];
-        if (/^[A-Za-z]{2,20}$/.test(t.trim()) && !name && t.length < 30 && !t.match(/yes|no|asap|month|week|research/i)) {
-          if (history.indexOf(m) > 6) name = t.trim(); // rough heuristic: name comes late
-        }
-      }
-    });
-
-    return { car: car || 'See transcript', tradein: tradein, timeline: timeline || 'See transcript', name: name || 'See transcript', phone: phone || 'See transcript' };
-  }
-
-  async function submitLead() {
-    try {
-      await fetch('/.netlify/functions/send-lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          transcript: buildTranscript(),
-          leadSummary: extractLeadSummary(),
-        }),
-      });
-    } catch (e) {
-      console.error('Lead submission error:', e);
-    }
-  }
-
-  function scroll() { setTimeout(function () { msgs.scrollTop = msgs.scrollHeight; }, 40); }
-
-  input.addEventListener('input', function () {
+  input.addEventListener('input', function(){
     this.style.height = 'auto';
     this.style.height = Math.min(this.scrollHeight, 96) + 'px';
   });
-  input.addEventListener('keydown', function (e) {
-    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); karleySend(); }
+  input.addEventListener('keydown', function(e){
+    if (e.key === 'Enter' && !e.shiftKey){ e.preventDefault(); karleySend(); }
   });
 
-  window.karleyToggle = function () {
+  window.karleyToggle = function(){
     isOpen = !isOpen;
     panel.classList.toggle('open', isOpen);
     icoChat.style.display = isOpen ? 'none' : 'block';
     icoX.style.display = isOpen ? 'block' : 'none';
-    if (isOpen) {
+    if (isOpen){
       badge.style.display = 'none';
-      if (msgs.children.length === 0) {
-        setTimeout(function () {
+      if (msgs.children.length === 0){
+        setTimeout(function(){
           addMsg('bot', GREETING);
           history.push({ role: 'assistant', content: GREETING });
-          addOptions(GREETING_OPTS, null);
+          addOptions(GREETING_OPTS);
         }, 280);
       }
-      setTimeout(function () { input.focus(); }, 380);
+      setTimeout(function(){ input.focus(); }, 380);
     }
   };
 
-  window.karleyQuick = function (text) {
-    if (!isOpen) {
-      karleyToggle();
-      setTimeout(function () { _send(text); }, 500);
-    } else {
-      _send(text);
-    }
+  window.karleyQuick = function(text){
+    if (!isOpen){ karleyToggle(); setTimeout(function(){ _send(text); }, 500); }
+    else { _send(text); }
   };
 
-  window.karleySend = function () { _send(input.value.trim()); };
+  window.karleySend = function(){ _send(input.value.trim()); };
 
-  function _send(text) {
+  function _send(text){
     if (!text || busy) return;
-    // Hide quickstart pills after first message
-    var qs = document.getElementById('k-quickstart');
-    if (qs) qs.style.display = 'none';
-
+    scanLeadData(text);
     addMsg('user', text);
     history.push({ role: 'user', content: text });
-    input.value = '';
-    input.style.height = 'auto';
-    sendBtn.disabled = true;
-    busy = true;
+    input.value = ''; input.style.height = 'auto';
+    sendBtn.disabled = true; busy = true;
     showTyping();
 
     fetch('/.netlify/functions/chat', {
@@ -2307,35 +2299,25 @@ html { scroll-padding-top: 5rem; }
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ messages: history }),
     })
-    .then(function (r) { return r.json(); })
-    .then(function (data) {
+    .then(function(r){ return r.json(); })
+    .then(function(data){
       removeTyping();
-      var reply = data.reply || "Having a little trouble right now. You can text Jerick directly at 672-800-2023.";
+      var reply = data.reply || "Having a little trouble right now. You can text Jerick at 672-800-2023.";
       addMsg('bot', reply);
       history.push({ role: 'assistant', content: reply });
-
-      if (data.options && data.options.length > 0) {
-        addOptions(data.options, null);
-      }
-
-      if (data.leadComplete) {
-        submitLead();
-        showSuccess();
-      }
+      if (data.options && data.options.length) addOptions(data.options);
+      if (data.leadComplete) showSuccess();
     })
-    .catch(function () {
+    .catch(function(){
       removeTyping();
       addMsg('bot', 'Having trouble connecting. Text Jerick at 672-800-2023 — he responds fast.');
     })
-    .finally(function () {
-      busy = false;
-      sendBtn.disabled = false;
-      input.focus();
+    .finally(function(){
+      busy = false; sendBtn.disabled = false; input.focus();
     });
   }
 
-  // Show badge after 7s
-  setTimeout(function () { if (!isOpen) badge.style.display = 'flex'; }, 7000);
+  setTimeout(function(){ if (!isOpen) badge.style.display = 'flex'; }, 7000);
 })();
 </script>
 
