@@ -2248,32 +2248,34 @@ window.KarleyBot = (function () {
 
   // ── Fire EmailJS lead ──
   function fireLead(data) {
-    // Use structured fields returned by chat.js
-    // Fall back to last two user messages if fields are missing
+    // Use fields extracted by chat.js — most reliable source
+    var name     = data.leadName     || '';
+    var phone    = data.leadPhone    || '';
+    var car      = data.leadCar      || '';
+    var tradeIn  = data.leadTradeIn  || 'None';
+    var timeline = data.leadTimeline || '';
+
+    // Fallback: last two user messages are always name then phone
     var userMsgs = state.messages.filter(function(m) { return m.role === 'user'; });
-    var name     = (data && data.leadName)     || (userMsgs.length >= 2 ? userMsgs[userMsgs.length - 2].content.trim() : 'New Lead');
-    var phone    = (data && data.leadPhone)    || (userMsgs.length >= 1 ? userMsgs[userMsgs.length - 1].content.trim() : 'Not provided');
-    var car      = (data && data.leadCar)      || 'Not specified';
-    var tradeIn  = (data && data.leadTradeIn)  || 'None';
-    var timeline = (data && data.leadTimeline) || 'Not specified';
+    if (!name)  name  = userMsgs.length >= 2 ? userMsgs[userMsgs.length - 2].content.trim() : 'New Lead';
+    if (!phone) phone = userMsgs.length >= 1 ? userMsgs[userMsgs.length - 1].content.trim() : 'Not provided';
+    if (!car)      car      = 'Not specified';
+    if (!timeline) timeline = 'Not specified';
 
-    var body =
-      'Name: ' + name + '\n' +
-      'Phone #: ' + phone + '\n' +
-      'Car interested in buying: ' + car + '\n' +
-      'Trade-in available: ' + tradeIn + '\n' +
-      'Ready to purchase: ' + timeline + '\n\n' +
-      '--- Full Conversation ---\n\n' +
-      state.messages.map(function(m) {
-        return (m.role === 'user' ? 'Visitor' : 'Karley') + ': ' + m.content;
-      }).join('\n\n');
+    var transcript = state.messages.map(function(m) {
+      return (m.role === 'user' ? 'Visitor' : 'Karley') + ': ' + m.content;
+    }).join('\n\n');
 
-    var payload = { user_name: name, user_email: phone, message: body };
+    console.log('[Karley] Firing lead — Name:', name, '| Phone:', phone, '| Car:', car);
 
-    console.log('[Karley] Firing lead:', name, phone);
-
-    emailjs.send('service_eru4dw6', 'template_kef0gxs', payload)
-    .then(function() {
+    emailjs.send('service_eru4dw6', 'template_kef0gxs', {
+      lead_name:       name,
+      lead_phone:      phone,
+      lead_car:        car,
+      lead_tradein:    tradeIn,
+      lead_timeline:   timeline,
+      lead_transcript: transcript
+    }).then(function() {
       console.log('[Karley] EmailJS success.');
     }, function(err) {
       console.warn('[Karley] EmailJS error:', JSON.stringify(err));
