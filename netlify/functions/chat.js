@@ -50,7 +50,10 @@ How we skip waitlists: We invest our own resources to pre-secure vehicle allocat
 ━━━━━━━━━━━━━━━━━━━━━━
 SERVICE SCREENING — RECOMMEND ONE ONLY
 ━━━━━━━━━━━━━━━━━━━━━━
-When someone asks about services, screen with these questions IN ORDER:
+When someone says they're not sure how much help they need, OR asks about services, screen with these questions IN ORDER — never list all services:
+
+Say: "No worries — two quick questions and I'll point you to the right fit."
+
 
 Q1: "Do you already have a quote from a dealer?"
 → YES → Deal Audit ($0 upfront, split savings 50/50)
