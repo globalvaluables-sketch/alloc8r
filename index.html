@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Alloc8r | Car Broker Vancouver, Beat Dealer Markup & Skip the Waitlist</title>
+<title>Alloc8r | Vancouver Car Buying Service, Beat Dealer Markup & Skip the Waitlist</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1999,355 +1999,269 @@ html { scroll-padding-top: 5rem; }
 </style>
 
 <!-- ============================================================ -->
-<!-- ALLOC8R AI LIVE CHAT WIDGET                                   -->
-<!-- Powered by Claude AI via Netlify serverless function          -->
+<!-- KARLEY CHATBOT WIDGET -->
 <!-- ============================================================ -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
 <style>
-/* ── Chat Bubble ── */
-#a8r-chat-bubble {
-  position: fixed; bottom: 28px; right: 28px; z-index: 9990;
-  width: 60px; height: 60px; border-radius: 50%;
-  background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
-  box-shadow: 0 4px 24px rgba(59,130,246,0.45), 0 2px 8px rgba(0,0,0,0.2);
-  cursor: pointer; display: flex; align-items: center; justify-content: center;
-  transition: transform 0.3s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.3s ease;
-  border: none; outline: none;
-}
-#a8r-chat-bubble:hover { transform: scale(1.08); box-shadow: 0 8px 32px rgba(59,130,246,0.55), 0 4px 12px rgba(0,0,0,0.25); }
-#a8r-chat-bubble.open { transform: scale(0.9); }
-#a8r-bubble-icon, #a8r-bubble-close { position: absolute; transition: opacity 0.2s ease, transform 0.2s ease; }
-#a8r-bubble-close { opacity: 0; transform: scale(0.6) rotate(-90deg); }
-#a8r-chat-bubble.open #a8r-bubble-icon { opacity: 0; transform: scale(0.6) rotate(90deg); }
-#a8r-chat-bubble.open #a8r-bubble-close { opacity: 1; transform: scale(1) rotate(0deg); }
-#a8r-notif-dot {
-  position: absolute; top: 2px; right: 2px; width: 14px; height: 14px;
-  background: #ef4444; border-radius: 50%; border: 2px solid white;
-  display: none; animation: a8r-pulse-dot 2s infinite;
-}
-@keyframes a8r-pulse-dot { 0%,100% { transform:scale(1);opacity:1; } 50% { transform:scale(1.2);opacity:0.8; } }
+  #karley-launcher {
+    position: fixed; bottom: 28px; right: 28px; z-index: 9990;
+    width: 62px; height: 62px; border-radius: 50%;
+    background: linear-gradient(135deg, #1d4ed8 0%, #0f2d7a 100%);
+    border: 2px solid rgba(255,255,255,0.15);
+    box-shadow: 0 8px 32px rgba(29,78,216,0.45), 0 2px 8px rgba(0,0,0,0.3);
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: transform 0.3s cubic-bezier(0.16,1,0.3,1), box-shadow 0.3s; outline: none;
+  }
+  #karley-launcher:hover { transform: scale(1.1) translateY(-2px); box-shadow: 0 14px 40px rgba(29,78,216,0.55), 0 2px 8px rgba(0,0,0,0.3); }
+  #karley-launcher .k-pulse { position: absolute; inset: -6px; border-radius: 50%; border: 2px solid rgba(59,130,246,0.4); animation: kPulse 2.4s ease-out infinite; }
+  @keyframes kPulse { 0% { transform: scale(1); opacity: 0.7; } 80% { transform: scale(1.55); opacity: 0; } 100% { opacity: 0; } }
+  #karley-launcher .k-badge { position: absolute; top: -3px; right: -3px; width: 18px; height: 18px; border-radius: 50%; background: #ef4444; border: 2px solid #fff; font-size: 10px; font-weight: 700; color: #fff; display: flex; align-items: center; justify-content: center; animation: kBounce 0.5s cubic-bezier(0.16,1,0.3,1); }
+  @keyframes kBounce { from { transform: scale(0); } to { transform: scale(1); } }
 
-/* ── Chat Panel ── */
-#a8r-chat-panel {
-  position: fixed; bottom: 104px; right: 28px; z-index: 9989;
-  width: 380px; max-width: calc(100vw - 32px);
-  height: 560px; max-height: calc(100svh - 140px);
-  background: #ffffff; border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.18), 0 4px 20px rgba(0,0,0,0.1);
-  display: flex; flex-direction: column; overflow: hidden;
-  transform: translateY(16px) scale(0.97); opacity: 0; pointer-events: none;
-  transition: all 0.35s cubic-bezier(0.34,1.56,0.64,1);
-  border: 1px solid rgba(0,0,0,0.07);
-}
-#a8r-chat-panel.visible { transform: translateY(0) scale(1); opacity: 1; pointer-events: all; }
+  #karley-panel {
+    position: fixed; bottom: 104px; right: 28px; z-index: 9989;
+    width: 374px; max-width: calc(100vw - 32px);
+    height: 570px; max-height: calc(100svh - 130px);
+    border-radius: 24px; background: #070d1c;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 24px 80px rgba(0,0,0,0.6), 0 4px 16px rgba(0,0,0,0.4);
+    display: flex; flex-direction: column; overflow: hidden;
+    transform: scale(0.92) translateY(24px); opacity: 0; pointer-events: none;
+    transition: transform 0.35s cubic-bezier(0.16,1,0.3,1), opacity 0.3s ease;
+    transform-origin: bottom right;
+  }
+  #karley-panel.open { transform: scale(1) translateY(0); opacity: 1; pointer-events: all; }
 
-/* Header */
-#a8r-chat-header {
-  background: linear-gradient(135deg, #070d1c 0%, #0f1e3d 100%);
-  padding: 16px 20px; display: flex; align-items: center; gap: 12px; flex-shrink: 0;
-}
-#a8r-avatar {
-  width: 40px; height: 40px; border-radius: 50%;
-  background: linear-gradient(135deg, #1e40af, #3b82f6);
-  display: flex; align-items: center; justify-content: center; font-size: 18px;
-  flex-shrink: 0; box-shadow: 0 0 0 2px rgba(59,130,246,0.4);
-}
-#a8r-chat-header-text h3 {
-  font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700;
-  color: white; margin: 0; line-height: 1.2;
-}
-#a8r-chat-header-text p { font-size: 12px; color: rgba(255,255,255,0.55); margin: 2px 0 0; display: flex; align-items: center; gap: 5px; }
-.a8r-online-dot { width: 6px; height: 6px; background: #4ade80; border-radius: 50%; display: inline-block; animation: a8r-pulse-dot 2s infinite; }
+  /* Header */
+  #karley-header { display: flex; align-items: center; gap: 12px; padding: 16px 18px; background: rgba(255,255,255,0.04); border-bottom: 1px solid rgba(255,255,255,0.08); flex-shrink: 0; }
+  .k-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #6366f1, #8b5cf6); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 16px; color: #fff; flex-shrink: 0; position: relative; font-family: 'Syne', sans-serif; }
+  .k-avatar-dot { position: absolute; bottom: 1px; right: 1px; width: 9px; height: 9px; border-radius: 50%; background: #22c55e; border: 2px solid #070d1c; }
+  .k-header-name { font-size: 14px; font-weight: 700; color: #fff; font-family: 'Syne', sans-serif; letter-spacing: -0.01em; }
+  .k-header-sub { font-size: 11px; color: rgba(255,255,255,0.38); margin-top: 2px; }
+  #karley-close { width: 30px; height: 30px; border-radius: 50%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.5); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s, color 0.2s; font-size: 16px; margin-left: auto; }
+  #karley-close:hover { background: rgba(255,255,255,0.12); color: #fff; }
 
-/* Messages */
-#a8r-messages {
-  flex: 1; overflow-y: auto; padding: 16px;
-  display: flex; flex-direction: column; gap: 12px;
-  background: #f8fafc; scroll-behavior: smooth;
-}
-#a8r-messages::-webkit-scrollbar { width: 4px; }
-#a8r-messages::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 2px; }
-.a8r-msg { display: flex; flex-direction: column; animation: a8r-msg-in 0.3s cubic-bezier(0.34,1.56,0.64,1); }
-@keyframes a8r-msg-in { from { opacity:0; transform:translateY(8px) scale(0.97); } to { opacity:1; transform:translateY(0) scale(1); } }
-.a8r-msg.ai { align-items: flex-start; }
-.a8r-msg.user { align-items: flex-end; }
-.a8r-bubble { max-width: 82%; padding: 10px 14px; border-radius: 16px; font-size: 14px; line-height: 1.5; font-family: 'DM Sans', sans-serif; }
-.a8r-msg.ai .a8r-bubble { background: white; color: #1e293b; border-radius: 4px 16px 16px 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); }
-.a8r-msg.user .a8r-bubble { background: linear-gradient(135deg, #1e40af, #3b82f6); color: white; border-radius: 16px 16px 4px 16px; }
+  /* Topic pills */
+  #karley-topics { display: flex; gap: 6px; padding: 10px 14px 0; flex-wrap: wrap; flex-shrink: 0; }
+  .k-topic { font-size: 11.5px; font-weight: 500; padding: 5px 11px; border-radius: 20px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); color: rgba(255,255,255,0.6); cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; white-space: nowrap; }
+  .k-topic:hover { background: rgba(99,102,241,0.2); border-color: rgba(99,102,241,0.4); color: #fff; }
 
-/* Typing */
-#a8r-typing { display: none; align-items: flex-start; flex-direction: column; }
-#a8r-typing.visible { display: flex; animation: a8r-msg-in 0.3s ease; }
-.a8r-typing-bubble { background: white; border-radius: 4px 16px 16px 16px; padding: 12px 16px; box-shadow: 0 1px 4px rgba(0,0,0,0.07); display: flex; gap: 4px; align-items: center; }
-.a8r-typing-dot { width: 7px; height: 7px; background: #94a3b8; border-radius: 50%; animation: a8r-typing-bounce 1.2s infinite; }
-.a8r-typing-dot:nth-child(2) { animation-delay: 0.15s; }
-.a8r-typing-dot:nth-child(3) { animation-delay: 0.3s; }
-@keyframes a8r-typing-bounce { 0%,60%,100% { transform:translateY(0); } 30% { transform:translateY(-5px); } }
+  /* Messages */
+  #karley-messages { flex: 1; overflow-y: auto; padding: 14px 14px 8px; display: flex; flex-direction: column; gap: 11px; scroll-behavior: smooth; }
+  #karley-messages::-webkit-scrollbar { width: 4px; }
+  #karley-messages::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.1); border-radius: 2px; }
 
-/* Chips */
-#a8r-chips { display: flex; flex-wrap: wrap; gap: 7px; padding: 8px 16px 0; background: #f8fafc; flex-shrink: 0; }
-.a8r-chip {
-  font-size: 12.5px; padding: 6px 14px; border-radius: 20px;
-  border: 1.5px solid #e2e8f0; background: white; color: #334155;
-  cursor: pointer; font-family: 'DM Sans', sans-serif; font-weight: 500;
-  transition: all 0.2s ease; white-space: nowrap;
-}
-.a8r-chip:hover { border-color: #3b82f6; color: #1e40af; background: #eff6ff; transform: translateY(-1px); }
+  .k-msg { display: flex; gap: 8px; animation: kMsgIn 0.32s cubic-bezier(0.16,1,0.3,1); }
+  @keyframes kMsgIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  .k-msg.user { flex-direction: row-reverse; }
+  .k-bubble { max-width: 83%; padding: 10px 14px; border-radius: 18px; font-size: 13.5px; line-height: 1.55; word-break: break-word; }
+  .k-msg.bot .k-bubble { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.88); border-bottom-left-radius: 6px; }
+  .k-msg.user .k-bubble { background: linear-gradient(135deg, #4f46e5, #6366f1); color: #fff; border-bottom-right-radius: 6px; }
 
-/* Input */
-#a8r-input-area {
-  padding: 12px 16px 16px; background: white; border-top: 1px solid #f1f5f9;
-  display: flex; gap: 10px; align-items: flex-end; flex-shrink: 0;
-}
-#a8r-input {
-  flex: 1; border: 1.5px solid #e2e8f0; border-radius: 14px; padding: 10px 14px;
-  font-size: 14px; font-family: 'DM Sans', sans-serif; color: #1e293b;
-  background: #f8fafc; resize: none; outline: none; max-height: 80px; min-height: 40px;
-  line-height: 1.4; transition: border-color 0.2s ease;
-}
-#a8r-input:focus { border-color: #3b82f6; background: white; }
-#a8r-input::placeholder { color: #94a3b8; }
-#a8r-send-btn {
-  width: 40px; height: 40px; border-radius: 12px;
-  background: linear-gradient(135deg, #1e40af, #3b82f6);
-  border: none; cursor: pointer; display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0; transition: all 0.2s ease; box-shadow: 0 2px 8px rgba(59,130,246,0.35);
-}
-#a8r-send-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(59,130,246,0.45); }
-#a8r-send-btn:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+  /* Typing */
+  .k-typing .k-bubble { display: flex; align-items: center; gap: 4px; padding: 12px 16px; }
+  .k-dot { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.4); animation: kDot 1.2s ease-in-out infinite; }
+  .k-dot:nth-child(2) { animation-delay: 0.2s; } .k-dot:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes kDot { 0%,60%,100% { transform: translateY(0); opacity: 0.4; } 30% { transform: translateY(-6px); opacity: 1; } }
 
-/* Lead success */
-#a8r-lead-success {
-  display: none; flex-direction: column; align-items: center; justify-content: center;
-  gap: 12px; padding: 28px 24px;
-  background: linear-gradient(135deg, #f0fdf4, #eff6ff);
-  border-top: 1px solid #e2e8f0; text-align: center; flex-shrink: 0;
-}
-#a8r-lead-success.visible { display: flex; animation: a8r-msg-in 0.4s ease; }
-#a8r-lead-success h4 { font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 700; color: #1e293b; margin: 0; }
-#a8r-lead-success p { font-size: 13px; color: #64748b; margin: 0; line-height: 1.5; }
-.a8r-success-icon { width: 48px; height: 48px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 22px; box-shadow: 0 4px 16px rgba(16,185,129,0.35); }
-#a8r-powered { text-align: center; padding: 6px; font-size: 10px; color: #cbd5e1; background: white; border-top: 1px solid #f1f5f9; letter-spacing: 0.02em; }
+  /* CTA */
+  .k-cta-card { margin: 4px 0; background: linear-gradient(135deg, rgba(99,102,241,0.18) 0%, rgba(139,92,246,0.12) 100%); border: 1px solid rgba(99,102,241,0.3); border-radius: 16px; padding: 14px 16px; animation: kMsgIn 0.4s cubic-bezier(0.16,1,0.3,1); }
+  .k-cta-card p { font-size: 12.5px; color: rgba(255,255,255,0.7); margin-bottom: 10px; line-height: 1.5; }
+  .k-cta-btns { display: flex; flex-direction: column; gap: 7px; }
+  .k-cta-btn { display: flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 14px; border-radius: 12px; font-size: 13px; font-weight: 600; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; border: none; }
+  .k-cta-btn:hover { transform: translateY(-2px); }
+  .k-cta-btn.sms { background: linear-gradient(135deg, #16a34a, #15803d); color: #fff; box-shadow: 0 4px 14px rgba(22,163,74,0.35); }
+  .k-cta-btn.sms:hover { box-shadow: 0 6px 20px rgba(22,163,74,0.5); }
+  .k-cta-btn.book { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.15); }
+  .k-cta-btn.book:hover { background: rgba(255,255,255,0.12); }
 
-@media (max-width: 640px) {
-  #a8r-chat-panel { right: 12px; bottom: 96px; width: calc(100vw - 24px); }
-  #a8r-chat-bubble { right: 16px; bottom: 20px; }
-}
+  /* Input */
+  #karley-inputbar { display: flex; align-items: center; gap: 9px; padding: 12px 14px; border-top: 1px solid rgba(255,255,255,0.08); background: rgba(255,255,255,0.02); flex-shrink: 0; }
+  #karley-input { flex: 1; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 10px 13px; font-size: 13.5px; color: #fff; outline: none; font-family: 'DM Sans', sans-serif; transition: border-color 0.2s, background 0.2s; resize: none; line-height: 1.4; }
+  #karley-input::placeholder { color: rgba(255,255,255,0.28); }
+  #karley-input:focus { border-color: rgba(99,102,241,0.5); background: rgba(255,255,255,0.09); }
+  #karley-send { width: 38px; height: 38px; border-radius: 10px; background: linear-gradient(135deg, #4f46e5, #6366f1); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.2s, box-shadow 0.2s; flex-shrink: 0; color: #fff; }
+  #karley-send:hover { transform: scale(1.08); box-shadow: 0 4px 16px rgba(99,102,241,0.5); }
+  #karley-send:disabled { opacity: 0.4; cursor: not-allowed; transform: none; box-shadow: none; }
+
+  .k-footer { text-align: center; font-size: 10px; color: rgba(255,255,255,0.18); padding: 5px; letter-spacing: 0.04em; flex-shrink: 0; }
 </style>
 
-<!-- Chat Bubble Button -->
-<button id="a8r-chat-bubble" onclick="a8rToggleChat()" aria-label="Chat with Kai from Alloc8r">
-  <div id="a8r-notif-dot"></div>
-  <div id="a8r-bubble-icon">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
-    </svg>
-  </div>
-  <div id="a8r-bubble-close">
-    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
-      <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
-    </svg>
-  </div>
+<!-- Launcher -->
+<button id="karley-launcher" onclick="karleyToggle()" aria-label="Chat with Karley">
+  <div class="k-pulse"></div>
+  <div class="k-badge" id="karley-badge" style="display:none;">1</div>
+  <svg id="karley-icon-chat" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+  <svg id="karley-icon-close" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none;"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
 </button>
 
-<!-- Chat Panel -->
-<div id="a8r-chat-panel" role="dialog" aria-label="Chat with Alloc8r">
-  <div id="a8r-chat-header">
-    <div id="a8r-avatar">🚗</div>
-    <div id="a8r-chat-header-text">
-      <h3>Kai from Alloc8r</h3>
-      <p><span class="a8r-online-dot"></span> Online now · Replies instantly</p>
+<!-- Panel -->
+<div id="karley-panel" role="dialog" aria-label="Karley — Alloc8r Car Advisor">
+  <div id="karley-header">
+    <div class="k-avatar">K<div class="k-avatar-dot"></div></div>
+    <div style="flex:1;">
+      <div class="k-header-name">Karley · Alloc8r</div>
+      <div class="k-header-sub">Car advisor · Ask me anything</div>
     </div>
+    <button id="karley-close" onclick="karleyToggle()" aria-label="Close">✕</button>
   </div>
-  <div id="a8r-messages">
-    <div id="a8r-typing">
-      <div class="a8r-typing-bubble">
-        <div class="a8r-typing-dot"></div>
-        <div class="a8r-typing-dot"></div>
-        <div class="a8r-typing-dot"></div>
-      </div>
-    </div>
+
+  <!-- Quick-start topic pills -->
+  <div id="karley-topics">
+    <button class="k-topic" onclick="karleyQuickSend('Help me pick a car')">🚗 Pick a car</button>
+    <button class="k-topic" onclick="karleyQuickSend('How do you skip the waitlist?')">⚡ Skip waitlist</button>
+    <button class="k-topic" onclick="karleyQuickSend('What services do you offer?')">📋 Services</button>
+    <button class="k-topic" onclick="karleyQuickSend('How much will I pay?')">💰 Pricing</button>
   </div>
-  <div id="a8r-chips"></div>
-  <div id="a8r-lead-success">
-    <div class="a8r-success-icon">✓</div>
-    <h4>You're all set!</h4>
-    <p>The Alloc8r team will reach out shortly — usually within one business day.</p>
-  </div>
-  <div id="a8r-input-area">
-    <textarea id="a8r-input" placeholder="Ask anything about car buying..." rows="1"></textarea>
-    <button id="a8r-send-btn" onclick="a8rSend()" aria-label="Send">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="22" y1="2" x2="11" y2="13"/>
-        <polygon points="22 2 15 22 11 13 2 9 22 2"/>
-      </svg>
+
+  <div id="karley-messages"></div>
+
+  <div id="karley-inputbar">
+    <textarea id="karley-input" placeholder="Ask about any car or service…" rows="1" maxlength="400"></textarea>
+    <button id="karley-send" onclick="karleySend()" aria-label="Send">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
     </button>
   </div>
-  <div id="a8r-powered">Powered by AI · Alloc8r © 2025</div>
+  <div class="k-footer">Alloc8r · Vancouver, BC · alloc8r.ca</div>
 </div>
 
 <script>
-(function() {
-  var CONFIG = {
-    emailjs_public_key:  'A2riU5n09GsRoGWq-',
-    emailjs_service_id:  'service_eru4dw6',
-    emailjs_template_id: 'template_kef0gxs',
-    notification_email:  'hello@alloc8r.ca',
-    chat_api_url: '/.netlify/functions/chat',
-  };
+(function () {
+  var isOpen = false;
+  var isBusy = false;
+  var history = [];
+  var ctaShown = false;
 
-  var state = { open: false, messages: [], started: false, leadCaptured: false, typing: false };
+  var panel = document.getElementById('karley-panel');
+  var msgs = document.getElementById('karley-messages');
+  var input = document.getElementById('karley-input');
+  var sendBtn = document.getElementById('karley-send');
+  var badge = document.getElementById('karley-badge');
+  var iconChat = document.getElementById('karley-icon-chat');
+  var iconClose = document.getElementById('karley-icon-close');
 
-  var initialChips = [
-    ['Skip a waitlist 🚘', "I'm trying to skip a waitlist for a specific car"],
-    ['Save on a new car 💰', "I want to save money on a new car purchase"],
-    ['Dealer marking me up? 🔍', "I want to know if my dealer is overcharging me"],
-    ['Just exploring 👀', "I just want to learn more about how Alloc8r works"]
-  ];
+  var GREETING = "Hi! I'm Karley 👋 I'm Alloc8r's car advisor. I can help you figure out which vehicle fits your life, explain how we skip waitlists on hard-to-get cars, or walk you through our services. What brings you here today?";
 
-  if (window.emailjs && CONFIG.emailjs_public_key !== 'YOUR_EMAILJS_PUBLIC_KEY') {
-    emailjs.init(CONFIG.emailjs_public_key);
-  }
-
-  window.a8rToggleChat = function() {
-    state.open = !state.open;
-    document.getElementById('a8r-chat-bubble').classList.toggle('open', state.open);
-    document.getElementById('a8r-chat-panel').classList.toggle('visible', state.open);
-    document.getElementById('a8r-notif-dot').style.display = 'none';
-    if (state.open && !state.started) {
-      state.started = true;
-      setTimeout(function() {
-        a8rShowTyping();
-        setTimeout(function() {
-          a8rHideTyping();
-          a8rAddMessage('ai', "Hey! I'm Kai 👋 I help people figure out if Alloc8r is the right fit. Chasing a hard-to-find car, or just want to make sure you're not getting marked up? What's going on?");
-          a8rSetChips(initialChips);
-        }, 1400);
-      }, 400);
-    }
-    if (state.open) setTimeout(function() { var i = document.getElementById('a8r-input'); if(i) i.focus(); }, 400);
-  };
-
-  function a8rAddMessage(role, text) {
-    var msgs = document.getElementById('a8r-messages');
-    var typing = document.getElementById('a8r-typing');
-    var div = document.createElement('div');
-    div.className = 'a8r-msg ' + role;
+  function appendMsg(role, text) {
+    var wrap = document.createElement('div');
+    wrap.className = 'k-msg ' + role;
     var bubble = document.createElement('div');
-    bubble.className = 'a8r-bubble';
+    bubble.className = 'k-bubble';
     bubble.textContent = text;
-    div.appendChild(bubble);
-    msgs.insertBefore(div, typing);
-    state.messages.push({ role: role === 'ai' ? 'assistant' : 'user', content: text });
-    a8rScrollBottom();
+    wrap.appendChild(bubble);
+    msgs.appendChild(wrap);
+    scrollBottom();
   }
 
-  function a8rScrollBottom() {
-    var msgs = document.getElementById('a8r-messages');
-    setTimeout(function() { msgs.scrollTop = msgs.scrollHeight; }, 60);
+  function showTyping() {
+    var wrap = document.createElement('div');
+    wrap.className = 'k-msg bot k-typing';
+    wrap.id = 'karley-typing';
+    wrap.innerHTML = '<div class="k-bubble"><div class="k-dot"></div><div class="k-dot"></div><div class="k-dot"></div></div>';
+    msgs.appendChild(wrap);
+    scrollBottom();
   }
 
-  function a8rShowTyping() {
-    state.typing = true;
-    document.getElementById('a8r-typing').classList.add('visible');
-    a8rScrollBottom();
+  function removeTyping() {
+    var t = document.getElementById('karley-typing');
+    if (t) t.remove();
   }
 
-  function a8rHideTyping() {
-    state.typing = false;
-    document.getElementById('a8r-typing').classList.remove('visible');
+  function showCta() {
+    if (ctaShown) return;
+    ctaShown = true;
+    var card = document.createElement('div');
+    card.className = 'k-cta-card';
+    card.innerHTML =
+      '<p>Ready to get a real answer on price or availability? Jerick typically replies within minutes.</p>'
+      + '<div class="k-cta-btns">'
+      + '<a href="sms:6728002023?body=Hi%20Jerick%2C%20I%20was%20chatting%20with%20Karley%20and%20want%20to%20learn%20more." class="k-cta-btn sms">'
+      + '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>'
+      + 'Text Jerick Now (Free)</a>'
+      + '<button class="k-cta-btn book" onclick="karleyToggle(); openCalModal();">'
+      + '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>'
+      + 'Book Free Consultation</button>'
+      + '</div>';
+    msgs.appendChild(card);
+    scrollBottom();
   }
 
-  function a8rSetChips(chips) {
-    var c = document.getElementById('a8r-chips');
-    c.innerHTML = '';
-    if (!chips || !chips.length) return;
-    chips.forEach(function(chip) {
-      var label = Array.isArray(chip) ? chip[0] : chip;
-      var value = Array.isArray(chip) ? chip[1] : chip;
-      var btn = document.createElement('button');
-      btn.className = 'a8r-chip';
-      btn.textContent = label;
-      btn.onclick = function() { c.innerHTML = ''; a8rSendMessage(value); };
-      c.appendChild(btn);
-    });
+  function scrollBottom() {
+    setTimeout(function () { msgs.scrollTop = msgs.scrollHeight; }, 50);
   }
 
-  window.a8rSend = function() {
-    var input = document.getElementById('a8r-input');
-    var text = (input.value || '').trim();
-    if (!text || state.typing || state.leadCaptured) return;
-    input.value = ''; input.style.height = 'auto';
-    document.getElementById('a8r-chips').innerHTML = '';
-    a8rSendMessage(text);
+  input.addEventListener('input', function () {
+    this.style.height = 'auto';
+    this.style.height = Math.min(this.scrollHeight, 100) + 'px';
+  });
+
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); karleySend(); }
+  });
+
+  window.karleyToggle = function () {
+    isOpen = !isOpen;
+    panel.classList.toggle('open', isOpen);
+    iconChat.style.display = isOpen ? 'none' : 'block';
+    iconClose.style.display = isOpen ? 'block' : 'none';
+    if (isOpen) {
+      badge.style.display = 'none';
+      if (msgs.children.length === 0) {
+        setTimeout(function () {
+          appendMsg('bot', GREETING);
+          history.push({ role: 'assistant', content: GREETING });
+        }, 280);
+      }
+      setTimeout(function () { input.focus(); }, 380);
+    }
   };
 
-  function a8rSendMessage(text) {
-    if (!text || state.typing || state.leadCaptured) return;
-    a8rAddMessage('user', text);
-    a8rShowTyping();
-    document.getElementById('a8r-send-btn').disabled = true;
+  window.karleyQuickSend = function (text) {
+    if (!isOpen) karleyToggle();
+    setTimeout(function () {
+      input.value = text;
+      karleySend();
+    }, isOpen ? 0 : 400);
+  };
 
-    fetch(CONFIG.chat_api_url, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ messages: state.messages.slice(-16) })
-    })
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      a8rHideTyping();
-      document.getElementById('a8r-send-btn').disabled = false;
-      if (data.error) { a8rAddMessage('ai', "Sorry, hit a snag — try again or book directly via the button above 🙂"); return; }
-      a8rAddMessage('ai', data.text);
-      if (data.lead && !state.leadCaptured) { state.leadCaptured = true; a8rCaptureLead(data.lead); }
-    })
-    .catch(function() {
-      a8rHideTyping();
-      document.getElementById('a8r-send-btn').disabled = false;
-      a8rAddMessage('ai', "Connection dropped — you can reach the team at hello@alloc8r.ca or book a free consult above 🙏");
-    });
-  }
+  window.karleySend = async function () {
+    var text = input.value.trim();
+    if (!text || isBusy) return;
+    appendMsg('user', text);
+    history.push({ role: 'user', content: text });
+    input.value = '';
+    input.style.height = 'auto';
+    sendBtn.disabled = true;
+    isBusy = true;
+    showTyping();
 
-  function a8rCaptureLead(lead) {
-    setTimeout(function() {
-      document.getElementById('a8r-input-area').style.display = 'none';
-      document.getElementById('a8r-chips').style.display = 'none';
-      document.getElementById('a8r-powered').style.display = 'none';
-      document.getElementById('a8r-lead-success').classList.add('visible');
-    }, 800);
-
-    if (window.emailjs && CONFIG.emailjs_public_key !== 'YOUR_EMAILJS_PUBLIC_KEY') {
-      emailjs.send(CONFIG.emailjs_service_id, CONFIG.emailjs_template_id, {
-        to_email: CONFIG.notification_email,
-        from_name: lead.name || 'Unknown',
-        contact: lead.contact || 'Not provided',
-        vehicle: lead.vehicle || 'Not specified',
-        timeline: lead.timeline || 'Not specified',
-        conversation_summary: state.messages.slice(-10)
-          .map(function(m) { return (m.role === 'user' ? '👤 Visitor: ' : '🤖 Kai: ') + m.content; })
-          .join('\n\n')
-      }).then(function() {
-        console.log('[Alloc8r] ✅ Lead email sent to hello@alloc8r.ca');
-      }).catch(function(e) {
-        console.error('[Alloc8r] EmailJS error:', e);
+    try {
+      var res = await fetch('/.netlify/functions/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ messages: history }),
       });
+      var data = await res.json();
+      removeTyping();
+      var reply = data.reply || "I'm having trouble connecting right now. You can text Jerick directly at 672-800-2023 — he's quick to respond.";
+      appendMsg('bot', reply);
+      history.push({ role: 'assistant', content: reply });
+      if (data.showCta) showCta();
+    } catch (e) {
+      removeTyping();
+      appendMsg('bot', 'Having trouble connecting. Feel free to text Jerick directly at 672-800-2023.');
     }
-  }
 
-  document.getElementById('a8r-input').addEventListener('input', function() {
-    this.style.height = 'auto';
-    this.style.height = Math.min(this.scrollHeight, 80) + 'px';
-  });
-  document.getElementById('a8r-input').addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); a8rSend(); }
-  });
-  setTimeout(function() {
-    if (!state.open) document.getElementById('a8r-notif-dot').style.display = 'block';
-  }, 10000);
+    isBusy = false;
+    sendBtn.disabled = false;
+    input.focus();
+  };
+
+  // Show badge after 6s
+  setTimeout(function () {
+    if (!isOpen) { badge.style.display = 'flex'; }
+  }, 6000);
 })();
 </script>
-<!-- END AI CHAT WIDGET -->
 
 </body>
 </html>
