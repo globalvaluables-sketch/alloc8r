@@ -83,7 +83,7 @@ When helping someone pick a car:
 Key questions (ask one at a time):
 • How many people usually ride with you?
 • Do you tow anything?
-• City driving or highway?
+• Do you prefer a specific make over others?
 • Do you need AWD for winter / off-road?
 • What matters most: reliability, luxury, practicality, or performance?
 
@@ -135,7 +135,7 @@ Step 4 — Name: "What's your name?" (no options needed)
 Step 5 — Phone: "And the best number to reach you?" (no options needed)
 
 After collecting all five, say something warm like:
-"Perfect, I've got everything I need. Jerick will reach out to you directly — usually within a few hours. He'll go over everything and get the ball rolling."
+"Perfect, I've got everything I need. Jerick will reach out to you directly — usually within a day. He'll go over everything and get the ball rolling."
 Then append [[LEAD_COMPLETE]] at the very end (hidden from display).
 
 ━━━━━━━━━━━━━━━━━━━━━━
@@ -174,6 +174,36 @@ Free consultation: Book via calendar on the site`;
     // Parse [[LEAD_COMPLETE]]
     const leadComplete = raw.includes('[[LEAD_COMPLETE]]');
 
+    // Extract lead fields by scanning the conversation history
+    // Look at each user message and what Karley asked just before it
+    let leadName = '';
+    let leadPhone = '';
+    let leadCar = '';
+    let leadTradeIn = '';
+    let leadTimeline = '';
+
+    if (leadComplete) {
+      for (let i = 1; i < messages.length; i++) {
+        const msg = messages[i];
+        const prev = messages[i - 1];
+        if (msg.role === 'user' && prev.role === 'assistant') {
+          const q = prev.content.toLowerCase();
+          const a = msg.content.trim();
+          if (q.includes("what's your name") || q.includes("what is your name")) {
+            leadName = a;
+          } else if (q.includes("best number") || q.includes("reach you")) {
+            leadPhone = a;
+          } else if (q.includes("what car") || q.includes("looking at")) {
+            leadCar = a;
+          } else if (q.includes("trade-in") && a.toLowerCase() !== 'no') {
+            leadTradeIn = a;
+          } else if (q.includes("when are you looking") || q.includes("timeline") || q.includes("looking to buy")) {
+            leadTimeline = a;
+          }
+        }
+      }
+    }
+
     // Clean reply for display
     const reply = raw
       .replace(/\[\[OPTIONS:\s*.*?\]\]/gi, '')
@@ -183,7 +213,16 @@ Free consultation: Book via calendar on the site`;
     return {
       statusCode: 200,
       headers: { 'Content-Type': 'application/json', 'Access-Control-Allow-Origin': '*' },
-      body: JSON.stringify({ reply, options, leadComplete }),
+      body: JSON.stringify({
+        reply,
+        options,
+        leadComplete,
+        leadName,
+        leadPhone,
+        leadCar,
+        leadTradeIn,
+        leadTimeline,
+      }),
     };
   } catch (err) {
     return {
