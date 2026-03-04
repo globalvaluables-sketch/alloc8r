@@ -2231,7 +2231,7 @@ window.KarleyBot = (function () {
 
       if (leadComplete && !state.leadSent) {
         state.leadSent = true;
-        fireLead(data);
+        fireLead();
         setTimeout(showCTAs, 600);
       }
 
@@ -2247,32 +2247,34 @@ window.KarleyBot = (function () {
   }
 
   // ── Fire EmailJS lead ──
-  function fireLead(data) {
-    var name     = data.leadName     || 'New Lead';
-    var phone    = data.leadPhone    || 'Not provided';
-    var car      = data.leadCar      || 'Not specified';
-    var tradeIn  = data.leadTradeIn  || 'None';
-    var timeline = data.leadTimeline || 'Not specified';
+  function fireLead() {
+    // Karley always ends with: name question → phone question
+    // So last two user messages are guaranteed to be name then phone
+    var userMsgs = state.messages.filter(function(m) { return m.role === 'user'; });
+    var phone = userMsgs.length >= 1 ? userMsgs[userMsgs.length - 1].content.trim() : 'Not provided';
+    var name  = userMsgs.length >= 2 ? userMsgs[userMsgs.length - 2].content.trim() : 'New Lead';
 
     var transcript = state.messages.map(function (m) {
       return (m.role === 'user' ? 'Visitor' : 'Karley') + ': ' + m.content;
     }).join('\n\n');
 
-    emailjs.send('service_eru4dw6', 'template_kef0gxs', {
+    var payload = {
       user_name:  name,
       user_email: phone,
       message:
-        'New Alloc8r lead via Karley AI Chatbot\n\n' +
-        'Name: '     + name     + '\n' +
-        'Phone: '    + phone    + '\n' +
-        'Car: '      + car      + '\n' +
-        'Trade-in: ' + tradeIn  + '\n' +
-        'Timeline: ' + timeline + '\n\n' +
+        'New Alloc8r lead via Karley\n\n' +
+        'Name: '  + name  + '\n' +
+        'Phone: ' + phone + '\n\n' +
         '--- Full Conversation ---\n\n' + transcript
-    }).then(function () {
-      console.log('[Karley] Lead sent via EmailJS.');
-    }, function (err) {
-      console.warn('[Karley] EmailJS error:', err);
+    };
+
+    console.log('[Karley] Firing lead:', JSON.stringify(payload).slice(0, 200));
+
+    emailjs.send('service_eru4dw6', 'template_kef0gxs', payload)
+    .then(function() {
+      console.log('[Karley] EmailJS success.');
+    }, function(err) {
+      console.warn('[Karley] EmailJS error:', JSON.stringify(err));
     });
   }
 
