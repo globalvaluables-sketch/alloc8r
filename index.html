@@ -2189,7 +2189,7 @@ window.KarleyBot = (function () {
     showTyping(function () {
       var greeting = 'Hi there! 👋 I\'m <strong style="color:#93c5fd">Karley</strong>, Alloc8r\'s car advisor.<br><br>Are you looking to skip a waitlist, need help choosing a car, or not sure where to start?';
       addBotMsg(greeting);
-      showOptions(['Skip a waitlist', 'Help choosing a car', 'Not sure yet', 'How much pro help I need']);
+      showOptions(['Skip a waitlist', 'Help choosing a car', 'Not sure yet', "I'm a dealer"]);
     }, 900);
   }
 
@@ -2248,14 +2248,15 @@ window.KarleyBot = (function () {
 
   // ── Fire EmailJS lead ──
   function fireLead(data) {
-    // Use fields extracted by chat.js — most reliable source
+    // Use fields extracted by chat.js via [[LEAD_DATA:...]] tag
     var name     = data.leadName     || '';
     var phone    = data.leadPhone    || '';
     var car      = data.leadCar      || '';
     var tradeIn  = data.leadTradeIn  || 'None';
     var timeline = data.leadTimeline || '';
+    var leadType = data.leadType     || 'buyer';
 
-    // Fallback: last two user messages are always name then phone
+    // Fallback: parse last user messages if server extraction missed
     var userMsgs = state.messages.filter(function(m) { return m.role === 'user'; });
     if (!name)  name  = userMsgs.length >= 2 ? userMsgs[userMsgs.length - 2].content.trim() : 'New Lead';
     if (!phone) phone = userMsgs.length >= 1 ? userMsgs[userMsgs.length - 1].content.trim() : 'Not provided';
@@ -2266,9 +2267,12 @@ window.KarleyBot = (function () {
       return (m.role === 'user' ? 'Visitor' : 'Karley') + ': ' + m.content;
     }).join('\n\n');
 
-    console.log('[Karley] Firing lead — Name:', name, '| Phone:', phone, '| Car:', car);
+    var typeLabel = leadType === 'dealer' ? '🏢 DEALER LEAD' : '🚗 BUYER LEAD';
+
+    console.log('[Karley] Firing lead — Type:', typeLabel, '| Name:', name, '| Phone:', phone, '| Car:', car);
 
     emailjs.send('service_eru4dw6', 'template_kef0gxs', {
+      lead_type:       typeLabel,
       lead_name:       name,
       lead_phone:      phone,
       lead_car:        car,
